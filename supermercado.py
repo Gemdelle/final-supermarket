@@ -15,12 +15,12 @@ def defineAction():
     return input('\nIngrese la acción que desea realizar [A/D/E/L]: ').upper()
 
 def addProduct(product_list):
-    code = input('Ingrese el código del producto a agregar: ')
-    description = input('Ingrese la descripción: ')
-    stock = input('Ingrese el stock: ')
-    price = input('Ingrese el precio: ')
-    expire_date = input('Ingrese la fecha de vencimiento: ')
-    kind = input('Ingrese el tipo [L/V/F]: ')
+    code = input('Código: ')
+    description = input('Descripción: ')
+    stock = input('Stock: ')
+    price = input('Precio unitario: ')
+    expire_date = input('Fecha de vencimiento: ')
+    kind = input('Tipo [L/V/F]: ')
     
     if code not in product_list:
         product_list[code] = [description, stock, price, expire_date, kind]
@@ -40,7 +40,12 @@ def printProducts(product_list):
 
 def main():
     products = {
-        '100': ['Leche', 50, 300, '2023-12-15', 'L'],
+        '100': {
+            'description': ,
+            'stock': ,
+            'expire date': ,
+            
+        }['Leche', 50, 300, '2023-12-15', 'L'],
         '101': ['Manzana', 100, 150, '2023-11-10', 'V'],
         '102': ['Yogur', 30, 180, '2023-12-05', 'L'],
         '103': ['Zanahoria', 75, 100, '2023-11-30', 'V'],
