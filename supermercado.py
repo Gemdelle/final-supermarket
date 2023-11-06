@@ -11,6 +11,87 @@ Created on Tue Oct 31 08:50:40 2023
 # unitario, fecha de vencimiento y tipo de producto, por ejemplo: "L" para lácteos, "V" para
 # verdulería, etc.
 
+# Products
+products = {
+    '100': {
+        'description': 'Leche',
+        'stock': 50,
+        'expire_date': '2023-12-15',
+        'price': 300,
+        'type': 'L'
+    },
+    '101': {
+        'description': 'Manzana',
+        'stock': 100,
+        'expire_date': '2023-11-10',
+        'price': 150,
+        'type': 'V'
+    },
+    '102': {
+        'description': 'Yogur',
+        'stock': 30,
+        'expire_date': '2023-12-05',
+        'price': 180,
+        'type': 'L'
+    },
+    '103': {
+        'description': 'Zanahoria',
+        'stock': 75,
+        'expire_date': '2023-11-30',
+        'price': 100,
+        'type': 'V'
+    },
+    '104': {
+        'description': 'Pan',
+        'stock': 60,
+        'expire_date': '2023-11-25',
+        'price': 90,
+        'type': 'P'
+    },
+    '105': {
+        'description': 'Pollo',
+        'stock': 20,
+        'expire_date': '2023-12-10',
+        'price': 400,
+        'type': 'C'
+    },
+    '106': {
+        'description': 'Cepillo de Dientes',
+        'stock': 25,
+        'expire_date': '2023-12-01',
+        'price': 50,
+        'type': 'H'
+    },
+    '107': {
+        'description': 'Pasta de Dientes',
+        'stock': 20,
+        'expire_date': '2023-12-02',
+        'price': 60,
+        'type': 'H'
+    },
+    '108': {
+        'description': 'Arroz',
+        'stock': 80,
+        'expire_date': '2023-11-29',
+        'price': 200,
+        'type': 'P'
+    },
+    '109': {
+        'description': 'Cereal',
+        'stock': 40,
+        'expire_date': '2023-12-08',
+        'price': 120,
+        'type': 'L'
+    },
+    '110': {
+        'description': 'Naranja',
+        'stock': 90,
+        'expire_date': '2023-11-20',
+        'price': 120,
+        'type': 'V'
+    },
+}
+
 def defineAction():
     return input('\nIngrese la acción que desea realizar [A/D/E/L]: ').upper()
 
@@ -39,39 +120,17 @@ def printProducts(product_list):
         print(f'Producto {product}: {product_list[product]}')
 
 def main():
-    products = {
-        '100': {
-            'description': ,
-            'stock': ,
-            'expire date': ,
-            
-        }['Leche', 50, 300, '2023-12-15', 'L'],
-        '101': ['Manzana', 100, 150, '2023-11-10', 'V'],
-        '102': ['Yogur', 30, 180, '2023-12-05', 'L'],
-        '103': ['Zanahoria', 75, 100, '2023-11-30', 'V'],
-        '104': ['Pan', 60, 90, '2023-11-25', 'P'],
-        '105': ['Pollo', 20, 400, '2023-12-10', 'C'],
-        '107': ['Cepillo de Dientes', 25, 50, '2023-12-01', 'H'],
-        '108': ['Pasta de Dientes', 20, 60, '2023-12-02', 'H'],
-        '109': ['Arroz', 80, 200, '2023-11-29', 'P'],
-        '110': ['Cereal', 40, 120, '2023-12-08', 'L'],
-        '111': ['Naranja', 90, 120, '2023-11-20', 'V']
-    }
-    
-    # products = {}
-    
+
     action = defineAction()
     
     while action != 'E':
         if action == 'A':
             addProduct(products)
-            action = defineAction()
         elif action == 'D':
             deleteProduct(products)
-            action = defineAction()
         elif action == 'L':
             printProducts(products)
-            action = defineAction()
+        action = defineAction()
             
     print(products)
     
