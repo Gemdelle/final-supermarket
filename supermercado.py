@@ -10,7 +10,7 @@ Created on Tue Oct 31 08:50:40 2023
 # Información a tener en cuenta de cada producto: código, descripción, stock, precio
 # unitario, fecha de vencimiento y tipo de producto, por ejemplo: "L" para lácteos, "V" para
 # verdulería, etc.
-
+import sqlite3
 # Products
 products = {
     '100': {
@@ -94,6 +94,28 @@ products = {
 
 def defineAction():
     return input('\nIngrese la acción que desea realizar [A/D/E/L]: ').upper()
+
+def mysql():
+    conn = sqlite3.connect('mydatabase.db')
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS students
+                         (id INTEGER PRIMARY KEY,
+                         name TEXT,
+                         age INTEGER)''')
+
+    # Insert data into the table
+    cursor.execute("INSERT INTO students (name, age) VALUES (?, ?)", ("Jhon", 25))
+
+    # Commit the changes
+    conn.commit()
+
+    cursor.execute("SELECT * FROM students")
+    data = cursor.fetchall()
+    for row in data:
+        print(row)
+
+    # Close the connection
+    conn.close()
 
 def addProduct(product_list):
     code = input('Código: ')
