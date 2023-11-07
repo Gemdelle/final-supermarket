@@ -104,7 +104,13 @@ def addProduct(product_list):
     kind = input('Tipo [L/V/F]: ')
     
     if code not in product_list:
-        product_list[code] = [description, stock, price, expire_date, kind]
+        product_list[code] = {
+            'description': description,
+            'stock': stock,
+            'price': price,
+            'expire_date': expire_date,
+            'kind': kind
+        }
     
     return product_list
   
@@ -131,8 +137,6 @@ def main():
         elif action == 'L':
             printProducts(products)
         action = defineAction()
-            
-    print(products)
     
 main()
     
