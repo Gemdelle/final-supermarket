@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 31 08:50:40 2023
-
-@author: milu2
-"""
-
 # T.P. Supermercado
 
 # Información a tener en cuenta de cada producto: código, descripción, stock, precio
@@ -92,19 +85,26 @@ products = {
     },
 }
 
+def greeting():
+    print('Las acciones que puede hacer son: \nA: Add (agregar)')
+
 def defineAction():
     return input('\nIngrese la acción que desea realizar [A/D/E/L]: ').upper()
 
 def mysql():
-    conn = sqlite3.connect('mydatabase.db')
+    conn = sqlite3.connect('supermarket.db')
     cursor = conn.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS students
-                         (id INTEGER PRIMARY KEY,
-                         name TEXT,
-                         age INTEGER)''')
+    cursor.execute('''CREATE TABLE IF NOT EXISTS products
+                        (id INTEGER PRIMARY KEY,
+                        description TEXT,
+                        stock INTEGER,
+                        expiration_date DATE,
+                        price VARCHAR,
+                        type TEXT
+                        )''')
 
     # Insert data into the table
-    cursor.execute("INSERT INTO students (name, age) VALUES (?, ?)", ("Jhon", 25))
+    cursor.execute("INSERT INTO products (id, description, stock, expiration_date, price, type) VALUES (?, ?, ?, ?, ?, ?)", ("Jhon", 25))
 
     # Commit the changes
     conn.commit()
@@ -120,7 +120,7 @@ def mysql():
 def addProduct(product_list):
     code = input('Código: ')
     description = input('Descripción: ')
-    stock = input('Stock: ')
+    stock = int(input('Stock: '))
     price = input('Precio unitario: ')
     expire_date = input('Fecha de vencimiento: ')
     kind = input('Tipo [L/V/F]: ')
@@ -144,20 +144,68 @@ def deleteProduct(product_list):
 
 def printProducts(product_list):
     print()
-    for product in product_list:
-        print(f'Producto {product}: {product_list[product]}')
+    for code,product in product_list.items():
+        print(f'\n-------------\n{code}')
+        for key,value in product.items():
+            print(f'{key}: {value}')
+
+def updateStock(product_list):
+    print('Ingrese la información del producto a vender:')
+    user_code = input('Código: ')
+    quantity = int(input('Cantidad: '))
+    
+    if product_list[user_code]['stock'] - quantity >= 0:
+        product_list[user_code]['stock'] -= quantity
+        
+def updatePrice(product_list):
+    print('Ingrese la información del producto a modificar el precio: ')
+    user_code = input('Código: ')
+    percentage = float(input('Porcentaje a modificar: '))
+        
+    product_list[user_code]['price'] = product_list[user_code]['price'] + product_list[user_code]['price'] * percentage  
+
+def verifyStock(product_list,cart):
+    print('Ingrese la información del producto que desea comprar: ')
+    user_code = input('Código: ')
+    quantity = int(input('Cantidad: '))
+    product = product_list[user_code]["description"]
+
+    if product_list[user_code]['stock'] < quantity:
+        print(f'No hay stock disponible del el producto {product}')
+    else:
+        if product in cart:
+            cart[product]['quantity'] += quantity
+        else:
+            cart[product] = {'quantity': quantity}
+        print(f'Has agregado {quantity} de {product} al carrito por un precio de {(product_list[user_code]["price"])*quantity}')
+        product_list[user_code]['stock'] -= quantity
+
+def viewCart(cart):
+    for product in cart:
+        print(f'{product}: {cart[product]["quantity"]}')
 
 def main():
 
+    greeting()
+
+    cart = {}
     action = defineAction()
     
     while action != 'E':
-        if action == 'A':
+        if action == 'A': # Add
             addProduct(products)
-        elif action == 'D':
+        elif action == 'D': # Delete
             deleteProduct(products)
-        elif action == 'L':
+        elif action == 'L': # List
             printProducts(products)
+        elif action == 'S': # Sell
+            updateStock(products)
+        elif action == 'UP': # Update price
+            updatePrice(products)
+        elif action == 'B': # Buy
+            verifyStock(products,cart)
+        elif action == 'C': # Cart
+            viewCart(cart)
         action = defineAction()
     
 main()
