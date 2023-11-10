@@ -88,6 +88,12 @@ products = {
 def greeting():
     print('Las acciones que puede hacer son: \nA: Add (agregar)')
 
+def defineDate():
+    print('Bienvenido al supermercado X. Ingrese la fecha del día de hoy antes de comenzar su compra: ')
+    day = int(input('Día: '))
+    month = int(input('Mes: '))
+    
+
 def defineAction():
     return input('\nIngrese la acción que desea realizar [A/D/E/L]: ').upper()
 
@@ -184,11 +190,60 @@ def viewCart(cart):
     for product in cart:
         print(f'{product}: {cart[product]["quantity"]}')
 
+def updateStock(product_list):
+    print('Ingrese la información del producto que desea reponer: ')
+    user_code = input('Código: ')
+    stock_limit = int(input('Mínimo de stock requerido: '))
+
+    if product_list[user_code]['stock'] < stock_limit:
+        print(f'El stock del producto {product_list[user_code]["description"]} está por debajo del límite.')
+        stock_update = int(input('Cantidad de stock a reponer: '))
+        product_list[user_code]['stock'] = stock_limit + stock_update 
+    else:
+        print(f'El stock del producto {product_list[user_code]["description"]} es de {product_list[user_code]["stock"]}, está por encima del mínimo {stock_limit}')
+
+def delivery():
+    print('\nIngrese la información para realizar el envío: ')
+    name = input('Nombre y apellido: ')
+    dni = input('DNI: ')
+    address = input('Domicilio: ')
+    phone_number = input('Número de teléfono: ')
+    payment_method = input('Método de pago [T/E]: ').upper()
+
+    print(f'\n-------------------------------\nInformación de pago\n\nNombre: {name}\nDNI: {dni}\nDirección: {address}\nNúmero de teléfono: {phone_number}\nMétodo de pago: {payment_method}\n-------------------------------\n')
+    repeat = input('¿Es correcta la información? [Y/N]: ').upper()
+    
+    while repeat == 'N':
+        print()
+        name = input('Nombre y apellido: ')
+        dni = input('DNI: ')
+        address = input('Domicilio: ')
+        phone_number = input('Número de teléfono: ')
+        payment_method = input('Método de pago [T/E]: ').upper()
+        print(f'\n-------------------------------\nInformación de pago:\n\nNombre: {name}\nDNI: {dni}\nDirección: {address}\nNúmero de teléfono: {phone_number}\nMétodo de pago: {payment_method}\n-------------------------------\n')
+        repeat = input('¿Es correcta la información? [Y/N]: ').upper()
+
+    print('Los datos del envío han sido ingresados correctamente.')
+
+def mostPurchasedItem(cart):
+    most_purchased_item = ''
+    item_quantity = 0
+
+    for item in cart:
+        if cart[item]['quantity'] > item_quantity:
+            most_purchased_item = item
+            item_quantity = cart[item]['quantity']
+
+    print(f'\nInformación de producto más llevado: \nProducto: {most_purchased_item}\nCantidad: {item_quantity}')
+
 def main():
 
     greeting()
 
     cart = {}
+    old_products = {}
+
+    date = defineDate()
     action = defineAction()
     
     while action != 'E':
@@ -206,6 +261,12 @@ def main():
             verifyStock(products,cart)
         elif action == 'C': # Cart
             viewCart(cart)
+        elif action == 'US': # Update Stock
+            updateStock(products)
+        elif action == 'H': # Home
+            delivery()
+        elif action == 'MP':
+            mostPurchasedItem(cart)
         action = defineAction()
     
 main()
