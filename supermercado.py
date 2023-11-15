@@ -11,77 +11,88 @@ products = {
         'stock': 50,
         'expire_date': '2023-12-15',
         'price': 300,
-        'type': 'L'
+        'type': 'L',
+        'discount': False
     },
     '101': {
         'description': 'Manzana',
         'stock': 100,
         'expire_date': '2023-11-10',
         'price': 150,
-        'type': 'V'
+        'type': 'V',
+        'discount': False
     },
     '102': {
         'description': 'Yogur',
         'stock': 30,
         'expire_date': '2023-12-05',
         'price': 180,
-        'type': 'L'
+        'type': 'L',
+        'discount': False
     },
     '103': {
         'description': 'Zanahoria',
         'stock': 75,
         'expire_date': '2023-11-30',
         'price': 100,
-        'type': 'V'
+        'type': 'V',
+        'discount': False
     },
     '104': {
         'description': 'Pan',
         'stock': 60,
         'expire_date': '2023-11-25',
         'price': 90,
-        'type': 'P'
+        'type': 'P',
+        'discount': False
     },
     '105': {
         'description': 'Pollo',
         'stock': 20,
         'expire_date': '2023-12-10',
         'price': 400,
-        'type': 'C'
+        'type': 'C',
+        'discount': False
     },
     '106': {
         'description': 'Cepillo de Dientes',
         'stock': 25,
         'expire_date': '2023-12-01',
         'price': 50,
-        'type': 'H'
+        'type': 'H',
+        'discount': False
     },
     '107': {
         'description': 'Pasta de Dientes',
         'stock': 20,
         'expire_date': '2023-12-02',
         'price': 60,
-        'type': 'H'
+        'type': 'H',
+        'discount': False
     },
     '108': {
         'description': 'Arroz',
         'stock': 80,
         'expire_date': '2023-11-29',
         'price': 200,
-        'type': 'P'
+        'type': 'P',
+        'discount': False
     },
     '109': {
         'description': 'Cereal',
         'stock': 40,
         'expire_date': '2023-12-08',
         'price': 120,
-        'type': 'L'
+        'type': 'L',
+        'discount': False
     },
     '110': {
         'description': 'Naranja',
         'stock': 90,
         'expire_date': '2023-11-20',
         'price': 120,
-        'type': 'V'
+        'type': 'V',
+        'discount': False
     },
 }
 
@@ -92,8 +103,9 @@ def defineDate():
     print('Bienvenido al supermercado X. Ingrese la fecha del día de hoy antes de comenzar su compra: ')
     day = int(input('Día: '))
     month = int(input('Mes: '))
-    
 
+    return day,month
+    
 def defineAction():
     return input('\nIngrese la acción que desea realizar [A/D/E/L]: ').upper()
 
@@ -137,7 +149,8 @@ def addProduct(product_list):
             'stock': stock,
             'price': price,
             'expire_date': expire_date,
-            'kind': kind
+            'kind': kind,
+            'discount': False
         }
     
     return product_list
@@ -182,7 +195,7 @@ def verifyStock(product_list,cart):
         if product in cart:
             cart[product]['quantity'] += quantity
         else:
-            cart[product] = {'quantity': quantity}
+            cart[product] = {'quantity': quantity,'type': product_list[user_code]['type']}
         print(f'Has agregado {quantity} de {product} al carrito por un precio de {(product_list[user_code]["price"])*quantity}')
         product_list[user_code]['stock'] -= quantity
 
@@ -236,6 +249,61 @@ def mostPurchasedItem(cart):
 
     print(f'\nInformación de producto más llevado: \nProducto: {most_purchased_item}\nCantidad: {item_quantity}')
 
+def mostPurchasedItemType(cart):
+
+    types = {}
+
+    for item in cart:
+        item_type = cart[item]['type']
+
+        if item_type not in types:
+            types[item_type] = 1
+        else: 
+            types[item_type] += 1
+
+    # Create a list of tuples from the types dictionary
+    types_arr = []
+    for item_type in types:
+        types_arr.append(types[item_type])
+        types_arr.append(item_type)
+
+    most_purchased_category = ''
+    most_purchased_category_num = 0
+    for i in range(len(types_arr)-1):
+        if isinstance(types_arr[i], int):
+            if types_arr[i] > most_purchased_category_num:
+                most_purchased_category_num = types_arr[i]
+                most_purchased_category = types_arr[i+1]
+
+    print(f'The most purchased category is "{most_purchased_category}" with {most_purchased_category_num} items.')
+
+    # print(f'\nProducto más llevado por tipo:\n\n')
+
+def deleteOldProducts(day,month,product_list):
+    old_products = {}
+
+    product_list_copy = product_list.copy()
+
+    for product_code, product_data in product_list_copy.items():
+        expire_month = int(product_data['expire_date'].split('-')[1])
+        expire_day = int(product_data['expire_date'].split('-')[2])
+        if expire_month == month and (expire_day <= day):
+            # Move the product to the old_products dictionary
+            old_products[product_code] = product_data
+            # Remove the product from the original product list
+            del product_list[product_code]
+    
+    print(old_products)
+
+def discountItem(day,month,product_list):
+
+    for product_code, product_data in product_list.items():
+        expire_month = int(product_data['expire_date'].split('-')[1])
+        expire_day = int(product_data['expire_date'].split('-')[2])
+        if (month == expire_month and expire_day - day > 7) or (month != expire_month and (31 - day + expire_day) > 7):
+            product_list[product_code]['discount'] = True
+            product_list[product_code]['price'] = product_list[product_code]['price'] - product_list[product_code]['price'] * 0.1
+
 def main():
 
     greeting()
@@ -243,7 +311,7 @@ def main():
     cart = {}
     old_products = {}
 
-    date = defineDate()
+    day,month = defineDate()
     action = defineAction()
     
     while action != 'E':
@@ -267,7 +335,26 @@ def main():
             delivery()
         elif action == 'MP':
             mostPurchasedItem(cart)
+        elif action == 'MPT':
+            mostPurchasedItemType(cart)
+        elif action == 'DOP': # Delete Old Products
+            deleteOldProducts(day,month,products)
         action = defineAction()
     
+    # emitTicket()
+
 main()
-    
+
+# [X] Agregar un nuevo producto.
+# [X] Eliminar un producto dado su código.
+# [X] Listar todos los productos de una forma prolija.
+# [X] Actualizar el stock cuando se vende un producto.
+# [X] Actualizar el precio unitario de un producto determinado en un cierto procentaje.
+# [X] Determinar la existencia de un producto para poder vender la cantidad solicitada.
+# [X] Reponer un producto cuando el stock está por debajo de un mínimo requerido.
+# [X] Pedir los datos de un cliente para hacer envío a domicilio.
+# [X] Determinar cuál es el artículo más vendido.
+# [-] Eliminar del supermercado (guardarlos en un otro diccionario) los artículos que estén vencidos.
+# [O] Simular la venta a un cliente y emitir el ticket de venta.
+# [-] Si el producto vence en una semana hacer un 10% de descuento y agregarlo al objeto.
+# [-] Determinar el producto más vendido dependiendo del tipo de producto.
