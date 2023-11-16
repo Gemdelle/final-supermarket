@@ -194,8 +194,9 @@ def verifyStock(product_list,cart):
     else:
         if product in cart:
             cart[product]['quantity'] += quantity
+            cart[product]['pay'] = quantity * cart[product]['price']
         else:
-            cart[product] = {'quantity': quantity,'type': product_list[user_code]['type']}
+            cart[product] = {'quantity': quantity,'type': product_list[user_code]['type'], 'pay': product_list[user_code]['price'] * quantity}
         print(f'Has agregado {quantity} de {product} al carrito por un precio de {(product_list[user_code]["price"])*quantity}')
         product_list[user_code]['stock'] -= quantity
 
@@ -304,6 +305,11 @@ def discountItem(day,month,product_list):
             product_list[product_code]['discount'] = True
             product_list[product_code]['price'] = product_list[product_code]['price'] - product_list[product_code]['price'] * 0.1
 
+def ticket(cart):
+    print(cart)
+    # for item, details in cart.items():
+    #     print(f'Item: {item} ------------------- {details["price"]}')
+
 def main():
 
     greeting()
@@ -341,7 +347,7 @@ def main():
             deleteOldProducts(day,month,products)
         action = defineAction()
     
-    # emitTicket()
+    ticket(cart)
 
 main()
 
