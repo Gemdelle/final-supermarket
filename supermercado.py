@@ -4,96 +4,124 @@
 # unitario, fecha de vencimiento y tipo de producto, por ejemplo: "L" para lácteos, "V" para
 # verdulería, etc.
 import sqlite3
+import random
+from datetime import datetime, timedelta
+
 # Products
-products = {
+
+bakery_products = {
     '100': {
-        'description': 'Leche',
-        'stock': 50,
-        'expire_date': '2023-12-15',
-        'price': 300,
-        'type': 'L',
+        'description': 'Strawberry Pie',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'F',
         'discount': False
     },
     '101': {
-        'description': 'Manzana',
-        'stock': 100,
-        'expire_date': '2023-11-10',
-        'price': 150,
-        'type': 'V',
+        'description': 'Grape Pie',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'F',
         'discount': False
     },
     '102': {
-        'description': 'Yogur',
-        'stock': 30,
-        'expire_date': '2023-12-05',
-        'price': 180,
-        'type': 'L',
+        'description': 'Apple Pie',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'F',
         'discount': False
     },
     '103': {
-        'description': 'Zanahoria',
-        'stock': 75,
-        'expire_date': '2023-11-30',
-        'price': 100,
-        'type': 'V',
+        'description': 'Fruit Pie',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'F',
         'discount': False
     },
     '104': {
-        'description': 'Pan',
-        'stock': 60,
-        'expire_date': '2023-11-25',
-        'price': 90,
-        'type': 'P',
+        'description': 'Blueberry Pie',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'F',
         'discount': False
     },
     '105': {
-        'description': 'Pollo',
-        'stock': 20,
-        'expire_date': '2023-12-10',
-        'price': 400,
-        'type': 'C',
+        'description': 'Bread Turtle',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'Z',
         'discount': False
     },
     '106': {
-        'description': 'Cepillo de Dientes',
-        'stock': 25,
-        'expire_date': '2023-12-01',
-        'price': 50,
-        'type': 'H',
+        'description': 'Bread Crocodile',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'Z',
         'discount': False
     },
     '107': {
-        'description': 'Pasta de Dientes',
-        'stock': 20,
-        'expire_date': '2023-12-02',
-        'price': 60,
-        'type': 'H',
+        'description': 'Baguette',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'B',
         'discount': False
     },
     '108': {
-        'description': 'Arroz',
-        'stock': 80,
-        'expire_date': '2023-11-29',
-        'price': 200,
-        'type': 'P',
+        'description': 'Bun',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'B',
         'discount': False
     },
     '109': {
-        'description': 'Cereal',
-        'stock': 40,
-        'expire_date': '2023-12-08',
-        'price': 120,
-        'type': 'L',
+        'description': 'Egg Toast',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'T',
         'discount': False
     },
     '110': {
-        'description': 'Naranja',
-        'stock': 90,
-        'expire_date': '2023-11-20',
-        'price': 120,
-        'type': 'V',
+        'description': 'Butter Toast',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'T',
         'discount': False
     },
+    '111': {
+        'description': 'Pretzel',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'P',
+        'discount': False
+    },
+    '112': {
+        'description': 'Croissant',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'P',
+        'discount': False
+    },
+    '113': {
+        'description': 'Bagel',
+        'stock': 0,
+        'expire_date': '',
+        'price': 0,
+        'type': 'S',
+        'discount': False
+    }
 }
 
 def greeting():
@@ -101,11 +129,25 @@ def greeting():
 
 def defineDate():
     print('Bienvenido al supermercado X. Ingrese la fecha del día de hoy antes de comenzar su compra: ')
-    day = int(input('Día: '))
-    month = int(input('Mes: '))
+    start_date = input('Fecha [YYYY-MM-DD]: ')
+    start_date = datetime.strptime(start_date, '%Y-%m-%d')
+    return start_date
 
-    return day,month
-    
+def createStock(products,start_date):
+    for product in products:
+        products[product]['stock'] = random.randint(0,300)
+        products[product]['expire_date'] = (start_date + timedelta(days=random.randint(30, 365))).strftime('%Y-%m-%d')
+        products[product]['price'] = random.randint(350,1200)
+
+    # Hacer que no haya stock de 2 productos al inicio
+    products[str(random.randint(100,113))]['stock'] = 0
+    products[str(random.randint(100,113))]['stock'] = 0
+
+    # Ver los productos de los que no hay stock
+    # for key,value in products.items():
+    #     if products[key]['stock'] == 0:
+    #         print(f"{key}: {value}")
+
 def defineAction():
     return input('\nIngrese la acción que desea realizar [A/D/E/L]: ').upper()
 
@@ -305,19 +347,20 @@ def discountItem(day,month,product_list):
             product_list[product_code]['discount'] = True
             product_list[product_code]['price'] = product_list[product_code]['price'] - product_list[product_code]['price'] * 0.1
 
-def ticket(cart):
-    print(cart)
+# def ticket(cart):
+#     print(cart)
     # for item, details in cart.items():
     #     print(f'Item: {item} ------------------- {details["price"]}')
 
 def main():
 
     greeting()
+    start_date = defineDate()
+    products = createStock(bakery_products,start_date)
 
     cart = {}
     old_products = {}
 
-    day,month = defineDate()
     action = defineAction()
     
     while action != 'E':
@@ -344,7 +387,7 @@ def main():
         elif action == 'MPT':
             mostPurchasedItemType(cart)
         elif action == 'DOP': # Delete Old Products
-            deleteOldProducts(day,month,products)
+            deleteOldProducts(start_date,products)
         action = defineAction()
     
     ticket(cart)
