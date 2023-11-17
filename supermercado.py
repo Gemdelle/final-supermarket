@@ -151,32 +151,6 @@ def createStock(products,start_date):
 def defineAction():
     return input('\nIngrese la acción que desea realizar [A/D/E/L]: ').upper()
 
-def mysql():
-    conn = sqlite3.connect('supermarket.db')
-    cursor = conn.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS products
-                        (id INTEGER PRIMARY KEY,
-                        description TEXT,
-                        stock INTEGER,
-                        expiration_date DATE,
-                        price VARCHAR,
-                        type TEXT
-                        )''')
-
-    # Insert data into the table
-    cursor.execute("INSERT INTO products (id, description, stock, expiration_date, price, type) VALUES (?, ?, ?, ?, ?, ?)", ("Jhon", 25))
-
-    # Commit the changes
-    conn.commit()
-
-    cursor.execute("SELECT * FROM students")
-    data = cursor.fetchall()
-    for row in data:
-        print(row)
-
-    # Close the connection
-    conn.close()
-
 def addProduct(product_list):
     code = input('Código: ')
     description = input('Descripción: ')
