@@ -22,6 +22,7 @@ pygame.display.set_caption('Bakery')
 clock = pygame.time.Clock()  # clock object to handle frame rate
 test_font = pygame.font.Font('font/Alkhemikal.ttf', 50)
 ticket_products_font = pygame.font.Font('font/Alkhemikal.ttf', 35)
+products_count_font = pygame.font.Font('font/Alkhemikal.ttf', 35)
 game_active = True
 running = True
 
@@ -228,6 +229,118 @@ def update_ticket():
             pass
 
 
+def render_plate1():
+    screen.blit(plate1, plate1_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['107']['stock']}",
+        True, 'Black'
+    ), (plate1_rect.centerx - 16, plate1_rect.centery + 80))
+
+
+def render_plate2():
+    screen.blit(plate1, plate2_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['108']['stock']}",
+        True, 'Black'
+    ), (plate2_rect.centerx - 16, plate2_rect.centery + 80))
+
+
+def render_plate3():
+    screen.blit(plate2, plate3_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['105']['stock']}",
+        True, 'Black'
+    ), (plate3_rect.centerx - 16, plate3_rect.centery + 80))
+
+
+def render_plate4():
+    screen.blit(plate2, plate4_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['106']['stock']}",
+        True, 'Black'
+    ), (plate4_rect.centerx - 16, plate4_rect.centery + 80))
+
+
+def render_plate5():
+    screen.blit(plate3, plate5_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['109']['stock']}",
+        True, 'Black'
+    ), (plate5_rect.centerx - 16, plate5_rect.centery + 80))
+
+
+def render_plate6():
+    screen.blit(plate3, plate6_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['110']['stock']}",
+        True, 'Black'
+    ), (plate6_rect.centerx - 16, plate6_rect.centery + 80))
+
+
+def render_plate7():
+    screen.blit(plate4, plate7_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['100']['stock']}",
+        True, 'Black'
+    ), (plate7_rect.centerx - 16, plate7_rect.centery + 80))
+
+
+def render_plate8():
+    screen.blit(plate4, plate8_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['101']['stock']}",
+        True, 'Black'
+    ), (plate8_rect.centerx - 16, plate8_rect.centery + 80))
+
+
+def render_plate9():
+    screen.blit(plate4, plate9_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['102']['stock']}",
+        True, 'Black'
+    ), (plate9_rect.centerx - 16, plate9_rect.centery + 80))
+
+
+def render_plate10():
+    screen.blit(plate4, plate10_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['103']['stock']}",
+        True, 'Black'
+    ), (plate10_rect.centerx - 16, plate10_rect.centery + 80))
+
+
+def render_plate11():
+    screen.blit(plate4, plate11_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['104']['stock']}",
+        True, 'Black'
+    ), (plate11_rect.centerx - 16, plate11_rect.centery + 80))
+
+
+def render_plate12():
+    screen.blit(plate5, plate12_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['113']['stock']}",
+        True, 'Black'
+    ), (plate12_rect.centerx - 16, plate12_rect.centery + 80))
+
+
+def render_plate13():
+    screen.blit(plate6, plate13_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['111']['stock']}",
+        True, 'Black'
+    ), (plate13_rect.centerx - 16, plate13_rect.centery + 80))
+
+
+def render_plate14():
+    screen.blit(plate6, plate14_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['112']['stock']}",
+        True, 'Black'
+    ), (plate14_rect.centerx - 16, plate14_rect.centery + 80))
+
+
 while running:  # The game will be continuously updated.
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -302,21 +415,33 @@ while running:  # The game will be continuously updated.
 
         # Plates
         # Line 1
-        screen.blit(plate1, plate1_rect)
-        screen.blit(plate1, plate2_rect)
-        screen.blit(plate2, plate3_rect)
-        screen.blit(plate2, plate4_rect)
-        screen.blit(plate3, plate5_rect)
-        screen.blit(plate3, plate6_rect)
-        screen.blit(plate4, plate7_rect)
+        render_plate1()
+
+        render_plate2()
+
+        render_plate3()
+
+        render_plate4()
+
+        render_plate5()
+
+        render_plate6()
+
+        render_plate7()
         # Line 2
-        screen.blit(plate4, plate8_rect)
-        screen.blit(plate4, plate9_rect)
-        screen.blit(plate4, plate10_rect)
-        screen.blit(plate4, plate11_rect)
-        screen.blit(plate5, plate12_rect)
-        screen.blit(plate6, plate13_rect)
-        screen.blit(plate6, plate14_rect)
+        render_plate8()
+
+        render_plate9()
+
+        render_plate10()
+
+        render_plate11()
+
+        render_plate12()
+
+        render_plate13()
+
+        render_plate14()
 
         if product_list['100']['stock'] > 0:
             screen.blit(food_pie1, food_pie1_rect)
