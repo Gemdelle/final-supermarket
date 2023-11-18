@@ -368,16 +368,29 @@ def main():
 
 main()
 
-# [X] Agregar un nuevo producto.
-# [X] Eliminar un producto dado su código.
-# [X] Listar todos los productos de una forma prolija.
-# [X] Actualizar el stock cuando se vende un producto.
-# [X] Actualizar el precio unitario de un producto determinado en un cierto procentaje.
-# [X] Determinar la existencia de un producto para poder vender la cantidad solicitada.
-# [X] Reponer un producto cuando el stock está por debajo de un mínimo requerido.
-# [X] Pedir los datos de un cliente para hacer envío a domicilio.
-# [X] Determinar cuál es el artículo más vendido.
-# [-] Eliminar del supermercado (guardarlos en un otro diccionario) los artículos que estén vencidos.
+# TAREAS GEMY
+# Agregar un espacio (dibujito) para poner en stock en los platos
+# Borrar el código de los platos
+# Dibujar plato gris
+# Dibujar tacho de basura (vencido)
+# Dibujar banderita de descuento
+
+# User
+# [X] Agregar un nuevo producto al carrito. (se agrega al ticket de la izquierda y se disminuye el stock)
+# [X] Eliminar un producto dado su código. (del carrito)
+# [X] Actualizar el stock cuando se vende un producto. (disminuye el stock en los platos)
+# [X] Pedir los datos de un cliente para hacer envío a domicilio. (CHEQUEAR)
 # [O] Simular la venta a un cliente y emitir el ticket de venta.
 # [-] Si el producto vence en una semana hacer un 10% de descuento y agregarlo al objeto.
-# [-] Determinar el producto más vendido dependiendo del tipo de producto.
+
+# Manager
+# [X] Agregar un nuevo producto al negocio (hay platos grises a los que se agrega el producto)
+# [X] Eliminar un producto dado su código. (del negocio)
+# [X] Actualizar el precio unitario de un producto determinado en un cierto procentaje.
+# [X] Reponer un producto cuando el stock está por debajo de un mínimo requerido. (categoría) -> AGREGAR STOCK MÍNIMO SI SE JUEGA COMO MANAGER
+# [-] Eliminar del supermercado (guardarlos en un otro diccionario) los artículos que estén vencidos.
+# [X] Determinar cuál es el artículo más vendido. (Cartel de más vendido)
+# [-] Determinar el producto más vendido dependiendo del tipo de producto. (Cartel de más vendido)
+
+
+
