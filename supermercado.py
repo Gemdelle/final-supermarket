@@ -43,7 +43,7 @@ bakery_products = {
         'discount': False
     },
     '104': {
-        'description': 'Blueberry Pie',
+        'description': 'Blueberry Fish',
         'stock': 0,
         'expire_date': '',
         'price': 0,
@@ -75,7 +75,7 @@ bakery_products = {
         'discount': False
     },
     '108': {
-        'description': 'Bun',
+        'description': 'Round Bread',
         'stock': 0,
         'expire_date': '',
         'price': 0,
@@ -142,6 +142,8 @@ def createStock(products,start_date):
     # Hacer que no haya stock de 2 productos al inicio
     products[str(random.randint(100,113))]['stock'] = 0
     products[str(random.randint(100,113))]['stock'] = 0
+
+    return products
 
     # Ver los productos de los que no hay stock
     # for key,value in products.items():
@@ -215,6 +217,22 @@ def verifyStock(product_list,cart):
             cart[product] = {'quantity': quantity,'type': product_list[user_code]['type'], 'pay': product_list[user_code]['price'] * quantity}
         print(f'Has agregado {quantity} de {product} al carrito por un precio de {(product_list[user_code]["price"])*quantity}')
         product_list[user_code]['stock'] -= quantity
+
+def buy_with_code(product_list,cart, code):
+    quantity = 1
+    product = product_list[code]["description"]
+
+    if product_list[code]['stock'] < quantity:
+        print(f'No hay stock disponible del el producto {product}')
+    else:
+        if product in cart:
+            cart[product]['quantity'] += quantity
+            cart[product]['pay'] = cart[product]['quantity'] * product_list[code]['price']
+        else:
+            cart[product] = {'quantity': quantity,'type': product_list[code]['type'], 'pay': product_list[code]['price'] * quantity}
+        print(f'Has agregado {quantity} de {product} al carrito por un precio de {(product_list[code]["price"])*quantity}')
+        product_list[code]['stock'] -= quantity
+    return cart
 
 def viewCart(cart):
     for product in cart:
@@ -366,7 +384,7 @@ def main():
     
     ticket(cart)
 
-main()
+#main()
 
 # TAREAS GEMY
 # Agregar un espacio (dibujito) para poner en stock en los platos
