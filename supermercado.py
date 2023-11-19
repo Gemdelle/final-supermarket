@@ -234,6 +234,13 @@ def buy_with_code(product_list,cart, code):
         product_list[code]['stock'] -= quantity
     return cart
 
+def return_product(product_list,cart, code):
+    product = product_list[code]["description"]
+    if product in cart:
+        cart[product]['quantity'] -= 1
+        cart[product]['pay'] = cart[product]['quantity'] * product_list[code]['price']
+    return cart
+
 def viewCart(cart):
     for product in cart:
         print(f'{product}: {cart[product]["quantity"]}')

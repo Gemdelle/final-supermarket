@@ -8,7 +8,141 @@ import math
 
 from pygame import font
 
-from supermercado import buy_with_code, createStock, bakery_products
+from supermercado import buy_with_code, createStock, bakery_products, return_product
+
+
+def update_ticket():
+    global current_y, total_price, products_text
+    keys_list = list(cart.keys())
+    aux_total_prize = 0
+    for product_code, product in product_list.items():
+        try:
+            if product['description'] in cart and cart[product['description']]['quantity'] > 0:
+                index = keys_list.index(product['description'])
+                products_text[product['description']] = {
+                    'quantity': cart[product['description']]['quantity'],
+                    'price': product['price'],
+                    'position_y': current_y + (PRODUCT_HEIGHT * index)
+                }
+                aux_total_prize += cart[product['description']]['pay']
+            else:
+                del products_text[product['description']]
+
+        except KeyError as e:
+            pass
+
+    total_price = aux_total_prize
+
+def render_plate1():
+    screen.blit(plate1, plate1_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['107']['stock']}",
+        True, 'Black'
+    ), (plate1_rect.centerx - 16, plate1_rect.centery + 80))
+
+
+def render_plate2():
+    screen.blit(plate1, plate2_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['108']['stock']}",
+        True, 'Black'
+    ), (plate2_rect.centerx - 16, plate2_rect.centery + 80))
+
+
+def render_plate3():
+    screen.blit(plate2, plate3_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['105']['stock']}",
+        True, 'Black'
+    ), (plate3_rect.centerx - 16, plate3_rect.centery + 80))
+
+
+def render_plate4():
+    screen.blit(plate2, plate4_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['106']['stock']}",
+        True, 'Black'
+    ), (plate4_rect.centerx - 16, plate4_rect.centery + 80))
+
+
+def render_plate5():
+    screen.blit(plate3, plate5_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['109']['stock']}",
+        True, 'Black'
+    ), (plate5_rect.centerx - 16, plate5_rect.centery + 80))
+
+
+def render_plate6():
+    screen.blit(plate3, plate6_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['110']['stock']}",
+        True, 'Black'
+    ), (plate6_rect.centerx - 16, plate6_rect.centery + 80))
+
+
+def render_plate7():
+    screen.blit(plate4, plate7_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['100']['stock']}",
+        True, 'Black'
+    ), (plate7_rect.centerx - 16, plate7_rect.centery + 80))
+
+
+def render_plate8():
+    screen.blit(plate4, plate8_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['101']['stock']}",
+        True, 'Black'
+    ), (plate8_rect.centerx - 16, plate8_rect.centery + 80))
+
+
+def render_plate9():
+    screen.blit(plate4, plate9_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['102']['stock']}",
+        True, 'Black'
+    ), (plate9_rect.centerx - 16, plate9_rect.centery + 80))
+
+
+def render_plate10():
+    screen.blit(plate4, plate10_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['103']['stock']}",
+        True, 'Black'
+    ), (plate10_rect.centerx - 16, plate10_rect.centery + 80))
+
+
+def render_plate11():
+    screen.blit(plate4, plate11_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['104']['stock']}",
+        True, 'Black'
+    ), (plate11_rect.centerx - 16, plate11_rect.centery + 80))
+
+
+def render_plate12():
+    screen.blit(plate5, plate12_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['113']['stock']}",
+        True, 'Black'
+    ), (plate12_rect.centerx - 16, plate12_rect.centery + 80))
+
+
+def render_plate13():
+    screen.blit(plate6, plate13_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['111']['stock']}",
+        True, 'Black'
+    ), (plate13_rect.centerx - 16, plate13_rect.centery + 80))
+
+
+def render_plate14():
+    screen.blit(plate6, plate14_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['112']['stock']}",
+        True, 'Black'
+    ), (plate14_rect.centerx - 16, plate14_rect.centery + 80))
 
 # Setup
 pygame.init()
@@ -210,136 +344,96 @@ total_price = 0
 
 products_text = {}
 
-
-def update_ticket():
-    global current_y, total_price, products_text
-    keys_list = list(cart.keys())
-    for product_code, product in product_list.items():
-        try:
-            if product['description'] in cart:
-                index = keys_list.index(product['description'])
-                products_text[product['description']] = {
-                    'quantity': cart[product['description']]['quantity'],
-                    'price': product['price'],
-                    'position_y': current_y + (PRODUCT_HEIGHT * index)
-                }
-
-                total_price += cart[product['description']]['pay']
-        except KeyError as e:
-            pass
+ticket_components = {}
 
 
-def render_plate1():
-    screen.blit(plate1, plate1_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['107']['stock']}",
-        True, 'Black'
-    ), (plate1_rect.centerx - 16, plate1_rect.centery + 80))
+def check_add_product():
+    if food_pie1_rect.collidepoint(event.pos) and product_list['100']['stock'] > 0:
+        buy_with_code(product_list, cart, '100')
+        update_ticket()
+    elif food_pie2_rect.collidepoint(event.pos) and product_list['101']['stock'] > 0:
+        buy_with_code(product_list, cart, '101')
+        update_ticket()
+    elif food_rectpie_rect.collidepoint(event.pos) and product_list['102']['stock'] > 0:
+        buy_with_code(product_list, cart, '102')
+        update_ticket()
+    elif food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['stock'] > 0:
+        buy_with_code(product_list, cart, '103')
+        update_ticket()
+    elif food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['stock'] > 0:
+        buy_with_code(product_list, cart, '104')
+        update_ticket()
+    elif food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['stock'] > 0:
+        buy_with_code(product_list, cart, '105')
+        update_ticket()
+    elif food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['stock'] > 0:
+        buy_with_code(product_list, cart, '106')
+        update_ticket()
+    elif food_baguette_rect.collidepoint(event.pos) and product_list['107']['stock'] > 0:
+        buy_with_code(product_list, cart, '107')
+        update_ticket()
+    elif food_roundbread_rect.collidepoint(event.pos) and product_list['108']['stock'] > 0:
+        buy_with_code(product_list, cart, '108')
+        update_ticket()
+    elif food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['stock'] > 0:
+        buy_with_code(product_list, cart, '109')
+        update_ticket()
+    elif food_toast_rect.collidepoint(event.pos) and product_list['110']['stock'] > 0:
+        buy_with_code(product_list, cart, '110')
+        update_ticket()
+    elif food_pretzel_rect.collidepoint(event.pos) and product_list['111']['stock'] > 0:
+        buy_with_code(product_list, cart, '111')
+        update_ticket()
+    elif food_croissant_rect.collidepoint(event.pos) and product_list['112']['stock'] > 0:
+        buy_with_code(product_list, cart, '112')
+        update_ticket()
+    elif food_bagel_rect.collidepoint(event.pos) and product_list['113']['stock'] > 0:
+        buy_with_code(product_list, cart, '113')
+        update_ticket()
 
-
-def render_plate2():
-    screen.blit(plate1, plate2_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['108']['stock']}",
-        True, 'Black'
-    ), (plate2_rect.centerx - 16, plate2_rect.centery + 80))
-
-
-def render_plate3():
-    screen.blit(plate2, plate3_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['105']['stock']}",
-        True, 'Black'
-    ), (plate3_rect.centerx - 16, plate3_rect.centery + 80))
-
-
-def render_plate4():
-    screen.blit(plate2, plate4_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['106']['stock']}",
-        True, 'Black'
-    ), (plate4_rect.centerx - 16, plate4_rect.centery + 80))
-
-
-def render_plate5():
-    screen.blit(plate3, plate5_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['109']['stock']}",
-        True, 'Black'
-    ), (plate5_rect.centerx - 16, plate5_rect.centery + 80))
-
-
-def render_plate6():
-    screen.blit(plate3, plate6_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['110']['stock']}",
-        True, 'Black'
-    ), (plate6_rect.centerx - 16, plate6_rect.centery + 80))
-
-
-def render_plate7():
-    screen.blit(plate4, plate7_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['100']['stock']}",
-        True, 'Black'
-    ), (plate7_rect.centerx - 16, plate7_rect.centery + 80))
-
-
-def render_plate8():
-    screen.blit(plate4, plate8_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['101']['stock']}",
-        True, 'Black'
-    ), (plate8_rect.centerx - 16, plate8_rect.centery + 80))
-
-
-def render_plate9():
-    screen.blit(plate4, plate9_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['102']['stock']}",
-        True, 'Black'
-    ), (plate9_rect.centerx - 16, plate9_rect.centery + 80))
-
-
-def render_plate10():
-    screen.blit(plate4, plate10_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['103']['stock']}",
-        True, 'Black'
-    ), (plate10_rect.centerx - 16, plate10_rect.centery + 80))
-
-
-def render_plate11():
-    screen.blit(plate4, plate11_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['104']['stock']}",
-        True, 'Black'
-    ), (plate11_rect.centerx - 16, plate11_rect.centery + 80))
-
-
-def render_plate12():
-    screen.blit(plate5, plate12_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['113']['stock']}",
-        True, 'Black'
-    ), (plate12_rect.centerx - 16, plate12_rect.centery + 80))
-
-
-def render_plate13():
-    screen.blit(plate6, plate13_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['111']['stock']}",
-        True, 'Black'
-    ), (plate13_rect.centerx - 16, plate13_rect.centery + 80))
-
-
-def render_plate14():
-    screen.blit(plate6, plate14_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['112']['stock']}",
-        True, 'Black'
-    ), (plate14_rect.centerx - 16, plate14_rect.centery + 80))
-
+def check_remove_product():
+    if food_pie1_rect.collidepoint(event.pos) and product_list['100']['stock'] > 0:
+        return_product(product_list, cart, '100')
+        update_ticket()
+    elif food_pie2_rect.collidepoint(event.pos) and product_list['101']['stock'] > 0:
+        return_product(product_list, cart, '101')
+        update_ticket()
+    elif food_rectpie_rect.collidepoint(event.pos) and product_list['102']['stock'] > 0:
+        return_product(product_list, cart, '102')
+        update_ticket()
+    elif food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['stock'] > 0:
+        return_product(product_list, cart, '103')
+        update_ticket()
+    elif food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['stock'] > 0:
+        return_product(product_list, cart, '104')
+        update_ticket()
+    elif food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['stock'] > 0:
+        return_product(product_list, cart, '105')
+        update_ticket()
+    elif food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['stock'] > 0:
+        return_product(product_list, cart, '106')
+        update_ticket()
+    elif food_baguette_rect.collidepoint(event.pos) and product_list['107']['stock'] > 0:
+        return_product(product_list, cart, '107')
+        update_ticket()
+    elif food_roundbread_rect.collidepoint(event.pos) and product_list['108']['stock'] > 0:
+        return_product(product_list, cart, '108')
+        update_ticket()
+    elif food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['stock'] > 0:
+        return_product(product_list, cart, '109')
+        update_ticket()
+    elif food_toast_rect.collidepoint(event.pos) and product_list['110']['stock'] > 0:
+        return_product(product_list, cart, '110')
+        update_ticket()
+    elif food_pretzel_rect.collidepoint(event.pos) and product_list['111']['stock'] > 0:
+        return_product(product_list, cart, '111')
+        update_ticket()
+    elif food_croissant_rect.collidepoint(event.pos) and product_list['112']['stock'] > 0:
+        return_product(product_list, cart, '112')
+        update_ticket()
+    elif food_bagel_rect.collidepoint(event.pos) and product_list['113']['stock'] > 0:
+        return_product(product_list, cart, '113')
+        update_ticket()
 
 while running:  # The game will be continuously updated.
     for event in pygame.event.get():
@@ -350,48 +444,10 @@ while running:  # The game will be continuously updated.
                 pygame.quit()
                 exit()
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            if food_pie1_rect.collidepoint(event.pos) and product_list['100']['stock'] > 0:
-                buy_with_code(product_list, cart, '100')
-                update_ticket()
-            elif food_pie2_rect.collidepoint(event.pos) and product_list['101']['stock'] > 0:
-                buy_with_code(product_list, cart, '101')
-                update_ticket()
-            elif food_rectpie_rect.collidepoint(event.pos) and product_list['102']['stock'] > 0:
-                buy_with_code(product_list, cart, '102')
-                update_ticket()
-            elif food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['stock'] > 0:
-                buy_with_code(product_list, cart, '103')
-                update_ticket()
-            elif food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['stock'] > 0:
-                buy_with_code(product_list, cart, '104')
-                update_ticket()
-            elif food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['stock'] > 0:
-                buy_with_code(product_list, cart, '105')
-                update_ticket()
-            elif food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['stock'] > 0:
-                buy_with_code(product_list, cart, '106')
-                update_ticket()
-            elif food_baguette_rect.collidepoint(event.pos) and product_list['107']['stock'] > 0:
-                buy_with_code(product_list, cart, '107')
-                update_ticket()
-            elif food_roundbread_rect.collidepoint(event.pos) and product_list['108']['stock'] > 0:
-                buy_with_code(product_list, cart, '108')
-                update_ticket()
-            elif food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['stock'] > 0:
-                buy_with_code(product_list, cart, '109')
-                update_ticket()
-            elif food_toast_rect.collidepoint(event.pos) and product_list['110']['stock'] > 0:
-                buy_with_code(product_list, cart, '110')
-                update_ticket()
-            elif food_pretzel_rect.collidepoint(event.pos) and product_list['111']['stock'] > 0:
-                buy_with_code(product_list, cart, '111')
-                update_ticket()
-            elif food_croissant_rect.collidepoint(event.pos) and product_list['112']['stock'] > 0:
-                buy_with_code(product_list, cart, '112')
-                update_ticket()
-            elif food_bagel_rect.collidepoint(event.pos) and product_list['113']['stock'] > 0:
-                buy_with_code(product_list, cart, '113')
-                update_ticket()
+            if event.button == 1:
+                check_add_product()
+            elif event.button == 3:
+                check_remove_product()
 
     if game_active:
         screen.fill((255, 255, 255))
@@ -404,10 +460,11 @@ while running:  # The game will be continuously updated.
         screen.blit(ticket, ticket_rect)
 
         for name, product_component in products_text.items():
-            screen.blit(ticket_products_font.render(
-                    f"{name}: {product_component['quantity']} x ${product_component['price']} = ${product_component['quantity'] * product_component['price']}",
-                    True, 'Black'
-                ), (MARGIN, product_component['position_y']))
+            component = ticket_products_font.render(
+                f"{name}: {product_component['quantity']} x ${product_component['price']} = ${product_component['quantity'] * product_component['price']}",
+                True, 'Black')
+
+            screen.blit(component, (MARGIN, product_component['position_y']))
 
         # Display total price
         total_price_text = test_font.render(f"${total_price}", True, 'Black')
@@ -416,31 +473,19 @@ while running:  # The game will be continuously updated.
         # Plates
         # Line 1
         render_plate1()
-
         render_plate2()
-
         render_plate3()
-
         render_plate4()
-
         render_plate5()
-
         render_plate6()
-
         render_plate7()
         # Line 2
         render_plate8()
-
         render_plate9()
-
         render_plate10()
-
         render_plate11()
-
         render_plate12()
-
         render_plate13()
-
         render_plate14()
 
         if product_list['100']['stock'] > 0:
