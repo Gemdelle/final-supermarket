@@ -6,8 +6,6 @@ from sys import exit  # to exit the game without having issues with the True loo
 from random import randint
 import math
 
-from pygame import font
-
 from supermercado import buy_with_code, createStock, bakery_products, return_product, discountItem
 
 
