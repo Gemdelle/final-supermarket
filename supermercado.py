@@ -136,7 +136,7 @@ def defineDate():
 def createStock(products,start_date):
     for product in products:
         products[product]['stock'] = random.randint(0,300)
-        products[product]['expire_date'] = (start_date + timedelta(days=random.randint(30, 365))).strftime('%Y-%m-%d')
+        products[product]['expire_date'] = (start_date + timedelta(days=random.randint(4, 30))).strftime('%Y-%m-%d')
         products[product]['price'] = random.randint(350,1200)
 
     # Hacer que no haya stock de 2 productos al inicio
@@ -342,7 +342,8 @@ def discountItem(day,month,product_list):
     for product_code, product_data in product_list.items():
         expire_month = int(product_data['expire_date'].split('-')[1])
         expire_day = int(product_data['expire_date'].split('-')[2])
-        if (month == expire_month and expire_day - day > 7) or (month != expire_month and (31 - day + expire_day) > 7):
+        print(f'product: {product_code} expires [day: {expire_day}] [Month: {expire_month}]')
+        if (month == expire_month and expire_day - day <= 7) or (month != expire_month and (31 - day + expire_day) <= 7):
             product_list[product_code]['discount'] = True
             product_list[product_code]['price'] = product_list[product_code]['price'] - product_list[product_code]['price'] * 0.1
 
