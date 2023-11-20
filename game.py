@@ -312,7 +312,6 @@ def render_user_game_screen():
     screen.fill((255, 255, 255))
     screen.blit(glass, glass_rect)
     screen.blit(welcome, welcome_rect)
-    screen.blit(chat_container, chat_container_rect)
     screen.blit(plates_type, plates_type_rect)
     # Ticket
     screen.blit(ticket, ticket_rect)
@@ -347,89 +346,92 @@ def render_user_game_screen():
     render_plate17()
     render_plate18()
 
+    tagx = 25
+    tagy = -120
+
     if product_list['100']['stock'] > 0:
         screen.blit(food_pie1, food_pie1_rect)
         if product_list['100']['discount']:
-            screen.blit(discount_badge, (food_pie1_rect.centerx - 16, food_pie1_rect.centery + 80))
+            screen.blit(discount_badge, (food_pie1_rect.centerx + tagx, food_pie1_rect.centery + tagy))
     else:
         screen.blit(food_pie1_NS, food_pie1_NS_rect)
     if product_list['101']['stock'] > 0:
         screen.blit(food_pie2, food_pie2_rect)
         if product_list['101']['discount']:
-            screen.blit(discount_badge, (food_pie2_rect.centerx - 16, food_pie2_rect.centery + 80))
+            screen.blit(discount_badge, (food_pie2_rect.centerx + tagx, food_pie2_rect.centery + tagy))
     else:
         screen.blit(food_pie2_NS, food_pie2_NS_rect)
     if product_list['102']['stock'] > 0:
         screen.blit(food_rectpie, food_rectpie_rect)
         if product_list['102']['discount']:
-            screen.blit(discount_badge, (food_rectpie_rect.centerx - 16, food_rectpie_rect.centery + 80))
+            screen.blit(discount_badge, (food_rectpie_rect.centerx + tagx, food_rectpie_rect.centery + tagy))
     else:
         screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
     if product_list['103']['stock'] > 0:
         screen.blit(food_fruitpie, food_fruitpie_rect)
         if product_list['103']['discount']:
-            screen.blit(discount_badge, (food_fruitpie_rect.centerx - 16, food_fruitpie_rect.centery + 80))
+            screen.blit(discount_badge, (food_fruitpie_rect.centerx + tagx, food_fruitpie_rect.centery + tagy))
     else:
         screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
     if product_list['104']['stock'] > 0:
         screen.blit(food_blueberryfish, food_blueberryfish_rect)
         if product_list['104']['discount']:
-            screen.blit(discount_badge, (food_blueberryfish_rect.centerx - 16, food_blueberryfish_rect.centery + 80))
+            screen.blit(discount_badge, (food_blueberryfish_rect.centerx + tagx, food_blueberryfish_rect.centery + tagy))
     else:
         screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
     if product_list['105']['stock'] > 0:
         screen.blit(food_bread_turtle, food_bread_turtle_rect)
         if product_list['105']['discount']:
-            screen.blit(discount_badge, (food_bread_turtle_rect.centerx - 16, food_bread_turtle_rect.centery + 80))
+            screen.blit(discount_badge, (food_bread_turtle_rect.centerx + tagx, food_bread_turtle_rect.centery + tagy))
     else:
         screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
     if product_list['106']['stock'] > 0:
         screen.blit(food_bread_crocodile, food_bread_crocodile_rect)
         if product_list['106']['discount']:
             screen.blit(discount_badge,
-                        (food_bread_crocodile_rect.centerx - 16, food_bread_crocodile_rect.centery + 80))
+                        (food_bread_crocodile_rect.centerx + tagx, food_bread_crocodile_rect.centery + tagy))
     else:
         screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
     if product_list['107']['stock'] > 0:
         screen.blit(food_baguette, food_baguette_rect)
         if product_list['107']['discount']:
-            screen.blit(discount_badge, (food_baguette_rect.centerx - 16, food_baguette_rect.centery + 80))
+            screen.blit(discount_badge, (food_baguette_rect.centerx + tagx, food_baguette_rect.centery + tagy))
     else:
         screen.blit(food_baguette_NS, food_baguette_NS_rect)
     if product_list['108']['stock'] > 0:
         screen.blit(food_roundbread, food_roundbread_rect)
         if product_list['108']['discount']:
-            screen.blit(discount_badge, (food_roundbread_rect.centerx - 16, food_roundbread_rect.centery + 80))
+            screen.blit(discount_badge, (food_roundbread_rect.centerx + tagx, food_roundbread_rect.centery + tagy))
     else:
         screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
     if product_list['109']['stock'] > 0:
         screen.blit(food_eggtoast, food_eggtoast_rect)
         if product_list['109']['discount']:
-            screen.blit(discount_badge, (food_eggtoast_rect.centerx - 16, food_eggtoast_rect.centery + 80))
+            screen.blit(discount_badge, (food_eggtoast_rect.centerx + tagx, food_eggtoast_rect.centery + tagy))
     else:
         screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
     if product_list['110']['stock'] > 0:
         screen.blit(food_toast, food_toast_rect)
         if product_list['110']['discount']:
-            screen.blit(discount_badge, (food_toast_rect.centerx - 16, food_toast_rect.centery + 80))
+            screen.blit(discount_badge, (food_toast_rect.centerx + tagx, food_toast_rect.centery + tagy))
     else:
         screen.blit(food_toast_NS, food_toast_NS_rect)
     if product_list['111']['stock'] > 0:
         screen.blit(food_pretzel, food_pretzel_rect)
         if product_list['111']['discount']:
-            screen.blit(discount_badge, (food_pretzel_rect.centerx - 16, food_pretzel_rect.centery + 80))
+            screen.blit(discount_badge, (food_pretzel_rect.centerx + tagx, food_pretzel_rect.centery + tagy))
     else:
         screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
     if product_list['112']['stock'] > 0:
         screen.blit(food_croissant, food_croissant_rect)
         if product_list['112']['discount']:
-            screen.blit(discount_badge, (food_croissant_rect.centerx - 16, food_croissant_rect.centery + 80))
+            screen.blit(discount_badge, (food_croissant_rect.centerx + tagx, food_croissant_rect.centery + tagy))
     else:
         screen.blit(food_croissant_NS, food_croissant_NS_rect)
     if product_list['113']['stock'] > 0:
         screen.blit(food_bagel, food_bagel_rect)
         if product_list['113']['discount']:
-            screen.blit(discount_badge, (food_bagel_rect.centerx - 16, food_bagel_rect.centery + 80))
+            screen.blit(discount_badge, (food_bagel_rect.centerx + tagx, food_bagel_rect.centery + tagy))
     else:
         screen.blit(food_bagel_NS, food_bagel_NS_rect)
 
@@ -462,7 +464,6 @@ def render_manager_game_screen():
     screen.fill((255, 255, 255))
     screen.blit(glass, glass_rect)
     screen.blit(welcome, welcome_rect)
-    screen.blit(chat_container, chat_container_rect)
     screen.blit(plates_type, plates_type_rect)
     # Ticket
     screen.blit(ticket, ticket_rect)
@@ -703,19 +704,18 @@ welcome = pygame.image.load('graphics/welcome.png').convert_alpha()
 welcome_rect = welcome.get_rect(center=(960, 120))
 
 glass = pygame.image.load('graphics/glass.png').convert_alpha()
-glass_rect = glass.get_rect(center=(960, 550))
-
-chat_container = pygame.image.load('graphics/chat-container.png').convert_alpha()
-chat_container_rect = chat_container.get_rect(center=(960, 970))
+glass = pygame.transform.scale(glass, (1920, 900))
+glass_rect = glass.get_rect(topleft=(0, 220))
 
 ticket = pygame.image.load('graphics/ticket.png').convert_alpha()
-ticket_rect = ticket.get_rect(center=(250, 520))
+ticket = pygame.transform.scale(ticket, (550, 650))
+ticket_rect = ticket.get_rect(topleft=(100, 320))
 
 current_y = 350
 
 plates_type = pygame.image.load('graphics/plates-catalogue.png').convert_alpha()
-plates_type = pygame.transform.scale(plates_type, (530, 380))
-plates_type_rect = plates_type.get_rect(center=(1680, 970))
+plates_type = pygame.transform.scale(plates_type, (450, 300))
+plates_type_rect = plates_type.get_rect(topleft=(1500, 30))
 
 plate1 = pygame.image.load('graphics/plates/plate1.png').convert_alpha()
 plate1 = pygame.transform.scale(plate1, (170, 210))
@@ -959,8 +959,7 @@ food_cupcake_NS = pygame.transform.scale(food_cupcake_NS, (120, 130))
 food_cupcake_NS_rect = food_cupcake_NS.get_rect(center=(1790, 900))
 
 discount_badge = pygame.image.load('graphics/tags/discount.png')
-discount_badge = pygame.transform.scale(discount_badge, (40, 45))
-discount_badge_rect = discount_badge.get_rect(center=(1190, 650))
+discount_badge = pygame.transform.scale(discount_badge, (30, 35))
 
 cart = {}
 start_date = datetime.now()
