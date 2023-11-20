@@ -51,7 +51,7 @@ def render_plate2_NS():
     screen.blit(plate2_NS, plate2_NS_rect)
 
 def render_plate3():
-    screen.blit(plate2, plate3_rect)
+    screen.blit(plate1, plate3_rect)
     screen.blit(ticket_products_font.render(
         f"{product_list['105']['stock']}",
         True, 'Black'
@@ -61,7 +61,7 @@ def render_plate3_NS():
     screen.blit(plate3_NS, plate3_NS_rect)
 
 def render_plate4():
-    screen.blit(plate2, plate4_rect)
+    screen.blit(plate1, plate4_rect)
     screen.blit(ticket_products_font.render(
         f"{product_list['106']['stock']}",
         True, 'Black'
@@ -71,7 +71,7 @@ def render_plate4_NS():
     screen.blit(plate4_NS, plate4_NS_rect)
 
 def render_plate5():
-    screen.blit(plate3, plate5_rect)
+    screen.blit(plate2, plate5_rect)
     screen.blit(ticket_products_font.render(
         f"{product_list['109']['stock']}",
         True, 'Black'
@@ -81,7 +81,7 @@ def render_plate5_NS():
     screen.blit(plate5_NS, plate5_NS_rect)
 
 def render_plate6():
-    screen.blit(plate3, plate6_rect)
+    screen.blit(plate2, plate6_rect)
     screen.blit(ticket_products_font.render(
         f"{product_list['110']['stock']}",
         True, 'Black'
@@ -91,7 +91,7 @@ def render_plate6_NS():
     screen.blit(plate6_NS, plate6_NS_rect)
 
 def render_plate7():
-    screen.blit(plate4, plate7_rect)
+    screen.blit(plate3, plate7_rect)
     screen.blit(ticket_products_font.render(
         f"{product_list['100']['stock']}",
         True, 'Black'
@@ -101,7 +101,7 @@ def render_plate7_NS():
     screen.blit(plate4_NS, plate7_NS_rect)
 
 def render_plate8():
-    screen.blit(plate4, plate8_rect)
+    screen.blit(plate3, plate8_rect)
     screen.blit(ticket_products_font.render(
         f"{product_list['101']['stock']}",
         True, 'Black'
@@ -731,34 +731,34 @@ plate6 = pygame.image.load('graphics/plates/plate6.png').convert_alpha()
 plate6 = pygame.transform.scale(plate6, (170, 210))
 
 # Plain
-plate1_rect = plate1.get_rect(center=(590, 390))
+plate1_rect = plate1.get_rect(center=(1390, 900))
 plate2_rect = plate1.get_rect(center=(790, 390))
-plate3_rect = plate2.get_rect(center=(990, 390))
-plate4_rect = plate2.get_rect(center=(1190, 390))
+plate3_rect = plate1.get_rect(center=(990, 390))
+plate4_rect = plate1.get_rect(center=(1190, 390))
 
 # Zoo Bread
-plate5_rect = plate3.get_rect(center=(1390, 390))
-plate6_rect = plate3.get_rect(center=(1590, 390))
+plate5_rect = plate1.get_rect(center=(1390, 390))
+plate6_rect = plate1.get_rect(center=(1590, 390))
 
 # Toast
-plate7_rect = plate4.get_rect(center=(1780, 390))
-plate8_rect = plate4.get_rect(center=(590, 640))
+plate7_rect = plate1.get_rect(center=(1780, 390))
+plate8_rect = plate1.get_rect(center=(1590, 900))
 
 # Fruit Pie
-plate9_rect = plate4.get_rect(center=(790, 640))
-plate10_rect = plate4.get_rect(center=(990, 640))
-plate11_rect = plate4.get_rect(center=(1190, 640))
-plate12_rect = plate5.get_rect(center=(1390, 640))
-plate13_rect = plate6.get_rect(center=(1590, 640))
+plate9_rect = plate1.get_rect(center=(790, 640))
+plate10_rect = plate1.get_rect(center=(990, 640))
+plate11_rect = plate1.get_rect(center=(1190, 640))
+plate12_rect = plate1.get_rect(center=(1390, 640))
+plate13_rect = plate1.get_rect(center=(1590, 640))
 
 # Sandwich
-plate14_rect = plate6.get_rect(center=(1780, 640))
+plate14_rect = plate1.get_rect(center=(1780, 640))
 
 # Chocolates
-plate15_rect = plate4.get_rect(center=(590, 890))
-plate16_rect = plate4.get_rect(center=(790, 890))
-plate17_rect = plate4.get_rect(center=(990, 890))
-plate18_rect = plate4.get_rect(center=(1190, 890))
+plate15_rect = plate1.get_rect(center=(1790, 900))
+plate16_rect = plate1.get_rect(center=(790, 890))
+plate17_rect = plate1.get_rect(center=(990, 890))
+plate18_rect = plate1.get_rect(center=(1190, 890))
 
 # Plates NS
 
@@ -828,103 +828,103 @@ food_roundbread_NS_rect = food_roundbread_NS.get_rect(center=(990, 400))
 # Zoo Bread
 food_bread_turtle = pygame.image.load('graphics/food-breadturtle.png')
 food_bread_turtle = pygame.transform.scale(food_bread_turtle, (170, 140))
-food_bread_turtle_rect = food_bread_turtle.get_rect(center=(1190, 400))
+food_bread_turtle_rect = food_bread_turtle.get_rect(center=(1590, 400))
 
 food_bread_turtle_NS = pygame.image.load('graphics/food-breadturtle-NS.png')
 food_bread_turtle_NS = pygame.transform.scale(food_bread_turtle_NS, (170, 140))
-food_bread_turtle_NS_rect = food_bread_turtle_NS.get_rect(center=(1190, 400))
+food_bread_turtle_NS_rect = food_bread_turtle_NS.get_rect(center=(1590, 400))
 
 food_bread_crocodile = pygame.image.load('graphics/food-breadcrocodile.png')
 food_bread_crocodile = pygame.transform.scale(food_bread_crocodile, (170, 140))
-food_bread_crocodile_rect = food_bread_crocodile.get_rect(center=(1390, 400))
+food_bread_crocodile_rect = food_bread_crocodile.get_rect(center=(1780, 400))
 
 food_bread_crocodile_NS = pygame.image.load('graphics/food-breadcrocodile-NS.png')
 food_bread_crocodile_NS = pygame.transform.scale(food_bread_crocodile_NS, (170, 140))
-food_bread_crocodile_NS_rect = food_bread_crocodile_NS.get_rect(center=(1390, 400))
+food_bread_crocodile_NS_rect = food_bread_crocodile_NS.get_rect(center=(1780, 400))
 
 # Toast
 food_eggtoast = pygame.image.load('graphics/food-eggtoast.png')
 food_eggtoast = pygame.transform.scale(food_eggtoast, (170, 140))
-food_eggtoast_rect = food_eggtoast.get_rect(center=(1590, 400))
+food_eggtoast_rect = food_eggtoast.get_rect(center=(790, 650))
 
 food_eggtoast_NS = pygame.image.load('graphics/food-eggtoast-NS.png')
 food_eggtoast_NS = pygame.transform.scale(food_eggtoast_NS, (170, 140))
-food_eggtoast_NS_rect = food_eggtoast_NS.get_rect(center=(1590, 400))
+food_eggtoast_NS_rect = food_eggtoast_NS.get_rect(center=(790, 650))
 
 food_toast = pygame.image.load('graphics/food-toast.png')
 food_toast = pygame.transform.scale(food_toast, (170, 140))
-food_toast_rect = food_toast.get_rect(center=(1780, 400))
+food_toast_rect = food_toast.get_rect(center=(990, 650))
 
 food_toast_NS = pygame.image.load('graphics/food-toast-NS.png')
 food_toast_NSt = pygame.transform.scale(food_toast_NS, (170, 140))
-food_toast_NS_rect = food_toast_NS.get_rect(center=(1780, 400))
+food_toast_NS_rect = food_toast_NS.get_rect(center=(990, 650))
 
 # Fruit Pie
 food_pie1 = pygame.image.load('graphics/food-pie1.png')
 food_pie1 = pygame.transform.scale(food_pie1, (170, 140))
-food_pie1_rect = food_pie1.get_rect(center=(790, 650))
+food_pie1_rect = food_pie1.get_rect(center=(1190, 650))
 
 food_pie1_NS = pygame.image.load('graphics/food-pie1-NS.png')
 food_pie1_NS = pygame.transform.scale(food_pie1_NS, (170, 140))
-food_pie1_NS_rect = food_pie1_NS.get_rect(center=(790, 650))
+food_pie1_NS_rect = food_pie1_NS.get_rect(center=(1190, 650))
 
 food_pie2 = pygame.image.load('graphics/food-pie2.png')
 food_pie2 = pygame.transform.scale(food_pie2, (170, 140))
-food_pie2_rect = food_pie2.get_rect(center=(990, 650))
+food_pie2_rect = food_pie2.get_rect(center=(1390, 650))
 
 food_pie2_NS = pygame.image.load('graphics/food-pie2-NS.png')
 food_pie2_NS = pygame.transform.scale(food_pie2_NS, (170, 140))
-food_pie2_NS_rect = food_pie2_NS.get_rect(center=(990, 650))
+food_pie2_NS_rect = food_pie2_NS.get_rect(center=(1390, 650))
 
 food_rectpie = pygame.image.load('graphics/food-rectpie.png')
 food_rectpie = pygame.transform.scale(food_rectpie, (170, 140))
-food_rectpie_rect = food_rectpie.get_rect(center=(1190, 650))
+food_rectpie_rect = food_rectpie.get_rect(center=(1590, 650))
 
 food_rectpie_NS = pygame.image.load('graphics/food-rectpie-NS.png')
 food_rectpie_NS = pygame.transform.scale(food_rectpie_NS, (170, 140))
-food_rectpie_NS_rect = food_rectpie_NS.get_rect(center=(1190, 650))
+food_rectpie_NS_rect = food_rectpie_NS.get_rect(center=(1590, 650))
 
 food_fruitpie = pygame.image.load('graphics/food-fruitpie.png')
 food_fruitpie = pygame.transform.scale(food_fruitpie, (170, 140))
-food_fruitpie_rect = food_fruitpie.get_rect(center=(1390, 650))
+food_fruitpie_rect = food_fruitpie.get_rect(center=(1790, 650))
 
 food_fruitpie_NS = pygame.image.load('graphics/food-fruitpie-NS.png')
 food_fruitpie_NS = pygame.transform.scale(food_fruitpie_NS, (170, 140))
-food_fruitpie_NS_rect = food_fruitpie_NS.get_rect(center=(1390, 650))
+food_fruitpie_NS_rect = food_fruitpie_NS.get_rect(center=(1790, 650))
 
 food_blueberryfish = pygame.image.load('graphics/food-blueberryfish.png')
 food_blueberryfish = pygame.transform.scale(food_blueberryfish, (170, 140))
-food_blueberryfish_rect = food_blueberryfish.get_rect(center=(1590, 650))
+food_blueberryfish_rect = food_blueberryfish.get_rect(center=(790, 900))
 
 food_blueberryfish_NS = pygame.image.load('graphics/food-blueberryfish-NS.png')
 food_blueberryfish_NS = pygame.transform.scale(food_blueberryfish_NS, (170, 140))
-food_blueberryfish_NS_rect = food_blueberryfish_NS.get_rect(center=(1590, 650))
+food_blueberryfish_NS_rect = food_blueberryfish_NS.get_rect(center=(790, 900))
 
 # Sandwich
 food_bagel = pygame.image.load('graphics/food-bagel.png')
 food_bagel = pygame.transform.scale(food_bagel, (170, 140))
-food_bagel_rect = food_bagel.get_rect(center=(1790, 650))
+food_bagel_rect = food_bagel.get_rect(center=(990, 900))
 
 food_bagel_NS = pygame.image.load('graphics/food-bagel-NS.png')
 food_bagel_NS = pygame.transform.scale(food_bagel_NS, (170, 140))
-food_bagel_NS_rect = food_bagel_NS.get_rect(center=(1790, 650))
+food_bagel_NS_rect = food_bagel_NS.get_rect(center=(990, 900))
 
 # Plain
 food_pretzel = pygame.image.load('graphics/food-pretzel.png')
 food_pretzel = pygame.transform.scale(food_pretzel, (170, 140))
-food_pretzel_rect = food_pretzel.get_rect(center=(790, 900))
+food_pretzel_rect = food_pretzel.get_rect(center=(1190, 400))
 
 food_pretzel_NS = pygame.image.load('graphics/food-pretzel-NS.png')
 food_pretzel_NS = pygame.transform.scale(food_pretzel_NS, (170, 140))
-food_pretzel_NS_rect = food_pretzel_NS.get_rect(center=(790, 900))
+food_pretzel_NS_rect = food_pretzel_NS.get_rect(center=(1190, 400))
 
 food_croissant = pygame.image.load('graphics/food-croissant.png')
 food_croissant = pygame.transform.scale(food_croissant, (170, 140))
-food_croissant_rect = food_croissant.get_rect(center=(990, 900))
+food_croissant_rect = food_croissant.get_rect(center=(1390, 400))
 
 food_croissant_NS = pygame.image.load('graphics/food-croissant-NS.png')
 food_croissant_NS = pygame.transform.scale(food_croissant_NS, (170, 140))
-food_croissant_NS_rect = food_croissant_NS.get_rect(center=(990, 900))
+food_croissant_NS_rect = food_croissant_NS.get_rect(center=(1390, 400))
 
 food_chocolatebread = pygame.image.load('graphics/food-chocolatebread.png')
 food_chocolatebread = pygame.transform.scale(food_chocolatebread, (130, 120))
