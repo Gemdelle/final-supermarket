@@ -164,7 +164,7 @@ def createStock(products,start_date):
         'price': random.randint(350,1200),
         'type': 'S',
         'discount': False,
-        'status': 'GLASS'
+        'status': 'STORAGE'
     }
     products['115'] = {
         'description': 'Cookies',
@@ -173,7 +173,7 @@ def createStock(products,start_date):
         'price': random.randint(350,1200),
         'type': 'S',
         'discount': False,
-        'status': 'GLASS'
+        'status': 'STORAGE'
     }
     products['116'] = {
         'description': 'Cream Bread',
@@ -182,7 +182,7 @@ def createStock(products,start_date):
         'price': random.randint(350,1200),
         'type': 'S',
         'discount': False,
-        'status': 'GLASS'
+        'status': 'STORAGE'
     }
     products['117'] = {
         'description': 'Cupcake',
@@ -191,7 +191,7 @@ def createStock(products,start_date):
         'price': random.randint(350,1200),
         'type': 'S',
         'discount': False,
-        'status': 'GLASS'
+        'status': 'STORAGE'
     }
 
     return products
@@ -291,6 +291,14 @@ def return_product(product_list,cart, code):
         cart[product]['quantity'] -= 1
         cart[product]['pay'] = cart[product]['quantity'] * product_list[code]['price']
     return cart
+
+def add_product(product_list, code):
+    product_list[code]['status'] = 'GLASS'
+    return True
+
+def remove_product(product_list, code):
+    product_list[code]['status'] = 'STORAGE'
+    return True
 
 def viewCart(cart):
     for product in cart:

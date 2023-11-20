@@ -6,7 +6,9 @@ from sys import exit  # to exit the game without having issues with the True loo
 from random import randint
 import math
 
-from supermercado import buy_with_code, createStock, bakery_products, return_product, discountItem
+from supermercado import buy_with_code, createStock, bakery_products, return_product, discountItem, add_product, \
+    remove_product
+
 
 def update_ticket():
     global current_y, total_price, products_text
@@ -284,6 +286,20 @@ def render_plate15_NS():
 
 
 def check_add_product():
+    global small_food_pie1_rect, small_food_pie2_rect, small_food_rectpie_rect, small_food_fruitpie_rect, \
+        small_food_blueberryfish_rect, small_food_bread_turtle_rect, small_food_bread_crocodile_rect, \
+        small_food_baguette_rect, \
+        small_food_roundbread_rect, \
+        small_food_eggtoast_rect, \
+        small_food_toast_rect, \
+        small_food_pretzel_rect, \
+        small_food_croissant_rect, \
+        small_food_bagel_rect, \
+        small_food_chocolatebread_rect, \
+        small_food_cookies_rect, \
+        small_food_creambread_rect, \
+        small_food_cupcake_rect
+
     if food_pie1_rect.collidepoint(event.pos) and product_list['100']['stock'] > 0:
         buy_with_code(product_list, cart, '100')
         update_ticket()
@@ -326,6 +342,110 @@ def check_add_product():
     elif food_bagel_rect.collidepoint(event.pos) and product_list['113']['stock'] > 0:
         buy_with_code(product_list, cart, '113')
         update_ticket()
+
+def check_manager_add_product():
+    global small_food_pie1_rect, small_food_pie2_rect, small_food_rectpie_rect, small_food_fruitpie_rect, \
+        small_food_blueberryfish_rect, small_food_bread_turtle_rect, small_food_bread_crocodile_rect, \
+        small_food_baguette_rect, \
+        small_food_roundbread_rect, \
+        small_food_eggtoast_rect, \
+        small_food_toast_rect, \
+        small_food_pretzel_rect, \
+        small_food_croissant_rect, \
+        small_food_bagel_rect, \
+        small_food_chocolatebread_rect, \
+        small_food_cookies_rect, \
+        small_food_creambread_rect, \
+        small_food_cupcake_rect
+
+    if small_food_pie1_rect.collidepoint(event.pos) and product_list['100']['status'] == 'STORAGE':
+        return add_product(product_list, '100')
+    elif small_food_pie2_rect.collidepoint(event.pos) and product_list['101']['status'] == 'STORAGE':
+        return add_product(product_list, '101')
+    elif small_food_rectpie_rect.collidepoint(event.pos) and product_list['102']['status'] == 'STORAGE':
+        return add_product(product_list, '102')
+    elif small_food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['status'] == 'STORAGE':
+        return add_product(product_list, '103')
+    elif small_food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['status'] == 'STORAGE':
+        return add_product(product_list, '104')
+    elif small_food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['status'] == 'STORAGE':
+        return add_product(product_list, '105')
+    elif small_food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['status'] == 'STORAGE':
+        return add_product(product_list, '106')
+    elif small_food_baguette_rect.collidepoint(event.pos) and product_list['107']['status'] == 'STORAGE':
+        return add_product(product_list, '107')
+    elif small_food_roundbread_rect.collidepoint(event.pos) and product_list['108']['status'] == 'STORAGE':
+        return add_product(product_list, '108')
+    elif small_food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['status'] == 'STORAGE':
+        return add_product(product_list, '109')
+    elif food_toast_rect.collidepoint(event.pos) and product_list['110']['status'] == 'STORAGE':
+        return add_product(product_list, '110')
+    elif small_food_pretzel_rect.collidepoint(event.pos) and product_list['111']['status'] == 'STORAGE':
+        return add_product(product_list, '111')
+    elif small_food_croissant_rect.collidepoint(event.pos) and product_list['112']['status'] == 'STORAGE':
+        return add_product(product_list, '112')
+    elif small_food_bagel_rect.collidepoint(event.pos) and product_list['113']['status'] == 'STORAGE':
+        return add_product(product_list, '113')
+    elif small_food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['status'] == 'STORAGE':
+        return add_product(product_list, '114')
+    elif small_food_cookies_rect.collidepoint(event.pos) and product_list['115']['status'] == 'STORAGE':
+        return add_product(product_list, '115')
+    elif small_food_creambread_rect.collidepoint(event.pos) and product_list['116']['status'] == 'STORAGE':
+        return add_product(product_list, '116')
+    elif small_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['status'] == 'STORAGE':
+        return add_product(product_list, '117')
+
+def check_manager_remove_product():
+    global small_food_pie1_rect, small_food_pie2_rect, small_food_rectpie_rect, small_food_fruitpie_rect, \
+        small_food_blueberryfish_rect, small_food_bread_turtle_rect, small_food_bread_crocodile_rect, \
+        small_food_baguette_rect, \
+        small_food_roundbread_rect, \
+        small_food_eggtoast_rect, \
+        small_food_toast_rect, \
+        small_food_pretzel_rect, \
+        small_food_croissant_rect, \
+        small_food_bagel_rect, \
+        small_food_chocolatebread_rect, \
+        small_food_cookies_rect, \
+        small_food_creambread_rect, \
+        small_food_cupcake_rect
+
+    if small_food_pie1_rect.collidepoint(event.pos) and product_list['100']['status'] == 'GLASS':
+        remove_product(product_list, '100')
+    elif small_food_pie2_rect.collidepoint(event.pos) and product_list['101']['status'] == 'GLASS':
+        remove_product(product_list, '101')
+    elif small_food_rectpie_rect.collidepoint(event.pos) and product_list['102']['status'] == 'GLASS':
+        remove_product(product_list, '102')
+    elif small_food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['status'] == 'GLASS':
+        remove_product(product_list, '103')
+    elif small_food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['status'] == 'GLASS':
+        remove_product(product_list, '104')
+    elif small_food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['status'] == 'GLASS':
+        remove_product(product_list, '105')
+    elif small_food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['status'] == 'GLASS':
+        remove_product(product_list, '106')
+    elif small_food_baguette_rect.collidepoint(event.pos) and product_list['107']['status'] == 'GLASS':
+        remove_product(product_list, '107')
+    elif small_food_roundbread_rect.collidepoint(event.pos) and product_list['108']['status'] == 'GLASS':
+        remove_product(product_list, '108')
+    elif small_food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['status'] == 'GLASS':
+        remove_product(product_list, '109')
+    elif small_food_toast_rect.collidepoint(event.pos) and product_list['110']['status'] == 'GLASS':
+        remove_product(product_list, '110')
+    elif small_food_pretzel_rect.collidepoint(event.pos) and product_list['111']['status'] == 'GLASS':
+        remove_product(product_list, '111')
+    elif small_food_croissant_rect.collidepoint(event.pos) and product_list['112']['status'] == 'GLASS':
+        remove_product(product_list, '112')
+    elif small_food_bagel_rect.collidepoint(event.pos) and product_list['113']['status'] == 'GLASS':
+        remove_product(product_list, '113')
+    elif small_food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['status'] == 'GLASS':
+        remove_product(product_list, '114')
+    elif small_food_cookies_rect.collidepoint(event.pos) and product_list['115']['status'] == 'GLASS':
+        remove_product(product_list, '115')
+    elif small_food_creambread_rect.collidepoint(event.pos) and product_list['116']['status'] == 'GLASS':
+        remove_product(product_list, '116')
+    elif small_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['status'] == 'GLASS':
+        remove_product(product_list, '117')
 
 def check_remove_product():
     if food_pie1_rect.collidepoint(event.pos) and product_list['100']['stock'] > 0:
@@ -540,15 +660,9 @@ def render_manager_game_screen():
     # Ticket
     screen.blit(ticket, ticket_rect)
 
-    screen.blit(manager_actions_titles_font.render(
-        f"ADD PRODUCT",
-        True, 'Black'
-    ), (70, 350))
+    render_add_product_section()
 
-    screen.blit(manager_actions_titles_font.render(
-        f"DELETE PRODUCT",
-        True, 'Black'
-    ), (70, 550))
+    render_remove_product_section()
 
     screen.blit(manager_actions_titles_font.render(
         f"PRICE UPDATE",
@@ -727,6 +841,454 @@ def render_manager_game_screen():
     else:
         render_plate15_NS()
 
+def render_remove_product_section():
+    global small_food_pie1_rect, small_food_pie2_rect, small_food_rectpie_rect, small_food_fruitpie_rect,\
+        small_food_blueberryfish_rect, small_food_bread_turtle_rect, small_food_bread_crocodile_rect, \
+        small_food_baguette_rect, \
+        small_food_roundbread_rect, \
+        small_food_eggtoast_rect, \
+        small_food_toast_rect, \
+        small_food_pretzel_rect, \
+        small_food_croissant_rect, \
+        small_food_bagel_rect, \
+        small_food_chocolatebread_rect, \
+        small_food_cookies_rect, \
+        small_food_creambread_rect, \
+        small_food_cupcake_rect
+
+    screen.blit(manager_actions_titles_font.render(
+        f"DELETE PRODUCT",
+        True, 'Black'
+    ), (70, 550))
+    products_in_glass = {key: value for key, value in product_list.items() if value['status'] == 'GLASS'}
+    products_x = 100
+    products_y = 650
+    products_line_height = 60
+    products_line_width = 100
+    products_inline_count = 1
+    for product_code, product in products_in_glass.items():
+        if product_code == '100':
+            small_food_pie1_rect = small_food_pie1.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_pie1,small_food_pie1_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '101':
+            small_food_pie2_rect = small_food_pie2.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_pie2, small_food_pie2_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '102':
+            small_food_rectpie_rect = small_food_rectpie.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_rectpie, small_food_rectpie_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '103':
+            small_food_fruitpie_rect = small_food_fruitpie.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_fruitpie, small_food_fruitpie_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '104':
+            small_food_blueberryfish_rect = small_food_blueberryfish.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_blueberryfish, small_food_blueberryfish_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '105':
+            small_food_bread_turtle_rect = small_food_bread_turtle.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_bread_turtle, small_food_bread_turtle_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '106':
+            small_food_bread_crocodile_rect = small_food_bread_crocodile.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_bread_crocodile, small_food_bread_crocodile_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '107':
+            small_food_baguette_rect = small_food_baguette.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_baguette, small_food_baguette_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '108':
+            small_food_roundbread_rect = small_food_roundbread.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_roundbread, small_food_roundbread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '109':
+            small_food_eggtoast_rect = small_food_eggtoast.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_eggtoast, small_food_roundbread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '110':
+            small_food_toast_rect = small_food_toast.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_toast, small_food_toast_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '111':
+            small_food_pretzel_rect = small_food_pretzel.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_pretzel, small_food_pretzel_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '112':
+            small_food_croissant_rect = small_food_croissant.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_croissant, small_food_croissant_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '113':
+            small_food_bagel_rect = small_food_bagel.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_bagel, small_food_bagel_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '114':
+            small_food_chocolatebread_rect = small_food_chocolatebread.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_chocolatebread, small_food_chocolatebread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '115':
+            small_food_cookies_rect = small_food_cookies.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_cookies, small_food_cookies_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '116':
+            small_food_creambread_rect = small_food_creambread.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_creambread, small_food_creambread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '117':
+            small_food_cupcake_rect = small_food_cupcake.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_cupcake, small_food_cupcake_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+def render_add_product_section():
+    global small_food_pie1_rect, small_food_pie2_rect, small_food_rectpie_rect, small_food_fruitpie_rect, \
+        small_food_blueberryfish_rect, small_food_bread_turtle_rect, small_food_bread_crocodile_rect, \
+        small_food_baguette_rect, \
+        small_food_roundbread_rect, \
+        small_food_eggtoast_rect, \
+        small_food_toast_rect, \
+        small_food_pretzel_rect, \
+        small_food_croissant_rect, \
+        small_food_bagel_rect, \
+        small_food_chocolatebread_rect, \
+        small_food_cookies_rect, \
+        small_food_creambread_rect, \
+        small_food_cupcake_rect
+
+    screen.blit(manager_actions_titles_font.render(
+        f"ADD PRODUCT",
+        True, 'Black'
+    ), (70, 350))
+    products_in_storage = {key: value for key, value in product_list.items()  if value['status'] == 'STORAGE'}
+    products_x = 100
+    products_y = 430
+    products_line_height = 60
+    products_line_width = 100
+    products_inline_count = 1
+    for product_code, product in products_in_storage.items():
+        if product_code == '100':
+            small_food_pie1_rect = small_food_pie1.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_pie1, small_food_pie1_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '101':
+            small_food_pie2_rect = small_food_pie2.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_pie2, small_food_pie2_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '102':
+            small_food_rectpie_rect = small_food_rectpie.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_rectpie, small_food_rectpie_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '103':
+            small_food_fruitpie_rect = small_food_fruitpie.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_fruitpie, small_food_fruitpie_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '104':
+            small_food_blueberryfish_rect = small_food_blueberryfish.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_blueberryfish, small_food_blueberryfish_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '105':
+            small_food_bread_turtle_rect = small_food_bread_turtle.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_bread_turtle, small_food_bread_turtle_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '106':
+            small_food_bread_crocodile_rect = small_food_bread_crocodile.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_bread_crocodile, small_food_bread_crocodile_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '107':
+            small_food_baguette_rect = small_food_baguette.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_baguette, small_food_baguette_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '108':
+            small_food_roundbread_rect = small_food_roundbread.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_roundbread, small_food_roundbread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '109':
+            small_food_eggtoast_rect = small_food_eggtoast.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_eggtoast, small_food_roundbread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '110':
+            small_food_toast_rect = small_food_toast.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_toast, small_food_toast_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '111':
+            small_food_pretzel_rect = small_food_pretzel.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_pretzel, small_food_pretzel_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '112':
+            small_food_croissant_rect = small_food_croissant.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_croissant, small_food_croissant_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '113':
+            small_food_bagel_rect = small_food_bagel.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_bagel, small_food_bagel_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '114':
+            small_food_chocolatebread_rect = small_food_chocolatebread.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_chocolatebread, small_food_chocolatebread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '115':
+            small_food_cookies_rect = small_food_cookies.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_cookies, small_food_cookies_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '116':
+            small_food_creambread_rect = small_food_creambread.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_creambread, small_food_creambread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '117':
+            small_food_cupcake_rect = small_food_cupcake.get_rect(center=(products_x, products_y))
+            screen.blit(small_food_cupcake, small_food_cupcake_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
 
 def listen_to_key_binding():
     global event, running, game_selected
@@ -751,7 +1313,10 @@ def listen_to_key_binding():
                     check_remove_product()
         elif game_selected == 'MANAGER':
             if event.type == pygame.MOUSEBUTTONDOWN:
-                print("MANAGER")
+                if event.button == 1:  # Left Click del Mouse
+                    product_added = check_manager_add_product()
+                    if not product_added:
+                        check_manager_remove_product()
 
 # Setup
 pygame.init()
@@ -1033,6 +1598,44 @@ food_cupcake_NS_rect = food_cupcake_NS.get_rect(center=(1790, 900))
 
 discount_badge = pygame.image.load('graphics/tags/discount.png')
 discount_badge = pygame.transform.scale(discount_badge, (30, 35))
+
+empty_rect = pygame.draw.rect(screen, (0, 0, 0), (0, 0, 0, 0), 0)
+small_food_cupcake = pygame.transform.scale(food_cupcake, (70, 60))
+small_food_cupcake_rect = empty_rect
+small_food_pie1 = pygame.transform.scale(food_pie1, (70, 60))
+small_food_pie1_rect = empty_rect
+small_food_pie2 = pygame.transform.scale(food_pie2, (70, 60))
+small_food_pie2_rect = empty_rect
+small_food_rectpie = pygame.transform.scale(food_rectpie, (70, 60))
+small_food_rectpie_rect = empty_rect
+small_food_fruitpie = pygame.transform.scale(food_fruitpie, (70, 60))
+small_food_fruitpie_rect = empty_rect
+small_food_blueberryfish = pygame.transform.scale(food_blueberryfish, (70, 60))
+small_food_blueberryfish_rect = empty_rect
+small_food_bread_turtle = pygame.transform.scale(food_bread_turtle, (70, 60))
+small_food_bread_turtle_rect = empty_rect
+small_food_bread_crocodile = pygame.transform.scale(food_bread_crocodile, (70, 60))
+small_food_bread_crocodile_rect = empty_rect
+small_food_baguette = pygame.transform.scale(food_baguette, (70, 60))
+small_food_baguette_rect = empty_rect
+small_food_roundbread = pygame.transform.scale(food_roundbread, (70, 60))
+small_food_roundbread_rect = empty_rect
+small_food_eggtoast = pygame.transform.scale(food_eggtoast, (70, 60))
+small_food_eggtoast_rect = empty_rect
+small_food_toast = pygame.transform.scale(food_toast, (70, 60))
+small_food_toast_rect = empty_rect
+small_food_pretzel = pygame.transform.scale(food_pretzel, (70, 60))
+small_food_pretzel_rect = empty_rect
+small_food_croissant = pygame.transform.scale(food_croissant, (70, 60))
+small_food_croissant_rect = empty_rect
+small_food_bagel = pygame.transform.scale(food_bagel, (70, 60))
+small_food_bagel_rect = empty_rect
+small_food_chocolatebread = pygame.transform.scale(food_chocolatebread, (70, 60))
+small_food_chocolatebread_rect = empty_rect
+small_food_cookies = pygame.transform.scale(food_cookies, (70, 60))
+small_food_cookies_rect = empty_rect
+small_food_creambread = pygame.transform.scale(food_creambread, (70, 60))
+small_food_creambread_rect = empty_rect
 
 cart = {}
 start_date = datetime.now()
