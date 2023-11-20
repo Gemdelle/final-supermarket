@@ -32,180 +32,252 @@ def update_ticket():
 
 def render_plate1():
     screen.blit(plate6, plate1_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['115']['stock']}",
         True, 'Black'
     ), (plate1_rect.centerx - 16, plate1_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['115']['price']}",
+        True, 'Black'
+    ), (plate1_rect.centerx - 25, plate1_rect.centery - 95 ))
 
 def render_plate1_NS():
     screen.blit(plate6_NS, plate1_NS_rect)
 
 def render_plate2():
     screen.blit(plate1, plate2_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['107']['stock']}",
         True, 'Black'
     ), (plate2_rect.centerx - 16, plate2_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['107']['price']}",
+        True, 'Black'
+    ), (plate2_rect.centerx - 25, plate2_rect.centery - 95))
 
 def render_plate2_NS():
     screen.blit(plate1_NS, plate2_NS_rect)
 
 def render_plate3():
     screen.blit(plate1, plate3_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['108']['stock']}",
         True, 'Black'
     ), (plate3_rect.centerx - 16, plate3_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['108']['price']}",
+        True, 'Black'
+    ), (plate3_rect.centerx - 25, plate3_rect.centery - 95))
 
 def render_plate3_NS():
     screen.blit(plate1_NS, plate3_NS_rect)
 
 def render_plate4():
     screen.blit(plate1, plate4_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['111']['stock']}",
         True, 'Black'
     ), (plate4_rect.centerx - 16, plate4_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['111']['price']}",
+        True, 'Black'
+    ), (plate4_rect.centerx - 25, plate4_rect.centery - 95))
 
 def render_plate4_NS():
     screen.blit(plate1_NS, plate4_NS_rect)
 
 def render_plate5():
     screen.blit(plate1, plate5_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['112']['stock']}",
         True, 'Black'
     ), (plate5_rect.centerx - 16, plate5_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['112']['price']}",
+        True, 'Black'
+    ), (plate5_rect.centerx - 25, plate5_rect.centery - 95))
 
 def render_plate5_NS():
     screen.blit(plate1_NS, plate5_NS_rect)
 
 def render_plate6():
     screen.blit(plate2, plate6_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['105']['stock']}",
         True, 'Black'
     ), (plate6_rect.centerx - 16, plate6_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['105']['price']}",
+        True, 'Black'
+    ), (plate6_rect.centerx - 25, plate6_rect.centery - 95))
 
 def render_plate6_NS():
     screen.blit(plate2_NS, plate6_NS_rect)
 
 def render_plate7():
     screen.blit(plate2, plate7_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['106']['stock']}",
         True, 'Black'
     ), (plate7_rect.centerx - 16, plate7_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['106']['price']}",
+        True, 'Black'
+    ), (plate7_rect.centerx - 25, plate7_rect.centery - 95))
 
 def render_plate7_NS():
     screen.blit(plate2_NS, plate7_NS_rect)
 
 def render_plate8():
     screen.blit(plate6, plate8_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['116']['stock']}",
         True, 'Black'
     ), (plate8_rect.centerx - 16, plate8_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['116']['price']}",
+        True, 'Black'
+    ), (plate8_rect.centerx - 25, plate8_rect.centery - 95))
 
 def render_plate8_NS():
     screen.blit(plate6_NS, plate8_NS_rect)
 
 def render_plate9():
     screen.blit(plate3, plate9_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['109']['stock']}",
         True, 'Black'
     ), (plate9_rect.centerx - 16, plate9_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['109']['price']}",
+        True, 'Black'
+    ), (plate9_rect.centerx - 25, plate9_rect.centery - 95))
 
 def render_plate9_NS():
     screen.blit(plate3_NS, plate9_NS_rect)
 
 def render_plate10():
     screen.blit(plate3, plate10_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['110']['stock']}",
         True, 'Black'
     ), (plate10_rect.centerx - 16, plate10_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['110']['price']}",
+        True, 'Black'
+    ), (plate10_rect.centerx - 25, plate10_rect.centery - 95))
 
 def render_plate10_NS():
     screen.blit(plate3_NS, plate10_NS_rect)
 
 def render_plate11():
     screen.blit(plate4, plate11_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['100']['stock']}",
         True, 'Black'
     ), (plate11_rect.centerx - 16, plate11_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['100']['price']}",
+        True, 'Black'
+    ), (plate11_rect.centerx - 25, plate11_rect.centery - 95))
 
 def render_plate11_NS():
     screen.blit(plate4_NS, plate11_NS_rect)
 
 def render_plate12():
     screen.blit(plate4, plate12_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['101']['stock']}",
         True, 'Black'
     ), (plate12_rect.centerx - 16, plate12_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['101']['price']}",
+        True, 'Black'
+    ), (plate12_rect.centerx - 25, plate12_rect.centery - 95))
 
 def render_plate12_NS():
     screen.blit(plate4_NS, plate12_NS_rect)
 
 def render_plate13():
     screen.blit(plate4, plate13_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['102']['stock']}",
         True, 'Black'
     ), (plate13_rect.centerx - 16, plate13_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['102']['price']}",
+        True, 'Black'
+    ), (plate13_rect.centerx - 25, plate13_rect.centery - 95))
 
 def render_plate13_NS():
     screen.blit(plate4_NS, plate13_NS_rect)
 
 def render_plate14():
     screen.blit(plate4, plate14_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['103']['stock']}",
         True, 'Black'
     ), (plate14_rect.centerx - 16, plate14_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['103']['price']}",
+        True, 'Black'
+    ), (plate14_rect.centerx - 25, plate14_rect.centery - 95))
 
 def render_plate14_NS():
     screen.blit(plate4_NS, plate14_NS_rect)
 
 def render_plate18():
     screen.blit(plate6, plate18_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['114']['stock']}",
         True, 'Black'
     ), (plate18_rect.centerx - 16, plate18_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['114']['price']}",
+        True, 'Black'
+    ), (plate18_rect.centerx - 25, plate18_rect.centery - 95))
 
 def render_plate18_NS():
     screen.blit(plate6_NS, plate18_NS_rect)
 
 def render_plate17():
     screen.blit(plate5, plate17_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['113']['stock']}",
         True, 'Black'
     ), (plate17_rect.centerx - 16, plate17_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['113']['price']}",
+        True, 'Black'
+    ), (plate17_rect.centerx - 25, plate17_rect.centery - 95))
 
 def render_plate17_NS():
     screen.blit(plate5_NS, plate17_NS_rect)
 
 def render_plate16():
     screen.blit(plate4, plate16_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['104']['stock']}",
         True, 'Black'
     ), (plate16_rect.centerx - 16, plate16_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['104']['price']}",
+        True, 'Black'
+    ), (plate16_rect.centerx - 25, plate16_rect.centery - 95))
 
 def render_plate16_NS():
     screen.blit(plate4_NS, plate16_NS_rect)
 
 def render_plate15():
     screen.blit(plate6, plate15_rect)
-    screen.blit(ticket_products_font.render(
+    screen.blit(products_count_font.render(
         f"{product_list['117']['stock']}",
         True, 'Black'
     ), (plate15_rect.centerx - 16, plate15_rect.centery + 80))
+    screen.blit(products_price_font.render(
+        f"${product_list['117']['price']}",
+        True, 'Black'
+    ), (plate15_rect.centerx - 25, plate15_rect.centery - 95))
 
 def render_plate15_NS():
     screen.blit(plate6_NS, plate15_NS_rect)
@@ -695,6 +767,7 @@ test_font = pygame.font.Font('font/Alkhemikal.ttf', 50)
 button_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
 ticket_products_font = pygame.font.Font('font/Alkhemikal.ttf', 30)
 products_count_font = pygame.font.Font('font/Alkhemikal.ttf', 35)
+products_price_font = pygame.font.Font('font/Alkhemikal.ttf', 35)
 manager_actions_titles_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
 game_active = True
 running = True

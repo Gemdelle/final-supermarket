@@ -396,7 +396,7 @@ def discountItem(day,month,product_list):
         print(f'product: {product_code} expires [day: {expire_day}] [Month: {expire_month}]')
         if (month == expire_month and expire_day - day <= 7) or (month != expire_month and (31 - day + expire_day) <= 7):
             product_list[product_code]['discount'] = True
-            product_list[product_code]['price'] = product_list[product_code]['price'] - product_list[product_code]['price'] * 0.1
+            product_list[product_code]['price'] = round(product_list[product_code]['price'] - product_list[product_code]['price'] * 0.1)
 
 # def ticket(cart):
 #     print(cart)
