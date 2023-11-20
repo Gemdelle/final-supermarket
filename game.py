@@ -37,6 +37,8 @@ def render_plate1():
         True, 'Black'
     ), (plate1_rect.centerx - 16, plate1_rect.centery + 80))
 
+def render_plate1_NS():
+    screen.blit(plate1_NS, plate1_NS_rect)
 
 def render_plate2():
     screen.blit(plate1, plate2_rect)
@@ -45,6 +47,8 @@ def render_plate2():
         True, 'Black'
     ), (plate2_rect.centerx - 16, plate2_rect.centery + 80))
 
+def render_plate2_NS():
+    screen.blit(plate2_NS, plate2_NS_rect)
 
 def render_plate3():
     screen.blit(plate2, plate3_rect)
@@ -53,6 +57,8 @@ def render_plate3():
         True, 'Black'
     ), (plate3_rect.centerx - 16, plate3_rect.centery + 80))
 
+def render_plate3_NS():
+    screen.blit(plate3_NS, plate3_NS_rect)
 
 def render_plate4():
     screen.blit(plate2, plate4_rect)
@@ -61,6 +67,8 @@ def render_plate4():
         True, 'Black'
     ), (plate4_rect.centerx - 16, plate4_rect.centery + 80))
 
+def render_plate4_NS():
+    screen.blit(plate4_NS, plate4_NS_rect)
 
 def render_plate5():
     screen.blit(plate3, plate5_rect)
@@ -69,6 +77,8 @@ def render_plate5():
         True, 'Black'
     ), (plate5_rect.centerx - 16, plate5_rect.centery + 80))
 
+def render_plate5_NS():
+    screen.blit(plate5_NS, plate5_NS_rect)
 
 def render_plate6():
     screen.blit(plate3, plate6_rect)
@@ -77,6 +87,8 @@ def render_plate6():
         True, 'Black'
     ), (plate6_rect.centerx - 16, plate6_rect.centery + 80))
 
+def render_plate6_NS():
+    screen.blit(plate6_NS, plate6_NS_rect)
 
 def render_plate7():
     screen.blit(plate4, plate7_rect)
@@ -85,6 +97,8 @@ def render_plate7():
         True, 'Black'
     ), (plate7_rect.centerx - 16, plate7_rect.centery + 80))
 
+def render_plate7_NS():
+    screen.blit(plate4_NS, plate7_NS_rect)
 
 def render_plate8():
     screen.blit(plate4, plate8_rect)
@@ -93,6 +107,8 @@ def render_plate8():
         True, 'Black'
     ), (plate8_rect.centerx - 16, plate8_rect.centery + 80))
 
+def render_plate8_NS():
+    screen.blit(plate4_NS, plate8_NS_rect)
 
 def render_plate9():
     screen.blit(plate4, plate9_rect)
@@ -101,6 +117,8 @@ def render_plate9():
         True, 'Black'
     ), (plate9_rect.centerx - 16, plate9_rect.centery + 80))
 
+def render_plate9_NS():
+    screen.blit(plate4_NS, plate9_NS_rect)
 
 def render_plate10():
     screen.blit(plate4, plate10_rect)
@@ -109,6 +127,8 @@ def render_plate10():
         True, 'Black'
     ), (plate10_rect.centerx - 16, plate10_rect.centery + 80))
 
+def render_plate10_NS():
+    screen.blit(plate4_NS, plate10_NS_rect)
 
 def render_plate11():
     screen.blit(plate4, plate11_rect)
@@ -117,6 +137,8 @@ def render_plate11():
         True, 'Black'
     ), (plate11_rect.centerx - 16, plate11_rect.centery + 80))
 
+def render_plate11_NS():
+    screen.blit(plate4_NS, plate11_NS_rect)
 
 def render_plate12():
     screen.blit(plate5, plate12_rect)
@@ -125,6 +147,8 @@ def render_plate12():
         True, 'Black'
     ), (plate12_rect.centerx - 16, plate12_rect.centery + 80))
 
+def render_plate12_NS():
+    screen.blit(plate5_NS, plate12_NS_rect)
 
 def render_plate13():
     screen.blit(plate6, plate13_rect)
@@ -133,6 +157,8 @@ def render_plate13():
         True, 'Black'
     ), (plate13_rect.centerx - 16, plate13_rect.centery + 80))
 
+def render_plate13_NS():
+    screen.blit(plate6_NS, plate13_NS_rect)
 
 def render_plate14():
     screen.blit(plate6, plate14_rect)
@@ -140,6 +166,50 @@ def render_plate14():
         f"{product_list['112']['stock']}",
         True, 'Black'
     ), (plate14_rect.centerx - 16, plate14_rect.centery + 80))
+
+def render_plate14_NS():
+    screen.blit(plate6_NS, plate14_NS_rect)
+
+def render_plate18():
+    screen.blit(plate4, plate18_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['117']['stock']}",
+        True, 'Black'
+    ), (plate18_rect.centerx - 16, plate18_rect.centery + 80))
+
+def render_plate18_NS():
+    screen.blit(plate4_NS, plate18_NS_rect)
+
+def render_plate17():
+    screen.blit(plate4, plate17_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['116']['stock']}",
+        True, 'Black'
+    ), (plate17_rect.centerx - 16, plate17_rect.centery + 80))
+
+def render_plate17_NS():
+    screen.blit(plate4_NS, plate17_NS_rect)
+
+def render_plate16():
+    screen.blit(plate4, plate16_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['115']['stock']}",
+        True, 'Black'
+    ), (plate16_rect.centerx - 16, plate16_rect.centery + 80))
+
+def render_plate16_NS():
+    screen.blit(plate4_NS, plate16_NS_rect)
+
+def render_plate15():
+    screen.blit(plate4, plate15_rect)
+    screen.blit(ticket_products_font.render(
+        f"{product_list['114']['stock']}",
+        True, 'Black'
+    ), (plate15_rect.centerx - 16, plate15_rect.centery + 80))
+
+def render_plate15_NS():
+    screen.blit(plate4_NS, plate15_NS_rect)
+
 
 def check_add_product():
     if food_pie1_rect.collidepoint(event.pos) and product_list['100']['stock'] > 0:
@@ -398,6 +468,8 @@ def render_manager_game_screen():
             screen.blit(food_pie1, food_pie1_rect)
         else:
             screen.blit(food_pie1_NS, food_pie1_NS_rect)
+    else:
+        render_plate7_NS()
 
     if product_list['101']['status'] == 'GLASS':
         render_plate8()
@@ -405,6 +477,8 @@ def render_manager_game_screen():
             screen.blit(food_pie2, food_pie2_rect)
         else:
             screen.blit(food_pie2_NS, food_pie2_NS_rect)
+    else:
+        render_plate8_NS()
 
     if product_list['102']['status'] == 'GLASS':
         render_plate9()
@@ -412,6 +486,8 @@ def render_manager_game_screen():
             screen.blit(food_rectpie, food_rectpie_rect)
         else:
             screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
+    else:
+        render_plate9_NS()
 
     if product_list['103']['status'] == 'GLASS':
         render_plate10()
@@ -419,6 +495,8 @@ def render_manager_game_screen():
             screen.blit(food_fruitpie, food_fruitpie_rect)
         else:
             screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
+    else:
+        render_plate10_NS()
 
     if product_list['104']['status'] == 'GLASS':
         render_plate11()
@@ -426,6 +504,8 @@ def render_manager_game_screen():
             screen.blit(food_blueberryfish, food_blueberryfish_rect)
         else:
             screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
+    else:
+        render_plate11_NS()
 
     if product_list['105']['status'] == 'GLASS':
         render_plate3()
@@ -433,6 +513,8 @@ def render_manager_game_screen():
             screen.blit(food_bread_turtle, food_bread_turtle_rect)
         else:
             screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
+    else:
+        render_plate3_NS()
 
     if product_list['106']['status'] == 'GLASS':
         render_plate4()
@@ -440,6 +522,8 @@ def render_manager_game_screen():
             screen.blit(food_bread_crocodile, food_bread_crocodile_rect)
         else:
             screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
+    else:
+        render_plate4_NS()
 
     if product_list['107']['status'] == 'GLASS':
         render_plate1()
@@ -447,6 +531,8 @@ def render_manager_game_screen():
             screen.blit(food_baguette, food_baguette_rect)
         else:
             screen.blit(food_baguette_NS, food_baguette_NS_rect)
+    else:
+        render_plate1_NS()
 
     if product_list['108']['status'] == 'GLASS':
         render_plate2()
@@ -454,6 +540,8 @@ def render_manager_game_screen():
             screen.blit(food_roundbread, food_roundbread_rect)
         else:
             screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
+    else:
+        render_plate2_NS()
 
     if product_list['109']['status'] == 'GLASS':
         render_plate5()
@@ -461,6 +549,8 @@ def render_manager_game_screen():
             screen.blit(food_eggtoast, food_eggtoast_rect)
         else:
             screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
+    else:
+        render_plate5_NS()
 
     if product_list['110']['status'] == 'GLASS':
         render_plate6()
@@ -468,6 +558,8 @@ def render_manager_game_screen():
             screen.blit(food_toast, food_toast_rect)
         else:
             screen.blit(food_toast_NS, food_toast_NS_rect)
+    else:
+        render_plate6_NS()
 
     if product_list['111']['status'] == 'GLASS':
         render_plate13()
@@ -475,6 +567,8 @@ def render_manager_game_screen():
             screen.blit(food_pretzel, food_pretzel_rect)
         else:
             screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
+    else:
+        render_plate13_NS()
 
     if product_list['112']['status'] == 'GLASS':
         render_plate14()
@@ -482,6 +576,8 @@ def render_manager_game_screen():
             screen.blit(food_croissant, food_croissant_rect)
         else:
             screen.blit(food_croissant_NS, food_croissant_NS_rect)
+    else:
+        render_plate14_NS()
 
     if product_list['113']['status'] == 'GLASS':
         render_plate12()
@@ -489,6 +585,8 @@ def render_manager_game_screen():
             screen.blit(food_bagel, food_bagel_rect)
         else:
             screen.blit(food_bagel_NS, food_bagel_NS_rect)
+    else:
+        render_plate12_NS()
 
     if product_list['114']['status'] == 'GLASS':
         render_plate15()
@@ -496,6 +594,8 @@ def render_manager_game_screen():
             screen.blit(food_chocolatebread, food_chocolatebread_rect)
         else:
             screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
+    else:
+        render_plate15_NS()
 
     if product_list['115']['status'] == 'GLASS':
         render_plate16()
@@ -503,6 +603,8 @@ def render_manager_game_screen():
             screen.blit(food_cookies, food_cookies_rect)
         else:
             screen.blit(food_cookies_NS, food_cookies_NS_rect)
+    else:
+        render_plate16_NS()
 
     if product_list['116']['status'] == 'GLASS':
         render_plate17()
@@ -510,6 +612,8 @@ def render_manager_game_screen():
             screen.blit(food_creambread, food_creambread_rect)
         else:
             screen.blit(food_creambread_NS, food_creambread_NS_rect)
+    else:
+        render_plate17_NS()
 
     if product_list['117']['status'] == 'GLASS':
         render_plate18()
@@ -517,38 +621,8 @@ def render_manager_game_screen():
             screen.blit(food_cupcake, food_cupcake_rect)
         else:
             screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
-
-
-def render_plate18():
-    screen.blit(plate4, plate18_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['117']['stock']}",
-        True, 'Black'
-    ), (plate18_rect.centerx - 16, plate18_rect.centery + 80))
-
-
-def render_plate17():
-    screen.blit(plate4, plate17_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['116']['stock']}",
-        True, 'Black'
-    ), (plate17_rect.centerx - 16, plate17_rect.centery + 80))
-
-
-def render_plate16():
-    screen.blit(plate4, plate16_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['115']['stock']}",
-        True, 'Black'
-    ), (plate16_rect.centerx - 16, plate16_rect.centery + 80))
-
-
-def render_plate15():
-    screen.blit(plate4, plate15_rect)
-    screen.blit(ticket_products_font.render(
-        f"{product_list['114']['stock']}",
-        True, 'Black'
-    ), (plate15_rect.centerx - 16, plate15_rect.centery + 80))
+    else:
+        render_plate18_NS()
 
 
 def listen_to_key_binding():
@@ -655,6 +729,53 @@ plate15_rect = plate4.get_rect(center=(590, 890))
 plate16_rect = plate4.get_rect(center=(790, 890))
 plate17_rect = plate4.get_rect(center=(990, 890))
 plate18_rect = plate4.get_rect(center=(1190, 890))
+
+# Plates NS
+
+plate1_NS = pygame.image.load('graphics/plates/plate1-NS.png').convert_alpha()
+plate1_NS = pygame.transform.scale(plate1_NS, (170, 210))
+plate2_NS = pygame.image.load('graphics/plates/plate2-NS.png').convert_alpha()
+plate2_NS = pygame.transform.scale(plate2_NS, (170, 210))
+plate3_NS = pygame.image.load('graphics/plates/plate3-NS.png').convert_alpha()
+plate3_NS = pygame.transform.scale(plate3_NS, (170, 210))
+plate4_NS = pygame.image.load('graphics/plates/plate4-NS.png').convert_alpha()
+plate4_NS = pygame.transform.scale(plate4_NS, (170, 210))
+plate5_NS = pygame.image.load('graphics/plates/plate5-NS.png').convert_alpha()
+plate5_NS = pygame.transform.scale(plate5_NS, (170, 210))
+plate6_NS = pygame.image.load('graphics/plates/plate6-NS.png').convert_alpha()
+plate6_NS = pygame.transform.scale(plate6_NS, (170, 210))
+
+# Plain
+plate1_NS_rect = plate1_NS.get_rect(center=(590, 390))
+plate2_NS_rect = plate1_NS.get_rect(center=(790, 390))
+
+# Zoo Bread
+plate3_NS_rect = plate2_NS.get_rect(center=(990, 390))
+plate4_NS_rect = plate2_NS.get_rect(center=(1190, 390))
+
+# Toast
+plate5_NS_rect = plate3_NS.get_rect(center=(1390, 390))
+plate6_NS_rect = plate3_NS.get_rect(center=(1590, 390))
+
+# Fruit Pie
+plate7_NS_rect = plate4_NS.get_rect(center=(1780, 390))
+plate8_NS_rect = plate4_NS.get_rect(center=(590, 640))
+plate9_NS_rect = plate4_NS.get_rect(center=(790, 640))
+plate10_NS_rect = plate4_NS.get_rect(center=(990, 640))
+plate11_NS_rect = plate4_NS.get_rect(center=(1190, 640))
+
+# Sandwich
+plate12_NS_rect = plate5_NS.get_rect(center=(1390, 640))
+
+# Bread
+plate13_NS_rect = plate6_NS.get_rect(center=(1590, 640))
+plate14_NS_rect = plate6_NS.get_rect(center=(1780, 640))
+
+# Chocolates
+plate15_NS_rect = plate4_NS.get_rect(center=(590, 890))
+plate16_NS_rect = plate4_NS.get_rect(center=(790, 890))
+plate17_NS_rect = plate4_NS.get_rect(center=(990, 890))
+plate18_NS_rect = plate4_NS.get_rect(center=(1190, 890))
 
 # FOOD -----------------------------------------------------------------------------------------------------------------
 # Bread
