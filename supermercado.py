@@ -16,7 +16,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'F',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '101': {
         'description': 'Grape Pie',
@@ -24,7 +25,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'F',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '102': {
         'description': 'Apple Pie',
@@ -32,7 +34,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'F',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '103': {
         'description': 'Fruit Pie',
@@ -40,7 +43,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'F',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '104': {
         'description': 'Blueberry Fish',
@@ -48,7 +52,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'F',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '105': {
         'description': 'Bread Turtle',
@@ -56,7 +61,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'Z',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '106': {
         'description': 'Bread Crocodile',
@@ -64,7 +70,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'Z',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '107': {
         'description': 'Baguette',
@@ -72,7 +79,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'B',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '108': {
         'description': 'Round Bread',
@@ -80,7 +88,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'B',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '109': {
         'description': 'Egg Toast',
@@ -88,7 +97,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'T',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '110': {
         'description': 'Butter Toast',
@@ -96,7 +106,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'T',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '111': {
         'description': 'Pretzel',
@@ -104,7 +115,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'P',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '112': {
         'description': 'Croissant',
@@ -112,7 +124,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'P',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     },
     '113': {
         'description': 'Bagel',
@@ -120,7 +133,8 @@ bakery_products = {
         'expire_date': '',
         'price': 0,
         'type': 'S',
-        'discount': False
+        'discount': False,
+        'status': 'GLASS'
     }
 }
 
@@ -142,6 +156,43 @@ def createStock(products,start_date):
     # Hacer que no haya stock de 2 productos al inicio
     products[str(random.randint(100,113))]['stock'] = 0
     products[str(random.randint(100,113))]['stock'] = 0
+
+    products['114'] = {
+        'description': 'Chocolate Bread',
+        'stock': random.randint(0,300),
+        'expire_date': (start_date + timedelta(days=20)).strftime('%Y-%m-%d'),
+        'price': random.randint(350,1200),
+        'type': 'S',
+        'discount': False,
+        'status': 'STORAGE'
+    }
+    products['115'] = {
+        'description': 'Cookies',
+        'stock': random.randint(0,300),
+        'expire_date': (start_date + timedelta(days=20)).strftime('%Y-%m-%d'),
+        'price': random.randint(350,1200),
+        'type': 'S',
+        'discount': False,
+        'status': 'STORAGE'
+    }
+    products['116'] = {
+        'description': 'Cream Bread',
+        'stock': random.randint(0,300),
+        'expire_date': (start_date + timedelta(days=20)).strftime('%Y-%m-%d'),
+        'price': random.randint(350,1200),
+        'type': 'S',
+        'discount': False,
+        'status': 'STORAGE'
+    }
+    products['117'] = {
+        'description': 'Cupcake',
+        'stock': random.randint(0,300),
+        'expire_date': (start_date + timedelta(days=20)).strftime('%Y-%m-%d'),
+        'price': random.randint(350,1200),
+        'type': 'S',
+        'discount': False,
+        'status': 'STORAGE'
+    }
 
     return products
 
