@@ -318,12 +318,12 @@ def render_user_game_screen():
     for name, product_component in products_text.items():
         component = ticket_products_font.render(
             f"{name}: {product_component['quantity']} x ${product_component['price']} = ${product_component['quantity'] * product_component['price']}",
-            True, 'Black')
+            True, (82,74,68))
 
         screen.blit(component, (MARGIN, product_component['position_y']))
     # Display total price
-    total_price_text = test_font.render(f"${total_price}", True, 'Black')
-    screen.blit(total_price_text, (250, 700))
+    total_price_text = test_font.render(f"TOTAL ${total_price}", True, 'Black')
+    screen.blit(total_price_text, (300, 870))
     # Plates
     # Line 1
     render_plate1()
@@ -683,8 +683,8 @@ def listen_to_key_binding():
 
 # Setup
 pygame.init()
-PRODUCT_HEIGHT = 30
-MARGIN = 60
+PRODUCT_HEIGHT = 33
+MARGIN = 130
 SCREEN_WIDTH = 1920
 SCREEN_HEIGHT = 1080
 screen = pygame.display.set_mode((SCREEN_WIDTH,
@@ -693,7 +693,7 @@ pygame.display.set_caption('Bakery')
 clock = pygame.time.Clock()  # clock object to handle frame rate
 test_font = pygame.font.Font('font/Alkhemikal.ttf', 50)
 button_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
-ticket_products_font = pygame.font.Font('font/Alkhemikal.ttf', 35)
+ticket_products_font = pygame.font.Font('font/Alkhemikal.ttf', 30)
 products_count_font = pygame.font.Font('font/Alkhemikal.ttf', 35)
 manager_actions_titles_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
 game_active = True
@@ -711,7 +711,7 @@ ticket = pygame.image.load('graphics/ticket.png').convert_alpha()
 ticket = pygame.transform.scale(ticket, (550, 650))
 ticket_rect = ticket.get_rect(topleft=(100, 320))
 
-current_y = 350
+current_y = 430
 
 plates_type = pygame.image.load('graphics/plates-catalogue.png').convert_alpha()
 plates_type = pygame.transform.scale(plates_type, (450, 300))
