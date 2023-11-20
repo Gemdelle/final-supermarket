@@ -372,41 +372,41 @@ def check_manager_add_product():
         small_food_creambread_rect, \
         small_food_cupcake_rect
 
-    if small_food_pie1_rect.collidepoint(event.pos) and product_list['100']['status'] == 'STORAGE':
+    if small_food_pie1_rect and small_food_pie1_rect.collidepoint(event.pos) and product_list['100']['status'] == 'STORAGE':
         return add_product(product_list, '100')
-    elif small_food_pie2_rect.collidepoint(event.pos) and product_list['101']['status'] == 'STORAGE':
+    elif small_food_pie2_rect and small_food_pie2_rect.collidepoint(event.pos) and product_list['101']['status'] == 'STORAGE':
         return add_product(product_list, '101')
-    elif small_food_rectpie_rect.collidepoint(event.pos) and product_list['102']['status'] == 'STORAGE':
+    elif small_food_rectpie_rect and small_food_rectpie_rect.collidepoint(event.pos) and product_list['102']['status'] == 'STORAGE':
         return add_product(product_list, '102')
-    elif small_food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['status'] == 'STORAGE':
+    elif small_food_fruitpie_rect and small_food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['status'] == 'STORAGE':
         return add_product(product_list, '103')
-    elif small_food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['status'] == 'STORAGE':
+    elif small_food_blueberryfish_rect and small_food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['status'] == 'STORAGE':
         return add_product(product_list, '104')
-    elif small_food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['status'] == 'STORAGE':
+    elif small_food_bread_turtle_rect and small_food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['status'] == 'STORAGE':
         return add_product(product_list, '105')
-    elif small_food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['status'] == 'STORAGE':
+    elif small_food_bread_crocodile_rect and small_food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['status'] == 'STORAGE':
         return add_product(product_list, '106')
-    elif small_food_baguette_rect.collidepoint(event.pos) and product_list['107']['status'] == 'STORAGE':
+    elif small_food_baguette_rect and small_food_baguette_rect.collidepoint(event.pos) and product_list['107']['status'] == 'STORAGE':
         return add_product(product_list, '107')
-    elif small_food_roundbread_rect.collidepoint(event.pos) and product_list['108']['status'] == 'STORAGE':
+    elif small_food_roundbread_rect and small_food_roundbread_rect.collidepoint(event.pos) and product_list['108']['status'] == 'STORAGE':
         return add_product(product_list, '108')
-    elif small_food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['status'] == 'STORAGE':
+    elif small_food_eggtoast_rect and small_food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['status'] == 'STORAGE':
         return add_product(product_list, '109')
-    elif food_toast_rect.collidepoint(event.pos) and product_list['110']['status'] == 'STORAGE':
+    elif food_toast_rect and food_toast_rect.collidepoint(event.pos) and product_list['110']['status'] == 'STORAGE':
         return add_product(product_list, '110')
-    elif small_food_pretzel_rect.collidepoint(event.pos) and product_list['111']['status'] == 'STORAGE':
+    elif small_food_pretzel_rect and small_food_pretzel_rect.collidepoint(event.pos) and product_list['111']['status'] == 'STORAGE':
         return add_product(product_list, '111')
-    elif small_food_croissant_rect.collidepoint(event.pos) and product_list['112']['status'] == 'STORAGE':
+    elif small_food_croissant_rect and small_food_croissant_rect.collidepoint(event.pos) and product_list['112']['status'] == 'STORAGE':
         return add_product(product_list, '112')
-    elif small_food_bagel_rect.collidepoint(event.pos) and product_list['113']['status'] == 'STORAGE':
+    elif small_food_bagel_rect and small_food_bagel_rect.collidepoint(event.pos) and product_list['113']['status'] == 'STORAGE':
         return add_product(product_list, '113')
-    elif small_food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['status'] == 'STORAGE':
+    elif small_food_chocolatebread_rect and small_food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['status'] == 'STORAGE':
         return add_product(product_list, '114')
-    elif small_food_cookies_rect.collidepoint(event.pos) and product_list['115']['status'] == 'STORAGE':
+    elif small_food_cookies_rect and small_food_cookies_rect.collidepoint(event.pos) and product_list['115']['status'] == 'STORAGE':
         return add_product(product_list, '115')
-    elif small_food_creambread_rect.collidepoint(event.pos) and product_list['116']['status'] == 'STORAGE':
+    elif small_food_creambread_rect and small_food_creambread_rect.collidepoint(event.pos) and product_list['116']['status'] == 'STORAGE':
         return add_product(product_list, '116')
-    elif small_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['status'] == 'STORAGE':
+    elif small_food_cupcake_rect and small_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['status'] == 'STORAGE':
         return add_product(product_list, '117')
 
 def check_manager_remove_product():
@@ -424,41 +424,41 @@ def check_manager_remove_product():
         small_food_creambread_rect, \
         small_food_cupcake_rect
 
-    if small_food_pie1_rect.collidepoint(event.pos) and product_list['100']['status'] == 'GLASS':
+    if small_food_pie1_rect and small_food_pie1_rect.collidepoint(event.pos) and product_list['100']['status'] == 'GLASS':
         remove_product(product_list, '100')
-    elif small_food_pie2_rect.collidepoint(event.pos) and product_list['101']['status'] == 'GLASS':
+    elif small_food_pie2_rect and small_food_pie2_rect.collidepoint(event.pos) and product_list['101']['status'] == 'GLASS':
         remove_product(product_list, '101')
-    elif small_food_rectpie_rect.collidepoint(event.pos) and product_list['102']['status'] == 'GLASS':
+    elif small_food_rectpie_rect and small_food_rectpie_rect.collidepoint(event.pos) and product_list['102']['status'] == 'GLASS':
         remove_product(product_list, '102')
-    elif small_food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['status'] == 'GLASS':
+    elif small_food_fruitpie_rect and small_food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['status'] == 'GLASS':
         remove_product(product_list, '103')
-    elif small_food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['status'] == 'GLASS':
+    elif small_food_blueberryfish_rect and small_food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['status'] == 'GLASS':
         remove_product(product_list, '104')
-    elif small_food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['status'] == 'GLASS':
+    elif small_food_bread_turtle_rect and small_food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['status'] == 'GLASS':
         remove_product(product_list, '105')
-    elif small_food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['status'] == 'GLASS':
+    elif small_food_bread_crocodile_rect and small_food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['status'] == 'GLASS':
         remove_product(product_list, '106')
-    elif small_food_baguette_rect.collidepoint(event.pos) and product_list['107']['status'] == 'GLASS':
+    elif small_food_baguette_rect and small_food_baguette_rect.collidepoint(event.pos) and product_list['107']['status'] == 'GLASS':
         remove_product(product_list, '107')
-    elif small_food_roundbread_rect.collidepoint(event.pos) and product_list['108']['status'] == 'GLASS':
+    elif small_food_roundbread_rect and small_food_roundbread_rect.collidepoint(event.pos) and product_list['108']['status'] == 'GLASS':
         remove_product(product_list, '108')
-    elif small_food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['status'] == 'GLASS':
+    elif small_food_eggtoast_rect and small_food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['status'] == 'GLASS':
         remove_product(product_list, '109')
-    elif small_food_toast_rect.collidepoint(event.pos) and product_list['110']['status'] == 'GLASS':
+    elif small_food_toast_rect and small_food_toast_rect.collidepoint(event.pos) and product_list['110']['status'] == 'GLASS':
         remove_product(product_list, '110')
-    elif small_food_pretzel_rect.collidepoint(event.pos) and product_list['111']['status'] == 'GLASS':
+    elif small_food_pretzel_rect and small_food_pretzel_rect.collidepoint(event.pos) and product_list['111']['status'] == 'GLASS':
         remove_product(product_list, '111')
-    elif small_food_croissant_rect.collidepoint(event.pos) and product_list['112']['status'] == 'GLASS':
+    elif small_food_croissant_rect and small_food_croissant_rect.collidepoint(event.pos) and product_list['112']['status'] == 'GLASS':
         remove_product(product_list, '112')
-    elif small_food_bagel_rect.collidepoint(event.pos) and product_list['113']['status'] == 'GLASS':
+    elif small_food_bagel_rect and small_food_bagel_rect.collidepoint(event.pos) and product_list['113']['status'] == 'GLASS':
         remove_product(product_list, '113')
-    elif small_food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['status'] == 'GLASS':
+    elif small_food_chocolatebread_rect and small_food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['status'] == 'GLASS':
         remove_product(product_list, '114')
-    elif small_food_cookies_rect.collidepoint(event.pos) and product_list['115']['status'] == 'GLASS':
+    elif small_food_cookies_rect and small_food_cookies_rect.collidepoint(event.pos) and product_list['115']['status'] == 'GLASS':
         remove_product(product_list, '115')
-    elif small_food_creambread_rect.collidepoint(event.pos) and product_list['116']['status'] == 'GLASS':
+    elif small_food_creambread_rect and small_food_creambread_rect.collidepoint(event.pos) and product_list['116']['status'] == 'GLASS':
         remove_product(product_list, '116')
-    elif small_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['status'] == 'GLASS':
+    elif small_food_cupcake_rect and small_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['status'] == 'GLASS':
         remove_product(product_list, '117')
 
 def check_remove_product():
@@ -525,41 +525,41 @@ def check_update_stock_button_clicked():
         small_update_stock_food_creambread_rect, \
         small_update_stock_food_cupcake_rect
 
-    if small_update_stock_food_pie1_rect.collidepoint(event.pos) and product_list['100']['stock'] < MIN_STOCK_TO_UPDATE:
+    if small_update_stock_food_pie1_rect and small_update_stock_food_pie1_rect.collidepoint(event.pos) and product_list['100']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '100', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_pie2_rect.collidepoint(event.pos) and product_list['101']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_pie2_rect and small_update_stock_food_pie2_rect.collidepoint(event.pos) and product_list['101']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '101', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_rectpie_rect.collidepoint(event.pos) and product_list['102']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_rectpie_rect and small_update_stock_food_rectpie_rect.collidepoint(event.pos) and product_list['102']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '102', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_fruitpie_rect and small_update_stock_food_fruitpie_rect.collidepoint(event.pos) and product_list['103']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '103', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_blueberryfish_rect and small_update_stock_food_blueberryfish_rect.collidepoint(event.pos) and product_list['104']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '104', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_bread_turtle_rect and small_update_stock_food_bread_turtle_rect.collidepoint(event.pos) and product_list['105']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '105', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_bread_crocodile_rect and small_update_stock_food_bread_crocodile_rect.collidepoint(event.pos) and product_list['106']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '106', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_baguette_rect.collidepoint(event.pos) and product_list['107']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_baguette_rect and small_update_stock_food_baguette_rect.collidepoint(event.pos) and product_list['107']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '107', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_roundbread_rect.collidepoint(event.pos) and product_list['108']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_roundbread_rect and small_update_stock_food_roundbread_rect.collidepoint(event.pos) and product_list['108']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '108', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_eggtoast_rect and small_update_stock_food_eggtoast_rect.collidepoint(event.pos) and product_list['109']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '109', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_toast_rect.collidepoint(event.pos) and product_list['110']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_toast_rect and small_update_stock_food_toast_rect.collidepoint(event.pos) and product_list['110']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '110', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_pretzel_rect.collidepoint(event.pos) and product_list['111']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_pretzel_rect and small_update_stock_food_pretzel_rect.collidepoint(event.pos) and product_list['111']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '111', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_croissant_rect.collidepoint(event.pos) and product_list['112']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_croissant_rect and small_update_stock_food_croissant_rect.collidepoint(event.pos) and product_list['112']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '112', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_bagel_rect.collidepoint(event.pos) and product_list['113']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_bagel_rect and small_update_stock_food_bagel_rect.collidepoint(event.pos) and product_list['113']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '113', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_chocolatebread_rect and small_update_stock_food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '114', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_cookies_rect.collidepoint(event.pos) and product_list['115']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_cookies_rect and small_update_stock_food_cookies_rect.collidepoint(event.pos) and product_list['115']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '115', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_creambread_rect.collidepoint(event.pos) and product_list['116']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_creambread_rect and small_update_stock_food_creambread_rect.collidepoint(event.pos) and product_list['116']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '116', MIN_STOCK_TO_UPDATE)
-    elif small_update_stock_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['stock'] < MIN_STOCK_TO_UPDATE:
+    elif small_update_stock_food_cupcake_rect and small_update_stock_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '117', MIN_STOCK_TO_UPDATE)
 
 def check_increment_porcentage_button_clicked():
