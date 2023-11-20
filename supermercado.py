@@ -309,6 +309,9 @@ def remove_product(product_list, code):
     product_list[code]['status'] = 'STORAGE'
     return True
 
+def update_product_stock(product_list, user_code, stock_limit):
+    product_list[user_code]['stock'] = stock_limit
+
 def viewCart(cart):
     for product in cart:
         print(f'{product}: {cart[product]["quantity"]}')
