@@ -852,11 +852,11 @@ food_eggtoast_NS = pygame.transform.scale(food_eggtoast_NS, (170, 140))
 food_eggtoast_NS_rect = food_eggtoast_NS.get_rect(center=(790, 650))
 
 food_toast = pygame.image.load('graphics/food-toast.png')
-food_toast = pygame.transform.scale(food_toast, (170, 140))
+food_toast = pygame.transform.scale(food_toast, (190, 160))
 food_toast_rect = food_toast.get_rect(center=(990, 650))
 
 food_toast_NS = pygame.image.load('graphics/food-toast-NS.png')
-food_toast_NSt = pygame.transform.scale(food_toast_NS, (170, 140))
+food_toast_NS = pygame.transform.scale(food_toast_NS, (190, 160))
 food_toast_NS_rect = food_toast_NS.get_rect(center=(990, 650))
 
 # Fruit Pie
