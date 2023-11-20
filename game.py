@@ -1615,6 +1615,9 @@ def listen_to_key_binding():
                 pygame.quit()
                 exit()
         elif game_selected == '':
+            screen.fill((255, 255, 255))
+            screen.blit(glass, glass_rect)
+            screen.blit(welcome, welcome_rect)
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if login_user_button.collidepoint(event.pos):
                     game_selected = 'USER'
