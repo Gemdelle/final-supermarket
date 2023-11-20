@@ -154,8 +154,8 @@ def createStock(products,start_date):
         products[product]['price'] = random.randint(350,1200)
 
     # Hacer que no haya stock de 2 productos al inicio
-    products[str(random.randint(100,113))]['stock'] = 0
-    products[str(random.randint(100,113))]['stock'] = 0
+    products[str(random.randint(100,109))]['stock'] = 0
+    products[str(random.randint(110,117))]['stock'] = 0
 
     products['114'] = {
         'description': 'Chocolate Bread',

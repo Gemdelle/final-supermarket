@@ -37,7 +37,7 @@ def render_plate1():
     screen.blit(products_count_font.render(
         f"{product_list['115']['stock']}",
         True, 'Black'
-    ), (plate1_rect.centerx - 16, plate1_rect.centery + 80))
+    ), (plate1_rect.centerx - 16, plate1_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['115']['price']}",
         True, 'Black'
@@ -51,7 +51,7 @@ def render_plate2():
     screen.blit(products_count_font.render(
         f"{product_list['107']['stock']}",
         True, 'Black'
-    ), (plate2_rect.centerx - 16, plate2_rect.centery + 80))
+    ), (plate2_rect.centerx - 16, plate2_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['107']['price']}",
         True, 'Black'
@@ -65,7 +65,7 @@ def render_plate3():
     screen.blit(products_count_font.render(
         f"{product_list['108']['stock']}",
         True, 'Black'
-    ), (plate3_rect.centerx - 16, plate3_rect.centery + 80))
+    ), (plate3_rect.centerx - 16, plate3_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['108']['price']}",
         True, 'Black'
@@ -79,7 +79,7 @@ def render_plate4():
     screen.blit(products_count_font.render(
         f"{product_list['111']['stock']}",
         True, 'Black'
-    ), (plate4_rect.centerx - 16, plate4_rect.centery + 80))
+    ), (plate4_rect.centerx - 16, plate4_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['111']['price']}",
         True, 'Black'
@@ -93,7 +93,7 @@ def render_plate5():
     screen.blit(products_count_font.render(
         f"{product_list['112']['stock']}",
         True, 'Black'
-    ), (plate5_rect.centerx - 16, plate5_rect.centery + 80))
+    ), (plate5_rect.centerx - 16, plate5_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['112']['price']}",
         True, 'Black'
@@ -107,7 +107,7 @@ def render_plate6():
     screen.blit(products_count_font.render(
         f"{product_list['105']['stock']}",
         True, 'Black'
-    ), (plate6_rect.centerx - 16, plate6_rect.centery + 80))
+    ), (plate6_rect.centerx - 16, plate6_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['105']['price']}",
         True, 'Black'
@@ -121,7 +121,7 @@ def render_plate7():
     screen.blit(products_count_font.render(
         f"{product_list['106']['stock']}",
         True, 'Black'
-    ), (plate7_rect.centerx - 16, plate7_rect.centery + 80))
+    ), (plate7_rect.centerx - 16, plate7_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['106']['price']}",
         True, 'Black'
@@ -135,7 +135,7 @@ def render_plate8():
     screen.blit(products_count_font.render(
         f"{product_list['116']['stock']}",
         True, 'Black'
-    ), (plate8_rect.centerx - 16, plate8_rect.centery + 80))
+    ), (plate8_rect.centerx - 16, plate8_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['116']['price']}",
         True, 'Black'
@@ -149,7 +149,7 @@ def render_plate9():
     screen.blit(products_count_font.render(
         f"{product_list['109']['stock']}",
         True, 'Black'
-    ), (plate9_rect.centerx - 16, plate9_rect.centery + 80))
+    ), (plate9_rect.centerx - 16, plate9_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['109']['price']}",
         True, 'Black'
@@ -163,7 +163,7 @@ def render_plate10():
     screen.blit(products_count_font.render(
         f"{product_list['110']['stock']}",
         True, 'Black'
-    ), (plate10_rect.centerx - 16, plate10_rect.centery + 80))
+    ), (plate10_rect.centerx - 16, plate10_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['110']['price']}",
         True, 'Black'
@@ -177,7 +177,7 @@ def render_plate11():
     screen.blit(products_count_font.render(
         f"{product_list['100']['stock']}",
         True, 'Black'
-    ), (plate11_rect.centerx - 16, plate11_rect.centery + 80))
+    ), (plate11_rect.centerx - 16, plate11_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['100']['price']}",
         True, 'Black'
@@ -191,7 +191,7 @@ def render_plate12():
     screen.blit(products_count_font.render(
         f"{product_list['101']['stock']}",
         True, 'Black'
-    ), (plate12_rect.centerx - 16, plate12_rect.centery + 80))
+    ), (plate12_rect.centerx - 16, plate12_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['101']['price']}",
         True, 'Black'
@@ -205,7 +205,7 @@ def render_plate13():
     screen.blit(products_count_font.render(
         f"{product_list['102']['stock']}",
         True, 'Black'
-    ), (plate13_rect.centerx - 16, plate13_rect.centery + 80))
+    ), (plate13_rect.centerx - 16, plate13_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['102']['price']}",
         True, 'Black'
@@ -219,7 +219,7 @@ def render_plate14():
     screen.blit(products_count_font.render(
         f"{product_list['103']['stock']}",
         True, 'Black'
-    ), (plate14_rect.centerx - 16, plate14_rect.centery + 80))
+    ), (plate14_rect.centerx - 16, plate14_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['103']['price']}",
         True, 'Black'
@@ -233,7 +233,7 @@ def render_plate18():
     screen.blit(products_count_font.render(
         f"{product_list['114']['stock']}",
         True, 'Black'
-    ), (plate18_rect.centerx - 16, plate18_rect.centery + 80))
+    ), (plate18_rect.centerx - 16, plate18_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['114']['price']}",
         True, 'Black'
@@ -247,7 +247,7 @@ def render_plate17():
     screen.blit(products_count_font.render(
         f"{product_list['113']['stock']}",
         True, 'Black'
-    ), (plate17_rect.centerx - 16, plate17_rect.centery + 80))
+    ), (plate17_rect.centerx - 16, plate17_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['113']['price']}",
         True, 'Black'
@@ -261,7 +261,7 @@ def render_plate16():
     screen.blit(products_count_font.render(
         f"{product_list['104']['stock']}",
         True, 'Black'
-    ), (plate16_rect.centerx - 16, plate16_rect.centery + 80))
+    ), (plate16_rect.centerx - 16, plate16_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['104']['price']}",
         True, 'Black'
@@ -275,7 +275,7 @@ def render_plate15():
     screen.blit(products_count_font.render(
         f"{product_list['117']['stock']}",
         True, 'Black'
-    ), (plate15_rect.centerx - 16, plate15_rect.centery + 80))
+    ), (plate15_rect.centerx - 16, plate15_rect.centery + 75))
     screen.blit(products_price_font.render(
         f"${product_list['117']['price']}",
         True, 'Black'
@@ -341,7 +341,21 @@ def check_add_product():
         update_ticket()
     elif food_bagel_rect.collidepoint(event.pos) and product_list['113']['stock'] > 0:
         buy_with_code(product_list, cart, '113')
+        update_ticket()    
+    elif food_chocolatebread_rect.collidepoint(event.pos) and product_list['114']['stock'] > 0:
+        buy_with_code(product_list, cart, '114')
         update_ticket()
+    elif food_cookies_rect.collidepoint(event.pos) and product_list['115']['stock'] > 0:
+        buy_with_code(product_list, cart, '115')
+        update_ticket()
+    elif food_creambread_rect.collidepoint(event.pos) and product_list['116']['stock'] > 0:
+        buy_with_code(product_list, cart, '116')
+        update_ticket()
+    elif food_cupcake_rect.collidepoint(event.pos) and product_list['117']['stock'] > 0:
+        buy_with_code(product_list, cart, '117')
+        update_ticket()
+
+
 
 def check_manager_add_product():
     global small_food_pie1_rect, small_food_pie2_rect, small_food_rectpie_rect, small_food_fruitpie_rect, \
@@ -580,7 +594,7 @@ def render_user_game_screen():
         screen.blit(component, (MARGIN, product_component['position_y']))
     # Display total price
     total_price_text = test_font.render(f"TOTAL ${total_price}", True, 'Black')
-    screen.blit(total_price_text, (300, 870))
+    screen.blit(total_price_text, (124, 885))
     # Plates
     # Line 1
     render_plate1()
@@ -692,30 +706,25 @@ def render_user_game_screen():
     else:
         screen.blit(food_bagel_NS, food_bagel_NS_rect)
 
-    if product_list['114']['status'] == 'GLASS':
-        if product_list['114']['stock'] > 0:
-            screen.blit(food_chocolatebread, food_chocolatebread_rect)
-        else:
-            screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
+    if product_list['114']['stock'] > 0:
+        screen.blit(food_chocolatebread, food_chocolatebread_rect)
+    else:
+        screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
 
-    if product_list['115']['status'] == 'GLASS':
-        if product_list['115']['stock'] > 0:
-            screen.blit(food_cookies, food_cookies_rect)
-        else:
-            screen.blit(food_cookies_NS, food_cookies_NS_rect)
+    if product_list['115']['stock'] > 0:
+        screen.blit(food_cookies, food_cookies_rect)
+    else:
+        screen.blit(food_cookies_NS, food_cookies_NS_rect)
 
-    if product_list['116']['status'] == 'GLASS':
-        if product_list['116']['stock'] > 0:
-            screen.blit(food_creambread, food_creambread_rect)
-        else:
-            screen.blit(food_creambread_NS, food_creambread_NS_rect)
+    if product_list['116']['stock'] > 0:
+        screen.blit(food_creambread, food_creambread_rect)
+    else:
+        screen.blit(food_creambread_NS, food_creambread_NS_rect)
 
-    if product_list['117']['status'] == 'GLASS':
-        if product_list['117']['stock'] > 0:
-            screen.blit(food_cupcake, food_cupcake_rect)
-        else:
-            screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
-
+    if product_list['117']['stock'] > 0:
+        screen.blit(food_cupcake, food_cupcake_rect)
+    else:
+        screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
 
 def render_manager_game_screen():
     screen.fill((255, 255, 255))
@@ -1629,7 +1638,7 @@ def listen_to_key_binding():
 
 # Setup
 pygame.init()
-PRODUCT_HEIGHT = 33
+PRODUCT_HEIGHT = 28
 MARGIN = 130
 SCREEN_WIDTH = 1920
 SCREEN_HEIGHT = 1080
@@ -1638,11 +1647,11 @@ screen = pygame.display.set_mode((SCREEN_WIDTH,
                                   SCREEN_HEIGHT))  # Create screen. This code ends, so to keep it running we use the while True (is never False).
 pygame.display.set_caption('Bakery')
 clock = pygame.time.Clock()  # clock object to handle frame rate
-test_font = pygame.font.Font('font/Alkhemikal.ttf', 50)
+test_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
 button_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
-ticket_products_font = pygame.font.Font('font/Alkhemikal.ttf', 30)
-products_count_font = pygame.font.Font('font/Alkhemikal.ttf', 32)
-products_price_font = pygame.font.Font('font/Alkhemikal.ttf', 28)
+ticket_products_font = pygame.font.Font('font/Alkhemikal.ttf', 26)
+products_count_font = pygame.font.Font('font/Alkhemikal.ttf', 28)
+products_price_font = pygame.font.Font('font/Alkhemikal.ttf', 25)
 manager_actions_titles_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
 game_active = True
 running = True
