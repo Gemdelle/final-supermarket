@@ -494,166 +494,166 @@ def render_manager_game_screen():
     ), (70, 950))
 
     if product_list['100']['status'] == 'GLASS':
-        render_plate7()
+        render_plate11()
         if product_list['100']['stock'] > 0:
             screen.blit(food_pie1, food_pie1_rect)
         else:
             screen.blit(food_pie1_NS, food_pie1_NS_rect)
     else:
-        render_plate7_NS()
+        render_plate11_NS()
 
     if product_list['101']['status'] == 'GLASS':
-        render_plate8()
+        render_plate12()
         if product_list['101']['stock'] > 0:
             screen.blit(food_pie2, food_pie2_rect)
         else:
             screen.blit(food_pie2_NS, food_pie2_NS_rect)
     else:
-        render_plate8_NS()
+        render_plate12_NS()
 
     if product_list['102']['status'] == 'GLASS':
-        render_plate9()
+        render_plate13()
         if product_list['102']['stock'] > 0:
             screen.blit(food_rectpie, food_rectpie_rect)
         else:
             screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
     else:
-        render_plate9_NS()
+        render_plate13_NS()
 
     if product_list['103']['status'] == 'GLASS':
-        render_plate10()
+        render_plate14()
         if product_list['103']['stock'] > 0:
             screen.blit(food_fruitpie, food_fruitpie_rect)
         else:
             screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
     else:
-        render_plate10_NS()
+        render_plate14_NS()
 
     if product_list['104']['status'] == 'GLASS':
-        render_plate11()
+        render_plate16()
         if product_list['104']['stock'] > 0:
             screen.blit(food_blueberryfish, food_blueberryfish_rect)
         else:
             screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
     else:
-        render_plate11_NS()
+        render_plate16_NS()
 
     if product_list['105']['status'] == 'GLASS':
-        render_plate3()
+        render_plate6()
         if product_list['105']['stock'] > 0:
             screen.blit(food_bread_turtle, food_bread_turtle_rect)
         else:
             screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
     else:
-        render_plate3_NS()
+        render_plate6_NS()
 
     if product_list['106']['status'] == 'GLASS':
-        render_plate4()
+        render_plate7()
         if product_list['106']['stock'] > 0:
             screen.blit(food_bread_crocodile, food_bread_crocodile_rect)
         else:
             screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
     else:
-        render_plate4_NS()
+        render_plate7_NS()
 
     if product_list['107']['status'] == 'GLASS':
-        render_plate1()
+        render_plate2()
         if product_list['107']['stock'] > 0:
             screen.blit(food_baguette, food_baguette_rect)
         else:
             screen.blit(food_baguette_NS, food_baguette_NS_rect)
     else:
-        render_plate1_NS()
+        render_plate2_NS()
 
     if product_list['108']['status'] == 'GLASS':
-        render_plate2()
+        render_plate3()
         if product_list['108']['stock'] > 0:
             screen.blit(food_roundbread, food_roundbread_rect)
         else:
             screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
     else:
-        render_plate2_NS()
+        render_plate3_NS()
 
     if product_list['109']['status'] == 'GLASS':
-        render_plate5()
+        render_plate9()
         if product_list['109']['stock'] > 0:
             screen.blit(food_eggtoast, food_eggtoast_rect)
         else:
             screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
     else:
-        render_plate5_NS()
+        render_plate9_NS()
 
     if product_list['110']['status'] == 'GLASS':
-        render_plate6()
+        render_plate10()
         if product_list['110']['stock'] > 0:
             screen.blit(food_toast, food_toast_rect)
         else:
             screen.blit(food_toast_NS, food_toast_NS_rect)
     else:
-        render_plate6_NS()
+        render_plate10_NS()
 
     if product_list['111']['status'] == 'GLASS':
-        render_plate13()
+        render_plate4()
         if product_list['111']['stock'] > 0:
             screen.blit(food_pretzel, food_pretzel_rect)
         else:
             screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
     else:
-        render_plate13_NS()
+        render_plate4_NS()
 
     if product_list['112']['status'] == 'GLASS':
-        render_plate14()
+        render_plate5()
         if product_list['112']['stock'] > 0:
             screen.blit(food_croissant, food_croissant_rect)
         else:
             screen.blit(food_croissant_NS, food_croissant_NS_rect)
     else:
-        render_plate14_NS()
+        render_plate5_NS()
 
     if product_list['113']['status'] == 'GLASS':
-        render_plate12()
+        render_plate17()
         if product_list['113']['stock'] > 0:
             screen.blit(food_bagel, food_bagel_rect)
         else:
             screen.blit(food_bagel_NS, food_bagel_NS_rect)
     else:
-        render_plate12_NS()
+        render_plate17_NS()
 
     if product_list['114']['status'] == 'GLASS':
-        render_plate15()
+        render_plate18()
         if product_list['114']['stock'] > 0:
             screen.blit(food_chocolatebread, food_chocolatebread_rect)
         else:
             screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
     else:
-        render_plate15_NS()
+        render_plate18_NS()
 
     if product_list['115']['status'] == 'GLASS':
-        render_plate16()
+        render_plate1()
         if product_list['115']['stock'] > 0:
             screen.blit(food_cookies, food_cookies_rect)
         else:
             screen.blit(food_cookies_NS, food_cookies_NS_rect)
     else:
-        render_plate16_NS()
+        render_plate1_NS()
 
     if product_list['116']['status'] == 'GLASS':
-        render_plate17()
+        render_plate8()
         if product_list['116']['stock'] > 0:
             screen.blit(food_creambread, food_creambread_rect)
         else:
             screen.blit(food_creambread_NS, food_creambread_NS_rect)
     else:
-        render_plate17_NS()
+        render_plate8_NS()
 
     if product_list['117']['status'] == 'GLASS':
-        render_plate18()
+        render_plate15()
         if product_list['117']['stock'] > 0:
             screen.blit(food_cupcake, food_cupcake_rect)
         else:
             screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
     else:
-        render_plate18_NS()
+        render_plate15_NS()
 
 
 def listen_to_key_binding():
