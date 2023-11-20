@@ -342,6 +342,11 @@ def render_user_game_screen():
     render_plate12()
     render_plate13()
     render_plate14()
+    render_plate15()
+    render_plate16()
+    render_plate17()
+    render_plate18()
+
     if product_list['100']['stock'] > 0:
         screen.blit(food_pie1, food_pie1_rect)
         if product_list['100']['discount']:
@@ -429,28 +434,24 @@ def render_user_game_screen():
         screen.blit(food_bagel_NS, food_bagel_NS_rect)
 
     if product_list['114']['status'] == 'GLASS':
-        render_plate15()
         if product_list['114']['stock'] > 0:
             screen.blit(food_chocolatebread, food_chocolatebread_rect)
         else:
             screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
 
     if product_list['115']['status'] == 'GLASS':
-        render_plate16()
         if product_list['115']['stock'] > 0:
             screen.blit(food_cookies, food_cookies_rect)
         else:
             screen.blit(food_cookies_NS, food_cookies_NS_rect)
 
     if product_list['116']['status'] == 'GLASS':
-        render_plate17()
         if product_list['116']['stock'] > 0:
             screen.blit(food_creambread, food_creambread_rect)
         else:
             screen.blit(food_creambread_NS, food_creambread_NS_rect)
 
     if product_list['117']['status'] == 'GLASS':
-        render_plate18()
         if product_list['117']['stock'] > 0:
             screen.blit(food_cupcake, food_cupcake_rect)
         else:
@@ -926,39 +927,39 @@ food_croissant_NS = pygame.transform.scale(food_croissant_NS, (170, 140))
 food_croissant_NS_rect = food_croissant_NS.get_rect(center=(990, 900))
 
 food_chocolatebread = pygame.image.load('graphics/food-chocolatebread.png')
-food_chocolatebread = pygame.transform.scale(food_chocolatebread, (170, 140))
-food_chocolatebread_rect = food_chocolatebread.get_rect(center=(590, 900))
+food_chocolatebread = pygame.transform.scale(food_chocolatebread, (130, 120))
+food_chocolatebread_rect = food_chocolatebread.get_rect(center=(1190, 900))
 
 food_chocolatebread_NS = pygame.image.load('graphics/food-chocolatebread-NS.png')
-food_chocolatebread_NS = pygame.transform.scale(food_chocolatebread_NS, (170, 140))
-food_chocolatebread_NS_rect = food_chocolatebread_NS.get_rect(center=(590, 900))
+food_chocolatebread_NS = pygame.transform.scale(food_chocolatebread_NS, (130, 120))
+food_chocolatebread_NS_rect = food_chocolatebread_NS.get_rect(center=(1190, 900))
 
 food_cookies = pygame.image.load('graphics/food-cookies.png')
-food_cookies = pygame.transform.scale(food_cookies, (170, 140))
-food_cookies_rect = food_cookies.get_rect(center=(790, 900))
+food_cookies = pygame.transform.scale(food_cookies, (140, 130))
+food_cookies_rect = food_cookies.get_rect(center=(1390, 900))
 
 food_cookies_NS = pygame.image.load('graphics/food-cookies-NS.png')
-food_cookies_NS = pygame.transform.scale(food_cookies_NS, (170, 140))
-food_cookies_NS_rect = food_cookies_NS.get_rect(center=(790, 900))
+food_cookies_NS = pygame.transform.scale(food_cookies_NS, (140, 130))
+food_cookies_NS_rect = food_cookies_NS.get_rect(center=(1390, 900))
 
 food_creambread = pygame.image.load('graphics/food-creambread.png')
-food_creambread = pygame.transform.scale(food_creambread, (170, 140))
-food_creambread_rect = food_creambread.get_rect(center=(990, 900))
+food_creambread = pygame.transform.scale(food_creambread, (130, 110))
+food_creambread_rect = food_creambread.get_rect(center=(1590, 900))
 
 food_creambread_NS = pygame.image.load('graphics/food-creambread-NS.png')
-food_creambread_NS = pygame.transform.scale(food_creambread_NS, (170, 140))
-food_creambread_NS_rect = food_creambread_NS.get_rect(center=(990, 900))
+food_creambread_NS = pygame.transform.scale(food_creambread_NS, (130, 110))
+food_creambread_NS_rect = food_creambread_NS.get_rect(center=(1590, 900))
 
 food_cupcake = pygame.image.load('graphics/food-cupcake.png')
-food_cupcake = pygame.transform.scale(food_cupcake, (170, 140))
-food_cupcake_rect = food_cupcake.get_rect(center=(1190, 900))
+food_cupcake = pygame.transform.scale(food_cupcake, (120, 130))
+food_cupcake_rect = food_cupcake.get_rect(center=(1790, 900))
 
 food_cupcake_NS = pygame.image.load('graphics/food-cupcake-NS.png')
-food_cupcake_NS = pygame.transform.scale(food_cupcake_NS, (170, 140))
-food_cupcake_NS_rect = food_cupcake_NS.get_rect(center=(1190, 900))
+food_cupcake_NS = pygame.transform.scale(food_cupcake_NS, (120, 130))
+food_cupcake_NS_rect = food_cupcake_NS.get_rect(center=(1790, 900))
 
-discount_badge = pygame.image.load('graphics/food-blueberryfish.png')
-discount_badge = pygame.transform.scale(discount_badge, (80, 50))
+discount_badge = pygame.image.load('graphics/tags/discount.png')
+discount_badge = pygame.transform.scale(discount_badge, (40, 45))
 discount_badge_rect = discount_badge.get_rect(center=(1190, 650))
 
 cart = {}
