@@ -164,7 +164,7 @@ def createStock(products,start_date):
         'price': random.randint(350,1200),
         'type': 'S',
         'discount': False,
-        'status': 'STORAGE'
+        'status': 'GLASS'
     }
     products['115'] = {
         'description': 'Cookies',
@@ -173,7 +173,7 @@ def createStock(products,start_date):
         'price': random.randint(350,1200),
         'type': 'S',
         'discount': False,
-        'status': 'STORAGE'
+        'status': 'GLASS'
     }
     products['116'] = {
         'description': 'Cream Bread',
@@ -182,7 +182,7 @@ def createStock(products,start_date):
         'price': random.randint(350,1200),
         'type': 'S',
         'discount': False,
-        'status': 'STORAGE'
+        'status': 'GLASS'
     }
     products['117'] = {
         'description': 'Cupcake',
@@ -191,7 +191,7 @@ def createStock(products,start_date):
         'price': random.randint(350,1200),
         'type': 'S',
         'discount': False,
-        'status': 'STORAGE'
+        'status': 'GLASS'
     }
 
     return products

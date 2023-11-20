@@ -428,6 +428,35 @@ def render_user_game_screen():
     else:
         screen.blit(food_bagel_NS, food_bagel_NS_rect)
 
+    if product_list['114']['status'] == 'GLASS':
+        render_plate15()
+        if product_list['114']['stock'] > 0:
+            screen.blit(food_chocolatebread, food_chocolatebread_rect)
+        else:
+            screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
+
+    if product_list['115']['status'] == 'GLASS':
+        render_plate16()
+        if product_list['115']['stock'] > 0:
+            screen.blit(food_cookies, food_cookies_rect)
+        else:
+            screen.blit(food_cookies_NS, food_cookies_NS_rect)
+
+    if product_list['116']['status'] == 'GLASS':
+        render_plate17()
+        if product_list['116']['stock'] > 0:
+            screen.blit(food_creambread, food_creambread_rect)
+        else:
+            screen.blit(food_creambread_NS, food_creambread_NS_rect)
+
+    if product_list['117']['status'] == 'GLASS':
+        render_plate18()
+        if product_list['117']['stock'] > 0:
+            screen.blit(food_cupcake, food_cupcake_rect)
+        else:
+            screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
+
+
 def render_manager_game_screen():
     screen.fill((255, 255, 255))
     screen.blit(glass, glass_rect)
