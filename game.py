@@ -8,7 +8,6 @@ import math
 
 from supermercado import buy_with_code, createStock, bakery_products, return_product, discountItem
 
-
 def update_ticket():
     global current_y, total_price, products_text
     keys_list = list(cart.keys())
@@ -230,6 +229,15 @@ def check_remove_product():
         return_product(product_list, cart, '113')
         update_ticket()
 
+def draw_button(x, y, width, height, text, button_color, text_color):
+    pygame.draw.rect(screen, button_color, (x, y, width, height))
+
+    text_surface = button_font.render(text, True, text_color)
+    text_rect = text_surface.get_rect(center=(x + width / 2, y + height / 2))
+
+    screen.blit(text_surface, text_rect)
+    return text_rect
+
 # Setup
 pygame.init()
 PRODUCT_HEIGHT = 30
@@ -241,6 +249,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH,
 pygame.display.set_caption('Bakery')
 clock = pygame.time.Clock()  # clock object to handle frame rate
 test_font = pygame.font.Font('font/Alkhemikal.ttf', 50)
+button_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
 ticket_products_font = pygame.font.Font('font/Alkhemikal.ttf', 35)
 products_count_font = pygame.font.Font('font/Alkhemikal.ttf', 35)
 game_active = True
@@ -437,8 +446,9 @@ products_text = {}
 
 ticket_components = {}
 
-
-
+game_selected = ''
+login_user_button = None
+login_manager_button = None
 
 while running:  # The game will be continuously updated.
     for event in pygame.event.get():
@@ -448,148 +458,166 @@ while running:  # The game will be continuously updated.
             if event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 exit()
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1: # Left Click del Mouse
-                check_add_product()
-            elif event.button == 3: # Right Click del Mouse
-                check_remove_product()
+        elif game_selected == '':
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if login_user_button.collidepoint(event.pos):
+                    game_selected = 'USER'
+                elif login_manager_button.collidepoint(event.pos):
+                    game_selected = 'MANAGER'
+        elif game_selected == 'USER':
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:  # Left Click del Mouse
+                    check_add_product()
+                elif event.button == 3:  # Right Click del Mouse
+                    check_remove_product()
+        elif game_selected == 'MANAGER':
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                print("MANAGER")
 
-    if game_active:
-        screen.fill((255, 255, 255))
-        screen.blit(glass, glass_rect)
-        screen.blit(welcome, welcome_rect)
-        screen.blit(chat_container, chat_container_rect)
-        screen.blit(plates_type, plates_type_rect)
 
-        # Ticket
-        screen.blit(ticket, ticket_rect)
+    if game_selected == 'USER':
+        if game_active:
+            screen.fill((255, 255, 255))
+            screen.blit(glass, glass_rect)
+            screen.blit(welcome, welcome_rect)
+            screen.blit(chat_container, chat_container_rect)
+            screen.blit(plates_type, plates_type_rect)
 
-        for name, product_component in products_text.items():
-            component = ticket_products_font.render(
-                f"{name}: {product_component['quantity']} x ${product_component['price']} = ${product_component['quantity'] * product_component['price']}",
-                True, 'Black')
+            # Ticket
+            screen.blit(ticket, ticket_rect)
 
-            screen.blit(component, (MARGIN, product_component['position_y']))
+            for name, product_component in products_text.items():
+                component = ticket_products_font.render(
+                    f"{name}: {product_component['quantity']} x ${product_component['price']} = ${product_component['quantity'] * product_component['price']}",
+                    True, 'Black')
 
-        # Display total price
-        total_price_text = test_font.render(f"${total_price}", True, 'Black')
-        screen.blit(total_price_text, (250, 700))
+                screen.blit(component, (MARGIN, product_component['position_y']))
 
-        # Plates
-        # Line 1
-        render_plate1()
-        render_plate2()
-        render_plate3()
-        render_plate4()
-        render_plate5()
-        render_plate6()
-        render_plate7()
-        # Line 2
-        render_plate8()
-        render_plate9()
-        render_plate10()
-        render_plate11()
-        render_plate12()
-        render_plate13()
-        render_plate14()
+            # Display total price
+            total_price_text = test_font.render(f"${total_price}", True, 'Black')
+            screen.blit(total_price_text, (250, 700))
 
-        if product_list['100']['stock'] > 0:
-            screen.blit(food_pie1, food_pie1_rect)
-            if product_list['100']['discount']:
-                screen.blit(discount_badge, (food_pie1_rect.centerx - 16, food_pie1_rect.centery + 80))
-        else:
-            screen.blit(food_pie1_NS, food_pie1_NS_rect)
+            # Plates
+            # Line 1
+            render_plate1()
+            render_plate2()
+            render_plate3()
+            render_plate4()
+            render_plate5()
+            render_plate6()
+            render_plate7()
+            # Line 2
+            render_plate8()
+            render_plate9()
+            render_plate10()
+            render_plate11()
+            render_plate12()
+            render_plate13()
+            render_plate14()
 
-        if product_list['101']['stock'] > 0:
-            screen.blit(food_pie2, food_pie2_rect)
-            if product_list['101']['discount']:
-                screen.blit(discount_badge, (food_pie2_rect.centerx - 16, food_pie2_rect.centery + 80))
-        else:
-            screen.blit(food_pie2_NS, food_pie2_NS_rect)
+            if product_list['100']['stock'] > 0:
+                screen.blit(food_pie1, food_pie1_rect)
+                if product_list['100']['discount']:
+                    screen.blit(discount_badge, (food_pie1_rect.centerx - 16, food_pie1_rect.centery + 80))
+            else:
+                screen.blit(food_pie1_NS, food_pie1_NS_rect)
 
-        if product_list['102']['stock'] > 0:
-            screen.blit(food_rectpie, food_rectpie_rect)
-            if product_list['102']['discount']:
-                screen.blit(discount_badge, (food_rectpie_rect.centerx - 16, food_rectpie_rect.centery + 80))
-        else:
-            screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
+            if product_list['101']['stock'] > 0:
+                screen.blit(food_pie2, food_pie2_rect)
+                if product_list['101']['discount']:
+                    screen.blit(discount_badge, (food_pie2_rect.centerx - 16, food_pie2_rect.centery + 80))
+            else:
+                screen.blit(food_pie2_NS, food_pie2_NS_rect)
 
-        if product_list['103']['stock'] > 0:
-            screen.blit(food_fruitpie, food_fruitpie_rect)
-            if product_list['103']['discount']:
-                screen.blit(discount_badge, (food_fruitpie_rect.centerx - 16, food_fruitpie_rect.centery + 80))
-        else:
-            screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
+            if product_list['102']['stock'] > 0:
+                screen.blit(food_rectpie, food_rectpie_rect)
+                if product_list['102']['discount']:
+                    screen.blit(discount_badge, (food_rectpie_rect.centerx - 16, food_rectpie_rect.centery + 80))
+            else:
+                screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
 
-        if product_list['104']['stock'] > 0:
-            screen.blit(food_blueberryfish, food_blueberryfish_rect)
-            if product_list['104']['discount']:
-                screen.blit(discount_badge, (food_blueberryfish_rect.centerx - 16, food_blueberryfish_rect.centery + 80))
-        else:
-            screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
+            if product_list['103']['stock'] > 0:
+                screen.blit(food_fruitpie, food_fruitpie_rect)
+                if product_list['103']['discount']:
+                    screen.blit(discount_badge, (food_fruitpie_rect.centerx - 16, food_fruitpie_rect.centery + 80))
+            else:
+                screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
 
-        if product_list['105']['stock'] > 0:
-            screen.blit(food_bread_turtle, food_bread_turtle_rect)
-            if product_list['105']['discount']:
-                screen.blit(discount_badge, (food_bread_turtle_rect.centerx - 16, food_bread_turtle_rect.centery + 80))
-        else:
-            screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
+            if product_list['104']['stock'] > 0:
+                screen.blit(food_blueberryfish, food_blueberryfish_rect)
+                if product_list['104']['discount']:
+                    screen.blit(discount_badge, (food_blueberryfish_rect.centerx - 16, food_blueberryfish_rect.centery + 80))
+            else:
+                screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
 
-        if product_list['106']['stock'] > 0:
-            screen.blit(food_bread_crocodile, food_bread_crocodile_rect)
-            if product_list['106']['discount']:
-                screen.blit(discount_badge, (food_bread_crocodile_rect.centerx - 16, food_bread_crocodile_rect.centery + 80))
-        else:
-            screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
+            if product_list['105']['stock'] > 0:
+                screen.blit(food_bread_turtle, food_bread_turtle_rect)
+                if product_list['105']['discount']:
+                    screen.blit(discount_badge, (food_bread_turtle_rect.centerx - 16, food_bread_turtle_rect.centery + 80))
+            else:
+                screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
 
-        if product_list['107']['stock'] > 0:
-            screen.blit(food_baguette, food_baguette_rect)
-            if product_list['107']['discount']:
-                screen.blit(discount_badge, (food_baguette_rect.centerx - 16, food_baguette_rect.centery + 80))
-        else:
-            screen.blit(food_baguette_NS, food_baguette_NS_rect)
+            if product_list['106']['stock'] > 0:
+                screen.blit(food_bread_crocodile, food_bread_crocodile_rect)
+                if product_list['106']['discount']:
+                    screen.blit(discount_badge, (food_bread_crocodile_rect.centerx - 16, food_bread_crocodile_rect.centery + 80))
+            else:
+                screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
 
-        if product_list['108']['stock'] > 0:
-            screen.blit(food_roundbread, food_roundbread_rect)
-            if product_list['108']['discount']:
-                screen.blit(discount_badge, (food_roundbread_rect.centerx - 16, food_roundbread_rect.centery + 80))
-        else:
-            screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
+            if product_list['107']['stock'] > 0:
+                screen.blit(food_baguette, food_baguette_rect)
+                if product_list['107']['discount']:
+                    screen.blit(discount_badge, (food_baguette_rect.centerx - 16, food_baguette_rect.centery + 80))
+            else:
+                screen.blit(food_baguette_NS, food_baguette_NS_rect)
 
-        if product_list['109']['stock'] > 0:
-            screen.blit(food_eggtoast, food_eggtoast_rect)
-            if product_list['109']['discount']:
-                screen.blit(discount_badge, (food_eggtoast_rect.centerx - 16, food_eggtoast_rect.centery + 80))
-        else:
-            screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
+            if product_list['108']['stock'] > 0:
+                screen.blit(food_roundbread, food_roundbread_rect)
+                if product_list['108']['discount']:
+                    screen.blit(discount_badge, (food_roundbread_rect.centerx - 16, food_roundbread_rect.centery + 80))
+            else:
+                screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
 
-        if product_list['110']['stock'] > 0:
-            screen.blit(food_toast, food_toast_rect)
-            if product_list['110']['discount']:
-                screen.blit(discount_badge, (food_toast_rect.centerx - 16, food_toast_rect.centery + 80))
-        else:
-            screen.blit(food_toast_NS, food_toast_NS_rect)
+            if product_list['109']['stock'] > 0:
+                screen.blit(food_eggtoast, food_eggtoast_rect)
+                if product_list['109']['discount']:
+                    screen.blit(discount_badge, (food_eggtoast_rect.centerx - 16, food_eggtoast_rect.centery + 80))
+            else:
+                screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
 
-        if product_list['111']['stock'] > 0:
-            screen.blit(food_pretzel, food_pretzel_rect)
-            if product_list['111']['discount']:
-                screen.blit(discount_badge, (food_pretzel_rect.centerx - 16, food_pretzel_rect.centery + 80))
-        else:
-            screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
+            if product_list['110']['stock'] > 0:
+                screen.blit(food_toast, food_toast_rect)
+                if product_list['110']['discount']:
+                    screen.blit(discount_badge, (food_toast_rect.centerx - 16, food_toast_rect.centery + 80))
+            else:
+                screen.blit(food_toast_NS, food_toast_NS_rect)
 
-        if product_list['112']['stock'] > 0:
-            screen.blit(food_croissant, food_croissant_rect)
-            if product_list['112']['discount']:
-                screen.blit(discount_badge, (food_croissant_rect.centerx - 16, food_croissant_rect.centery + 80))
-        else:
-            screen.blit(food_croissant_NS, food_croissant_NS_rect)
+            if product_list['111']['stock'] > 0:
+                screen.blit(food_pretzel, food_pretzel_rect)
+                if product_list['111']['discount']:
+                    screen.blit(discount_badge, (food_pretzel_rect.centerx - 16, food_pretzel_rect.centery + 80))
+            else:
+                screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
 
-        if product_list['113']['stock'] > 0:
-            screen.blit(food_bagel, food_bagel_rect)
-            if product_list['113']['discount']:
-                screen.blit(discount_badge, (food_bagel_rect.centerx - 16, food_bagel_rect.centery + 80))
-        else:
-            screen.blit(food_bagel_NS, food_bagel_NS_rect)
+            if product_list['112']['stock'] > 0:
+                screen.blit(food_croissant, food_croissant_rect)
+                if product_list['112']['discount']:
+                    screen.blit(discount_badge, (food_croissant_rect.centerx - 16, food_croissant_rect.centery + 80))
+            else:
+                screen.blit(food_croissant_NS, food_croissant_NS_rect)
+
+            if product_list['113']['stock'] > 0:
+                screen.blit(food_bagel, food_bagel_rect)
+                if product_list['113']['discount']:
+                    screen.blit(discount_badge, (food_bagel_rect.centerx - 16, food_bagel_rect.centery + 80))
+            else:
+                screen.blit(food_bagel_NS, food_bagel_NS_rect)
+    elif game_selected == 'MANAGER':
+        print("MANAGER")
+    else:
+        # Draw the button
+        login_user_button = draw_button(800, 400, 350, 50, "LOGIN AS USER", 'Grey', 'Black')
+        login_manager_button = draw_button(800, 500, 350, 50, "LOGIN AS MANAGER", 'Grey', 'Black')
 
     pygame.display.update()  # update the screen
     clock.tick(60)  # while True runs 60 times per second
