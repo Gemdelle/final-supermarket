@@ -7,7 +7,7 @@ from random import randint
 import math
 
 from supermercado import buy_with_code, createStock, bakery_products, return_product, discountItem, add_product, \
-    remove_product
+    remove_product, increment_price_by_percentage, decrement_price_by_percentage
 
 
 def update_ticket():
@@ -490,6 +490,13 @@ def check_remove_product():
     elif food_bagel_rect.collidepoint(event.pos) and product_list['113']['stock'] > 0:
         return_product(product_list, cart, '113')
         update_ticket()
+def check_increment_porcentage_button_clicked():
+    if increment_porcentage_button_rect.collidepoint(event.pos):
+        increment_price_by_percentage(product_list, 0.1)
+
+def check_decrement_porcentage_button_clicked():
+    if decrement_porcentage_button_rect.collidepoint(event.pos):
+        decrement_price_by_percentage(product_list, 0.1)
 
 def draw_button(x, y, width, height, text, button_color, text_color):
     pygame.draw.rect(screen, button_color, (x, y, width, height))
@@ -664,10 +671,7 @@ def render_manager_game_screen():
 
     render_remove_product_section()
 
-    screen.blit(manager_actions_titles_font.render(
-        f"PRICE UPDATE",
-        True, 'Black'
-    ), (70, 750))
+    render_update_price()
 
     screen.blit(manager_actions_titles_font.render(
         f"UPDATE STOCK",
@@ -840,6 +844,17 @@ def render_manager_game_screen():
             screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
     else:
         render_plate15_NS()
+
+
+def render_update_price():
+    global increment_porcentage_button_rect, decrement_porcentage_button_rect
+    screen.blit(manager_actions_titles_font.render(
+        f"PRICE UPDATE",
+        True, 'Black'
+    ), (70, 750))
+    increment_porcentage_button_rect = draw_button(70, 800, 100, 50, "+10%", 'Grey', 'Black')
+    decrement_porcentage_button_rect = draw_button(200, 800, 100, 50, "-10%", 'Grey', 'Black')
+
 
 def render_remove_product_section():
     global small_food_pie1_rect, small_food_pie2_rect, small_food_rectpie_rect, small_food_fruitpie_rect,\
@@ -1314,6 +1329,8 @@ def listen_to_key_binding():
         elif game_selected == 'MANAGER':
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  # Left Click del Mouse
+                    check_increment_porcentage_button_clicked()
+                    check_decrement_porcentage_button_clicked()
                     product_added = check_manager_add_product()
                     if not product_added:
                         check_manager_remove_product()
@@ -1636,6 +1653,10 @@ small_food_cookies = pygame.transform.scale(food_cookies, (70, 60))
 small_food_cookies_rect = empty_rect
 small_food_creambread = pygame.transform.scale(food_creambread, (70, 60))
 small_food_creambread_rect = empty_rect
+
+
+increment_porcentage_button_rect = empty_rect
+decrement_porcentage_button_rect = empty_rect
 
 cart = {}
 start_date = datetime.now()

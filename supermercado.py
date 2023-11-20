@@ -250,7 +250,16 @@ def updatePrice(product_list):
     user_code = input('Código: ')
     percentage = float(input('Porcentaje a modificar: '))
         
-    product_list[user_code]['price'] = product_list[user_code]['price'] + product_list[user_code]['price'] * percentage  
+    product_list[user_code]['price'] = product_list[user_code]['price'] + product_list[user_code]['price'] * percentage
+
+
+def increment_price_by_percentage(product_list, percentage):
+    for code, product in product_list.items():
+        product['price'] = round(product['price'] + product['price'] * percentage)
+
+def decrement_price_by_percentage(product_list, percentage):
+    for code, product in product_list.items():
+        product['price'] = round(product['price'] - product['price'] * percentage)
 
 def verifyStock(product_list,cart):
     print('Ingrese la información del producto que desea comprar: ')
