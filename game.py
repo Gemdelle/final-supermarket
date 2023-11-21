@@ -1260,7 +1260,7 @@ def render_old_products():
         f"OLD PRODUCTS",
         True, 'Black'
     )
-    rotten_products_text_rect = text_render.get_rect(center=(MARGIN + 90, 900))
+    rotten_products_text_rect = text_render.get_rect(center=(MARGIN + 90, 930))
     screen.blit(text_render, rotten_products_text_rect)
 
     products_rotten = {key: value for key, value in product_list.items() if
