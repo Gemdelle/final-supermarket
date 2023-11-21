@@ -585,58 +585,58 @@ def check_rotten_products_button_clicked():
 
     if small_rotten_food_pie1_rect and small_rotten_food_pie1_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['100']):
-        remove_rotten_product(product_list, '100')
+        remove_rotten_product(product_list, '100', start_date)
     elif small_rotten_food_pie2_rect and small_rotten_food_pie2_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['101']):
-        remove_rotten_product(product_list, '101')
+        remove_rotten_product(product_list, '101', start_date)
     elif small_rotten_food_rectpie_rect and small_rotten_food_rectpie_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['102']):
-        remove_rotten_product(product_list, '102')
+        remove_rotten_product(product_list, '102', start_date)
     elif small_rotten_food_fruitpie_rect and small_rotten_food_fruitpie_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['103']):
-        remove_rotten_product(product_list, '103')
+        remove_rotten_product(product_list, '103', start_date)
     elif small_rotten_food_blueberryfish_rect and small_rotten_food_blueberryfish_rect.collidepoint(
             event.pos) and is_product_expired(product_list['104']):
-        remove_rotten_product(product_list, '104')
+        remove_rotten_product(product_list, '104', start_date)
     elif small_rotten_food_bread_turtle_rect and small_rotten_food_bread_turtle_rect.collidepoint(
             event.pos) and is_product_expired(product_list['105']):
-        remove_rotten_product(product_list, '105')
+        remove_rotten_product(product_list, '105', start_date)
     elif small_rotten_food_bread_crocodile_rect and small_rotten_food_bread_crocodile_rect.collidepoint(
             event.pos) and is_product_expired(product_list['106']):
-        remove_rotten_product(product_list, '106')
+        remove_rotten_product(product_list, '106', start_date)
     elif small_rotten_food_baguette_rect and small_rotten_food_baguette_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['107']):
-        remove_rotten_product(product_list, '107')
+        remove_rotten_product(product_list, '107', start_date)
     elif small_rotten_food_roundbread_rect and small_rotten_food_roundbread_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['108']):
-        remove_rotten_product(product_list, '108')
+        remove_rotten_product(product_list, '108', start_date)
     elif small_rotten_food_eggtoast_rect and small_rotten_food_eggtoast_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['109']):
-        remove_rotten_product(product_list, '109')
+        remove_rotten_product(product_list, '109', start_date)
     elif small_rotten_food_toast_rect and small_rotten_food_toast_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['110']):
-        remove_rotten_product(product_list, '110')
+        remove_rotten_product(product_list, '110', start_date)
     elif small_rotten_food_pretzel_rect and small_rotten_food_pretzel_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['111']):
-        remove_rotten_product(product_list, '111')
+        remove_rotten_product(product_list, '111', start_date)
     elif small_rotten_food_croissant_rect and small_rotten_food_croissant_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['112']):
-        remove_rotten_product(product_list, '112')
+        remove_rotten_product(product_list, '112', start_date)
     elif small_rotten_food_bagel_rect and small_rotten_food_bagel_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['113']):
-        remove_rotten_product(product_list, '113')
+        remove_rotten_product(product_list, '113', start_date)
     elif small_rotten_food_chocolatebread_rect and small_rotten_food_chocolatebread_rect.collidepoint(
             event.pos) and is_product_expired(product_list['114']):
-        remove_rotten_product(product_list, '114')
+        remove_rotten_product(product_list, '114', start_date)
     elif small_rotten_food_cookies_rect and small_rotten_food_cookies_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['115']):
-        remove_rotten_product(product_list, '115')
+        remove_rotten_product(product_list, '115', start_date)
     elif small_rotten_food_creambread_rect and small_rotten_food_creambread_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['116']):
-        remove_rotten_product(product_list, '116')
+        remove_rotten_product(product_list, '116', start_date)
     elif small_rotten_food_cupcake_rect and small_rotten_food_cupcake_rect.collidepoint(event.pos) and \
             is_product_expired(product_list['117']):
-        remove_rotten_product(product_list, '117')
+        remove_rotten_product(product_list, '117', start_date)
 
 def check_increment_porcentage_button_clicked():
     if increment_porcentage_button_rect.collidepoint(event.pos):
