@@ -44,7 +44,7 @@ def render_plate1():
     ), (plate1_rect.centerx - 25, plate1_rect.centery - 95 ))
 
 def render_plate1_NS():
-    screen.blit(plate6_NS, plate1_NS_rect)
+    screen.blit(plate_gray, plate1_rect)
 
 def render_plate2():
     screen.blit(plate1, plate2_rect)
@@ -58,7 +58,7 @@ def render_plate2():
     ), (plate2_rect.centerx - 25, plate2_rect.centery - 95))
 
 def render_plate2_NS():
-    screen.blit(plate1_NS, plate2_NS_rect)
+    screen.blit(plate_gray, plate2_NS_rect)
 
 def render_plate3():
     screen.blit(plate1, plate3_rect)
@@ -72,7 +72,7 @@ def render_plate3():
     ), (plate3_rect.centerx - 25, plate3_rect.centery - 95))
 
 def render_plate3_NS():
-    screen.blit(plate1_NS, plate3_NS_rect)
+    screen.blit(plate_gray, plate3_NS_rect)
 
 def render_plate4():
     screen.blit(plate1, plate4_rect)
@@ -86,7 +86,7 @@ def render_plate4():
     ), (plate4_rect.centerx - 25, plate4_rect.centery - 95))
 
 def render_plate4_NS():
-    screen.blit(plate1_NS, plate4_NS_rect)
+    screen.blit(plate_gray, plate4_NS_rect)
 
 def render_plate5():
     screen.blit(plate1, plate5_rect)
@@ -100,7 +100,7 @@ def render_plate5():
     ), (plate5_rect.centerx - 25, plate5_rect.centery - 95))
 
 def render_plate5_NS():
-    screen.blit(plate1_NS, plate5_NS_rect)
+    screen.blit(plate_gray, plate5_NS_rect)
 
 def render_plate6():
     screen.blit(plate2, plate6_rect)
@@ -114,7 +114,7 @@ def render_plate6():
     ), (plate6_rect.centerx - 25, plate6_rect.centery - 95))
 
 def render_plate6_NS():
-    screen.blit(plate2_NS, plate6_NS_rect)
+    screen.blit(plate_gray, plate6_NS_rect)
 
 def render_plate7():
     screen.blit(plate2, plate7_rect)
@@ -128,7 +128,7 @@ def render_plate7():
     ), (plate7_rect.centerx - 25, plate7_rect.centery - 95))
 
 def render_plate7_NS():
-    screen.blit(plate2_NS, plate7_NS_rect)
+    screen.blit(plate_gray, plate7_NS_rect)
 
 def render_plate8():
     screen.blit(plate6, plate8_rect)
@@ -142,7 +142,7 @@ def render_plate8():
     ), (plate8_rect.centerx - 25, plate8_rect.centery - 95))
 
 def render_plate8_NS():
-    screen.blit(plate6_NS, plate8_NS_rect)
+    screen.blit(plate_gray, plate8_rect)
 
 def render_plate9():
     screen.blit(plate3, plate9_rect)
@@ -156,7 +156,7 @@ def render_plate9():
     ), (plate9_rect.centerx - 25, plate9_rect.centery - 95))
 
 def render_plate9_NS():
-    screen.blit(plate3_NS, plate9_NS_rect)
+    screen.blit(plate_gray, plate9_NS_rect)
 
 def render_plate10():
     screen.blit(plate3, plate10_rect)
@@ -170,7 +170,7 @@ def render_plate10():
     ), (plate10_rect.centerx - 25, plate10_rect.centery - 95))
 
 def render_plate10_NS():
-    screen.blit(plate3_NS, plate10_NS_rect)
+    screen.blit(plate_gray, plate10_NS_rect)
 
 def render_plate11():
     screen.blit(plate4, plate11_rect)
@@ -184,7 +184,7 @@ def render_plate11():
     ), (plate11_rect.centerx - 25, plate11_rect.centery - 95))
 
 def render_plate11_NS():
-    screen.blit(plate4_NS, plate11_NS_rect)
+    screen.blit(plate_gray, plate11_NS_rect)
 
 def render_plate12():
     screen.blit(plate4, plate12_rect)
@@ -198,7 +198,7 @@ def render_plate12():
     ), (plate12_rect.centerx - 25, plate12_rect.centery - 95))
 
 def render_plate12_NS():
-    screen.blit(plate4_NS, plate12_NS_rect)
+    screen.blit(plate_gray, plate12_NS_rect)
 
 def render_plate13():
     screen.blit(plate4, plate13_rect)
@@ -212,7 +212,7 @@ def render_plate13():
     ), (plate13_rect.centerx - 25, plate13_rect.centery - 95))
 
 def render_plate13_NS():
-    screen.blit(plate4_NS, plate13_NS_rect)
+    screen.blit(plate_gray, plate13_NS_rect)
 
 def render_plate14():
     screen.blit(plate4, plate14_rect)
@@ -226,7 +226,7 @@ def render_plate14():
     ), (plate14_rect.centerx - 25, plate14_rect.centery - 95))
 
 def render_plate14_NS():
-    screen.blit(plate4_NS, plate14_NS_rect)
+    screen.blit(plate_gray, plate14_NS_rect)
 
 def render_plate18():
     screen.blit(plate6, plate18_rect)
@@ -240,7 +240,7 @@ def render_plate18():
     ), (plate18_rect.centerx - 25, plate18_rect.centery - 95))
 
 def render_plate18_NS():
-    screen.blit(plate6_NS, plate18_NS_rect)
+    screen.blit(plate_gray, plate18_NS_rect)
 
 def render_plate17():
     screen.blit(plate5, plate17_rect)
@@ -254,7 +254,7 @@ def render_plate17():
     ), (plate17_rect.centerx - 25, plate17_rect.centery - 95))
 
 def render_plate17_NS():
-    screen.blit(plate5_NS, plate17_NS_rect)
+    screen.blit(plate_gray, plate17_NS_rect)
 
 def render_plate16():
     screen.blit(plate4, plate16_rect)
@@ -268,7 +268,7 @@ def render_plate16():
     ), (plate16_rect.centerx - 25, plate16_rect.centery - 95))
 
 def render_plate16_NS():
-    screen.blit(plate4_NS, plate16_NS_rect)
+    screen.blit(plate_gray, plate16_NS_rect)
 
 def render_plate15():
     screen.blit(plate6, plate15_rect)
@@ -282,7 +282,7 @@ def render_plate15():
     ), (plate15_rect.centerx - 25, plate15_rect.centery - 95))
 
 def render_plate15_NS():
-    screen.blit(plate6_NS, plate15_NS_rect)
+    screen.blit(plate_gray, plate15_rect)
 
 
 def check_add_product():
@@ -573,7 +573,7 @@ def check_decrement_porcentage_button_clicked():
 def draw_button(x, y, width, height, text, button_color, text_color):
     pygame.draw.rect(screen, button_color, (x, y, width, height))
 
-    text_surface = button_font.render(text, True, text_color)
+    text_surface = button_font_manager.render(text, True, text_color)
     text_rect = text_surface.get_rect(center=(x + width / 2, y + height / 2))
 
     screen.blit(text_surface, text_rect)
@@ -732,7 +732,7 @@ def render_manager_game_screen():
     screen.blit(welcome, welcome_rect)
     screen.blit(plates_type, plates_type_rect)
     # Ticket
-    screen.blit(ticket, ticket_rect)
+    screen.blit(manager_board, manager_board_rect)
 
     render_add_product_section()
 
@@ -911,8 +911,7 @@ def render_old_products():
     screen.blit(manager_actions_titles_font.render(
         f"OLD PRODUCTS",
         True, 'Black'
-    ), (70, 950))
-
+    ), (MARGIN, 900))
 
 def render_update_stock():
     global small_update_stock_food_pie1_rect, \
@@ -937,20 +936,21 @@ def render_update_stock():
     screen.blit(manager_actions_titles_font.render(
         f"UPDATE STOCK",
         True, 'Black'
-    ), (70, 850))
+    ), (MARGIN, 850))
 
     products_without_min_stock = {key: value for key, value in product_list.items() if value['stock'] < MIN_STOCK_TO_UPDATE}
-    products_x = 100
-    products_y = 900
+    products_x = 350
+    products_y = 865
     products_line_height = 60
-    products_line_width = 100
+    products_line_width = 62
     products_inline_count = 1
+    max_products = 5
 
     for product_code, product in products_without_min_stock.items():
         if product_code == '100':
             small_update_stock_food_pie1_rect = small_update_stock_food_pie1.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_pie1, small_update_stock_food_pie1_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -961,7 +961,7 @@ def render_update_stock():
         if product_code == '101':
             small_update_stock_food_pie2_rect = small_update_stock_food_pie2.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_pie2, small_update_stock_food_pie2_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -972,7 +972,7 @@ def render_update_stock():
         if product_code == '102':
             small_update_stock_food_rectpie_rect = small_update_stock_food_rectpie.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_rectpie, small_update_stock_food_rectpie_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -983,7 +983,7 @@ def render_update_stock():
         if product_code == '103':
             small_update_stock_food_fruitpie_rect = small_update_stock_food_fruitpie.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_fruitpie, small_update_stock_food_fruitpie_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -994,7 +994,7 @@ def render_update_stock():
         if product_code == '104':
             small_update_stock_food_blueberryfish_rect = small_update_stock_food_blueberryfish.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_blueberryfish, small_update_stock_food_blueberryfish_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1005,7 +1005,7 @@ def render_update_stock():
         if product_code == '105':
             small_update_stock_food_bread_turtle_rect = small_update_stock_food_bread_turtle.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_bread_turtle, small_update_stock_food_bread_turtle_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1016,7 +1016,7 @@ def render_update_stock():
         if product_code == '106':
             small_update_stock_food_bread_crocodile_rect = small_update_stock_food_bread_crocodile.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_bread_crocodile, small_update_stock_food_bread_crocodile_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1027,7 +1027,7 @@ def render_update_stock():
         if product_code == '107':
             small_update_stock_food_baguette_rect = small_update_stock_food_baguette.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_baguette, small_update_stock_food_baguette_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1038,7 +1038,7 @@ def render_update_stock():
         if product_code == '108':
             small_update_stock_food_roundbread_rect = small_update_stock_food_roundbread.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_roundbread, small_update_stock_food_roundbread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1049,7 +1049,7 @@ def render_update_stock():
         if product_code == '109':
             small_update_stock_food_eggtoast_rect = small_update_stock_food_eggtoast.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_eggtoast, small_update_stock_food_eggtoast_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1060,7 +1060,7 @@ def render_update_stock():
         if product_code == '110':
             small_update_stock_food_toast_rect = small_update_stock_food_toast.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_toast, small_update_stock_food_toast_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1071,7 +1071,7 @@ def render_update_stock():
         if product_code == '111':
             small_update_stock_food_pretzel_rect = small_update_stock_food_pretzel.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_pretzel, small_update_stock_food_pretzel_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1082,7 +1082,7 @@ def render_update_stock():
         if product_code == '112':
             small_update_stock_food_croissant_rect = small_update_stock_food_croissant.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_croissant, small_update_stock_food_croissant_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1093,7 +1093,7 @@ def render_update_stock():
         if product_code == '113':
             small_update_stock_food_bagel_rect = small_update_stock_food_bagel.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_bagel, small_update_stock_food_bagel_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1104,7 +1104,7 @@ def render_update_stock():
         if product_code == '114':
             small_update_stock_food_chocolatebread_rect = small_update_stock_food_chocolatebread.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_chocolatebread, small_update_stock_food_chocolatebread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1115,7 +1115,7 @@ def render_update_stock():
         if product_code == '115':
             small_update_stock_food_cookies_rect = small_update_stock_food_cookies.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_cookies, small_update_stock_food_cookies_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1126,7 +1126,7 @@ def render_update_stock():
         if product_code == '116':
             small_update_stock_food_creambread_rect = small_update_stock_food_creambread.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_creambread, small_update_stock_food_creambread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1137,7 +1137,7 @@ def render_update_stock():
         if product_code == '117':
             small_update_stock_food_cupcake_rect = small_update_stock_food_cupcake.get_rect(center=(products_x, products_y))
             screen.blit(small_update_stock_food_cupcake, small_update_stock_food_cupcake_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
                 products_x = 100
@@ -1151,9 +1151,9 @@ def render_update_price():
     screen.blit(manager_actions_titles_font.render(
         f"PRICE UPDATE",
         True, 'Black'
-    ), (70, 750))
-    increment_porcentage_button_rect = draw_button(330, 745, 100, 50, "+10%", 'Grey', 'Black')
-    decrement_porcentage_button_rect = draw_button(450, 745, 100, 50, "-10%", 'Grey', 'Black')
+    ), (MARGIN, 795))
+    increment_porcentage_button_rect = draw_button(330, 795, 60, 30, "+10%", '#F49090', 'Black')
+    decrement_porcentage_button_rect = draw_button(420, 795, 60, 30, "-10%", '#C3DEEB', 'Black')
 
 
 def render_remove_product_section():
@@ -1174,21 +1174,23 @@ def render_remove_product_section():
     screen.blit(manager_actions_titles_font.render(
         f"DELETE PRODUCT",
         True, 'Black'
-    ), (70, 550))
+    ), (MARGIN, 575))
     products_in_glass = {key: value for key, value in product_list.items() if value['status'] == 'GLASS'}
-    products_x = 100
-    products_y = 650
+    products_x = MARGIN + 30
+    products_y = 635
     products_line_height = 60
-    products_line_width = 100
+    products_line_width = 62
     products_inline_count = 1
+    max_products = 6    
+
     for product_code, product in products_in_glass.items():
         if product_code == '100':
             small_food_pie1_rect = small_food_pie1.get_rect(center=(products_x, products_y))
             screen.blit(small_food_pie1,small_food_pie1_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1196,10 +1198,10 @@ def render_remove_product_section():
         if product_code == '101':
             small_food_pie2_rect = small_food_pie2.get_rect(center=(products_x, products_y))
             screen.blit(small_food_pie2, small_food_pie2_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1207,10 +1209,10 @@ def render_remove_product_section():
         if product_code == '102':
             small_food_rectpie_rect = small_food_rectpie.get_rect(center=(products_x, products_y))
             screen.blit(small_food_rectpie, small_food_rectpie_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1218,10 +1220,10 @@ def render_remove_product_section():
         if product_code == '103':
             small_food_fruitpie_rect = small_food_fruitpie.get_rect(center=(products_x, products_y))
             screen.blit(small_food_fruitpie, small_food_fruitpie_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1229,10 +1231,10 @@ def render_remove_product_section():
         if product_code == '104':
             small_food_blueberryfish_rect = small_food_blueberryfish.get_rect(center=(products_x, products_y))
             screen.blit(small_food_blueberryfish, small_food_blueberryfish_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1240,10 +1242,10 @@ def render_remove_product_section():
         if product_code == '105':
             small_food_bread_turtle_rect = small_food_bread_turtle.get_rect(center=(products_x, products_y))
             screen.blit(small_food_bread_turtle, small_food_bread_turtle_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1251,10 +1253,10 @@ def render_remove_product_section():
         if product_code == '106':
             small_food_bread_crocodile_rect = small_food_bread_crocodile.get_rect(center=(products_x, products_y))
             screen.blit(small_food_bread_crocodile, small_food_bread_crocodile_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1262,10 +1264,10 @@ def render_remove_product_section():
         if product_code == '107':
             small_food_baguette_rect = small_food_baguette.get_rect(center=(products_x, products_y))
             screen.blit(small_food_baguette, small_food_baguette_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1273,10 +1275,10 @@ def render_remove_product_section():
         if product_code == '108':
             small_food_roundbread_rect = small_food_roundbread.get_rect(center=(products_x, products_y))
             screen.blit(small_food_roundbread, small_food_roundbread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1284,10 +1286,10 @@ def render_remove_product_section():
         if product_code == '109':
             small_food_eggtoast_rect = small_food_eggtoast.get_rect(center=(products_x, products_y))
             screen.blit(small_food_eggtoast, small_food_roundbread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1295,10 +1297,10 @@ def render_remove_product_section():
         if product_code == '110':
             small_food_toast_rect = small_food_toast.get_rect(center=(products_x, products_y))
             screen.blit(small_food_toast, small_food_toast_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1306,10 +1308,10 @@ def render_remove_product_section():
         if product_code == '111':
             small_food_pretzel_rect = small_food_pretzel.get_rect(center=(products_x, products_y))
             screen.blit(small_food_pretzel, small_food_pretzel_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1317,10 +1319,10 @@ def render_remove_product_section():
         if product_code == '112':
             small_food_croissant_rect = small_food_croissant.get_rect(center=(products_x, products_y))
             screen.blit(small_food_croissant, small_food_croissant_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1328,10 +1330,10 @@ def render_remove_product_section():
         if product_code == '113':
             small_food_bagel_rect = small_food_bagel.get_rect(center=(products_x, products_y))
             screen.blit(small_food_bagel, small_food_bagel_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1339,10 +1341,10 @@ def render_remove_product_section():
         if product_code == '114':
             small_food_chocolatebread_rect = small_food_chocolatebread.get_rect(center=(products_x, products_y))
             screen.blit(small_food_chocolatebread, small_food_chocolatebread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1350,10 +1352,10 @@ def render_remove_product_section():
         if product_code == '115':
             small_food_cookies_rect = small_food_cookies.get_rect(center=(products_x, products_y))
             screen.blit(small_food_cookies, small_food_cookies_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1361,10 +1363,10 @@ def render_remove_product_section():
         if product_code == '116':
             small_food_creambread_rect = small_food_creambread.get_rect(center=(products_x, products_y))
             screen.blit(small_food_creambread, small_food_creambread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1372,10 +1374,10 @@ def render_remove_product_section():
         if product_code == '117':
             small_food_cupcake_rect = small_food_cupcake.get_rect(center=(products_x, products_y))
             screen.blit(small_food_cupcake, small_food_cupcake_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1398,21 +1400,22 @@ def render_add_product_section():
     screen.blit(manager_actions_titles_font.render(
         f"ADD PRODUCT",
         True, 'Black'
-    ), (70, 350))
+    ), (MARGIN, 365))
     products_in_storage = {key: value for key, value in product_list.items()  if value['status'] == 'STORAGE'}
-    products_x = 100
-    products_y = 430
-    products_line_height = 60
-    products_line_width = 100
+    products_x = MARGIN + 30
+    products_y = 425
+    products_line_height = 55
+    products_line_width = 62
     products_inline_count = 1
+    max_products = 6
     for product_code, product in products_in_storage.items():
         if product_code == '100':
             small_food_pie1_rect = small_food_pie1.get_rect(center=(products_x, products_y))
             screen.blit(small_food_pie1, small_food_pie1_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1420,10 +1423,10 @@ def render_add_product_section():
         if product_code == '101':
             small_food_pie2_rect = small_food_pie2.get_rect(center=(products_x, products_y))
             screen.blit(small_food_pie2, small_food_pie2_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1431,10 +1434,10 @@ def render_add_product_section():
         if product_code == '102':
             small_food_rectpie_rect = small_food_rectpie.get_rect(center=(products_x, products_y))
             screen.blit(small_food_rectpie, small_food_rectpie_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1442,10 +1445,10 @@ def render_add_product_section():
         if product_code == '103':
             small_food_fruitpie_rect = small_food_fruitpie.get_rect(center=(products_x, products_y))
             screen.blit(small_food_fruitpie, small_food_fruitpie_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1453,10 +1456,10 @@ def render_add_product_section():
         if product_code == '104':
             small_food_blueberryfish_rect = small_food_blueberryfish.get_rect(center=(products_x, products_y))
             screen.blit(small_food_blueberryfish, small_food_blueberryfish_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1464,10 +1467,10 @@ def render_add_product_section():
         if product_code == '105':
             small_food_bread_turtle_rect = small_food_bread_turtle.get_rect(center=(products_x, products_y))
             screen.blit(small_food_bread_turtle, small_food_bread_turtle_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1475,10 +1478,10 @@ def render_add_product_section():
         if product_code == '106':
             small_food_bread_crocodile_rect = small_food_bread_crocodile.get_rect(center=(products_x, products_y))
             screen.blit(small_food_bread_crocodile, small_food_bread_crocodile_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1486,10 +1489,10 @@ def render_add_product_section():
         if product_code == '107':
             small_food_baguette_rect = small_food_baguette.get_rect(center=(products_x, products_y))
             screen.blit(small_food_baguette, small_food_baguette_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1497,10 +1500,10 @@ def render_add_product_section():
         if product_code == '108':
             small_food_roundbread_rect = small_food_roundbread.get_rect(center=(products_x, products_y))
             screen.blit(small_food_roundbread, small_food_roundbread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1508,10 +1511,10 @@ def render_add_product_section():
         if product_code == '109':
             small_food_eggtoast_rect = small_food_eggtoast.get_rect(center=(products_x, products_y))
             screen.blit(small_food_eggtoast, small_food_roundbread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1519,10 +1522,10 @@ def render_add_product_section():
         if product_code == '110':
             small_food_toast_rect = small_food_toast.get_rect(center=(products_x, products_y))
             screen.blit(small_food_toast, small_food_toast_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1530,10 +1533,10 @@ def render_add_product_section():
         if product_code == '111':
             small_food_pretzel_rect = small_food_pretzel.get_rect(center=(products_x, products_y))
             screen.blit(small_food_pretzel, small_food_pretzel_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1541,10 +1544,10 @@ def render_add_product_section():
         if product_code == '112':
             small_food_croissant_rect = small_food_croissant.get_rect(center=(products_x, products_y))
             screen.blit(small_food_croissant, small_food_croissant_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1552,10 +1555,10 @@ def render_add_product_section():
         if product_code == '113':
             small_food_bagel_rect = small_food_bagel.get_rect(center=(products_x, products_y))
             screen.blit(small_food_bagel, small_food_bagel_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1563,10 +1566,10 @@ def render_add_product_section():
         if product_code == '114':
             small_food_chocolatebread_rect = small_food_chocolatebread.get_rect(center=(products_x, products_y))
             screen.blit(small_food_chocolatebread, small_food_chocolatebread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1574,10 +1577,10 @@ def render_add_product_section():
         if product_code == '115':
             small_food_cookies_rect = small_food_cookies.get_rect(center=(products_x, products_y))
             screen.blit(small_food_cookies, small_food_cookies_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1585,10 +1588,10 @@ def render_add_product_section():
         if product_code == '116':
             small_food_creambread_rect = small_food_creambread.get_rect(center=(products_x, products_y))
             screen.blit(small_food_creambread, small_food_creambread_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1596,10 +1599,10 @@ def render_add_product_section():
         if product_code == '117':
             small_food_cupcake_rect = small_food_cupcake.get_rect(center=(products_x, products_y))
             screen.blit(small_food_cupcake, small_food_cupcake_rect)
-            if products_inline_count > 3:
+            if products_inline_count > max_products:
                 products_y += products_line_height
                 products_inline_count = 0
-                products_x = 100
+                products_x = MARGIN + 30
             else:
                 products_x += products_line_width
                 products_inline_count += 1
@@ -1618,6 +1621,7 @@ def listen_to_key_binding():
             screen.fill((255, 255, 255))
             screen.blit(glass, glass_rect)
             screen.blit(welcome, welcome_rect)
+            screen.blit(chat_container, chat_container_rect)
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if login_user_button.collidepoint(event.pos):
                     game_selected = 'USER'
@@ -1652,10 +1656,11 @@ pygame.display.set_caption('Bakery')
 clock = pygame.time.Clock()  # clock object to handle frame rate
 test_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
 button_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
+button_font_manager = pygame.font.Font('font/Alkhemikal.ttf', 25)
 ticket_products_font = pygame.font.Font('font/Alkhemikal.ttf', 26)
 products_count_font = pygame.font.Font('font/Alkhemikal.ttf', 28)
 products_price_font = pygame.font.Font('font/Alkhemikal.ttf', 25)
-manager_actions_titles_font = pygame.font.Font('font/Alkhemikal.ttf', 40)
+manager_actions_titles_font = pygame.font.Font('font/Alkhemikal.ttf', 30)
 game_active = True
 running = True
 
@@ -1667,9 +1672,16 @@ glass = pygame.image.load('graphics/glass.png').convert_alpha()
 glass = pygame.transform.scale(glass, (1920, 900))
 glass_rect = glass.get_rect(topleft=(0, 220))
 
+chat_container = pygame.image.load('graphics/chat-container.png').convert_alpha()
+chat_container_rect = welcome.get_rect(center=(960, 900))
+
 ticket = pygame.image.load('graphics/ticket.png').convert_alpha()
 ticket = pygame.transform.scale(ticket, (550, 650))
 ticket_rect = ticket.get_rect(topleft=(100, 320))
+
+manager_board = pygame.image.load('graphics/manager-board.png').convert_alpha()
+manager_board = pygame.transform.scale(manager_board, (550, 650))
+manager_board_rect = manager_board.get_rect(topleft=(100, 320))
 
 current_y = 430
 
@@ -1689,6 +1701,8 @@ plate5 = pygame.image.load('graphics/plates/plate5.png').convert_alpha()
 plate5 = pygame.transform.scale(plate5, (170, 210))
 plate6 = pygame.image.load('graphics/plates/plate6.png').convert_alpha()
 plate6 = pygame.transform.scale(plate6, (170, 210))
+plate_gray = pygame.image.load('graphics/plates/plate-gray2.png').convert_alpha()
+plate_gray = pygame.transform.scale(plate_gray, (170, 210))
 
 # Plain
 plate1_rect = plate1.get_rect(center=(1390, 900))
@@ -1922,78 +1936,78 @@ discount_badge = pygame.image.load('graphics/tags/discount.png')
 discount_badge = pygame.transform.scale(discount_badge, (30, 35))
 
 empty_rect = None
-small_food_cupcake = pygame.transform.scale(food_cupcake, (70, 60))
+small_food_cupcake = pygame.transform.scale(food_cupcake, (55, 55))
 small_food_cupcake_rect = empty_rect
-small_food_pie1 = pygame.transform.scale(food_pie1, (70, 60))
+small_food_pie1 = pygame.transform.scale(food_pie1, (55, 55))
 small_food_pie1_rect = empty_rect
-small_food_pie2 = pygame.transform.scale(food_pie2, (70, 60))
+small_food_pie2 = pygame.transform.scale(food_pie2, (55, 55))
 small_food_pie2_rect = empty_rect
-small_food_rectpie = pygame.transform.scale(food_rectpie, (70, 60))
+small_food_rectpie = pygame.transform.scale(food_rectpie, (55, 55))
 small_food_rectpie_rect = empty_rect
-small_food_fruitpie = pygame.transform.scale(food_fruitpie, (70, 60))
+small_food_fruitpie = pygame.transform.scale(food_fruitpie, (55, 55))
 small_food_fruitpie_rect = empty_rect
-small_food_blueberryfish = pygame.transform.scale(food_blueberryfish, (70, 60))
+small_food_blueberryfish = pygame.transform.scale(food_blueberryfish, (55, 55))
 small_food_blueberryfish_rect = empty_rect
-small_food_bread_turtle = pygame.transform.scale(food_bread_turtle, (70, 60))
+small_food_bread_turtle = pygame.transform.scale(food_bread_turtle, (55, 55))
 small_food_bread_turtle_rect = empty_rect
-small_food_bread_crocodile = pygame.transform.scale(food_bread_crocodile, (70, 60))
+small_food_bread_crocodile = pygame.transform.scale(food_bread_crocodile, (55, 55))
 small_food_bread_crocodile_rect = empty_rect
-small_food_baguette = pygame.transform.scale(food_baguette, (70, 60))
+small_food_baguette = pygame.transform.scale(food_baguette, (55, 55))
 small_food_baguette_rect = empty_rect
-small_food_roundbread = pygame.transform.scale(food_roundbread, (70, 60))
+small_food_roundbread = pygame.transform.scale(food_roundbread, (55, 55))
 small_food_roundbread_rect = empty_rect
-small_food_eggtoast = pygame.transform.scale(food_eggtoast, (70, 60))
+small_food_eggtoast = pygame.transform.scale(food_eggtoast, (60, 45))
 small_food_eggtoast_rect = empty_rect
-small_food_toast = pygame.transform.scale(food_toast, (70, 60))
+small_food_toast = pygame.transform.scale(food_toast, (55, 55))
 small_food_toast_rect = empty_rect
-small_food_pretzel = pygame.transform.scale(food_pretzel, (70, 60))
+small_food_pretzel = pygame.transform.scale(food_pretzel, (55, 55))
 small_food_pretzel_rect = empty_rect
-small_food_croissant = pygame.transform.scale(food_croissant, (70, 60))
+small_food_croissant = pygame.transform.scale(food_croissant, (55, 55))
 small_food_croissant_rect = empty_rect
-small_food_bagel = pygame.transform.scale(food_bagel, (70, 60))
+small_food_bagel = pygame.transform.scale(food_bagel, (55, 55))
 small_food_bagel_rect = empty_rect
-small_food_chocolatebread = pygame.transform.scale(food_chocolatebread, (70, 60))
+small_food_chocolatebread = pygame.transform.scale(food_chocolatebread, (55, 55))
 small_food_chocolatebread_rect = empty_rect
-small_food_cookies = pygame.transform.scale(food_cookies, (70, 60))
+small_food_cookies = pygame.transform.scale(food_cookies, (55, 55))
 small_food_cookies_rect = empty_rect
-small_food_creambread = pygame.transform.scale(food_creambread, (70, 60))
+small_food_creambread = pygame.transform.scale(food_creambread, (55, 55))
 small_food_creambread_rect = empty_rect
 
-small_update_stock_food_cupcake = pygame.transform.scale(food_cupcake, (70, 60))
+small_update_stock_food_cupcake = pygame.transform.scale(food_cupcake, (55, 55))
 small_update_stock_food_cupcake_rect = empty_rect
-small_update_stock_food_pie1 = pygame.transform.scale(food_pie1, (70, 60))
+small_update_stock_food_pie1 = pygame.transform.scale(food_pie1, (55, 55))
 small_update_stock_food_pie1_rect = empty_rect
-small_update_stock_food_pie2 = pygame.transform.scale(food_pie2, (70, 60))
+small_update_stock_food_pie2 = pygame.transform.scale(food_pie2, (55, 55))
 small_update_stock_food_pie2_rect = empty_rect
-small_update_stock_food_rectpie = pygame.transform.scale(food_rectpie, (70, 60))
+small_update_stock_food_rectpie = pygame.transform.scale(food_rectpie, (55, 55))
 small_update_stock_food_rectpie_rect = empty_rect
-small_update_stock_food_fruitpie = pygame.transform.scale(food_fruitpie, (70, 60))
+small_update_stock_food_fruitpie = pygame.transform.scale(food_fruitpie, (55, 55))
 small_update_stock_food_fruitpie_rect = empty_rect
-small_update_stock_food_blueberryfish = pygame.transform.scale(food_blueberryfish, (70, 60))
+small_update_stock_food_blueberryfish = pygame.transform.scale(food_blueberryfish, (55, 55))
 small_update_stock_food_blueberryfish_rect = empty_rect
-small_update_stock_food_bread_turtle = pygame.transform.scale(food_bread_turtle, (70, 60))
+small_update_stock_food_bread_turtle = pygame.transform.scale(food_bread_turtle, (55, 55))
 small_update_stock_food_bread_turtle_rect = empty_rect
-small_update_stock_food_bread_crocodile = pygame.transform.scale(food_bread_crocodile, (70, 60))
+small_update_stock_food_bread_crocodile = pygame.transform.scale(food_bread_crocodile, (55, 55))
 small_update_stock_food_bread_crocodile_rect = empty_rect
-small_update_stock_food_baguette = pygame.transform.scale(food_baguette, (70, 60))
+small_update_stock_food_baguette = pygame.transform.scale(food_baguette, (55, 55))
 small_update_stock_food_baguette_rect = empty_rect
-small_update_stock_food_roundbread = pygame.transform.scale(food_roundbread, (70, 60))
+small_update_stock_food_roundbread = pygame.transform.scale(food_roundbread, (55, 55))
 small_update_stock_food_roundbread_rect = empty_rect
-small_update_stock_food_eggtoast = pygame.transform.scale(food_eggtoast, (70, 60))
+small_update_stock_food_eggtoast = pygame.transform.scale(food_eggtoast, (60, 45))
 small_update_stock_food_eggtoast_rect = empty_rect
-small_update_stock_food_toast = pygame.transform.scale(food_toast, (70, 60))
+small_update_stock_food_toast = pygame.transform.scale(food_toast, (55, 55))
 small_update_stock_food_toast_rect = empty_rect
-small_update_stock_food_pretzel = pygame.transform.scale(food_pretzel, (70, 60))
+small_update_stock_food_pretzel = pygame.transform.scale(food_pretzel, (55, 55))
 small_update_stock_food_pretzel_rect = empty_rect
-small_update_stock_food_croissant = pygame.transform.scale(food_croissant, (70, 60))
+small_update_stock_food_croissant = pygame.transform.scale(food_croissant, (55, 55))
 small_update_stock_food_croissant_rect = empty_rect
-small_update_stock_food_bagel = pygame.transform.scale(food_bagel, (70, 60))
+small_update_stock_food_bagel = pygame.transform.scale(food_bagel, (55, 55))
 small_update_stock_food_bagel_rect = empty_rect
-small_update_stock_food_chocolatebread = pygame.transform.scale(food_chocolatebread, (70, 60))
+small_update_stock_food_chocolatebread = pygame.transform.scale(food_chocolatebread, (55, 55))
 small_update_stock_food_chocolatebread_rect = empty_rect
-small_update_stock_food_cookies = pygame.transform.scale(food_cookies, (70, 60))
+small_update_stock_food_cookies = pygame.transform.scale(food_cookies, (55, 55))
 small_update_stock_food_cookies_rect = empty_rect
-small_update_stock_food_creambread = pygame.transform.scale(food_creambread, (70, 60))
+small_update_stock_food_creambread = pygame.transform.scale(food_creambread, (55, 55))
 small_update_stock_food_creambread_rect = empty_rect
 
 
@@ -2023,8 +2037,8 @@ while running:  # The game will be continuously updated.
             render_manager_game_screen()
         else:
             # Draw the button
-            login_user_button = draw_button(800, 400, 350, 50, "LOGIN AS USER", 'Grey', 'Black')
-            login_manager_button = draw_button(800, 500, 350, 50, "LOGIN AS MANAGER", 'Grey', 'Black')
+            login_user_button = draw_button(800, 500, 350, 50, "LOGIN AS USER", (225,224,204), 'White')
+            login_manager_button = draw_button(800, 600, 350, 50, "LOGIN AS MANAGER", (225,204,204), 'White')
 
     pygame.display.update()  # update the screen
     clock.tick(60)  # while True runs 60 times per second

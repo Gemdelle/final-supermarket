@@ -194,6 +194,19 @@ def createStock(products,start_date):
     products[str(random.randint(100,109))]['stock'] = 0
     products[str(random.randint(110,117))]['stock'] = 0
 
+    low_stock = 0
+    low_stock_arr = []
+    for product in products:
+        if products[product]['stock'] < 100:
+             low_stock += 1
+             low_stock_arr.append(product)
+    
+    exceeded_len = len(low_stock_arr)
+    while exceeded_len > 4:
+        random_code = low_stock_arr[random.randint(0,len(low_stock_arr)-1)]
+        products[random_code]['stock'] = random.randint(100,300)
+        exceeded_len -= 1
+
     return products
 
     # Ver los productos de los que no hay stock
