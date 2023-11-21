@@ -34,7 +34,10 @@ def update_ticket():
     total_price = aux_total_prize
 
 def render_plate1():
-    screen.blit(plate6, plate1_rect)
+    if product_list['115']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate6_NS, plate1_rect)
+    else:
+        screen.blit(plate6, plate1_rect)
     screen.blit(products_count_font.render(
         f"{product_list['115']['stock']}",
         True, 'Black'
@@ -48,7 +51,10 @@ def render_plate1_NS():
     screen.blit(plate_gray, plate1_rect)
 
 def render_plate2():
-    screen.blit(plate1, plate2_rect)
+    if product_list['107']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate1_NS, plate2_rect)
+    else:
+        screen.blit(plate1, plate2_rect)
     screen.blit(products_count_font.render(
         f"{product_list['107']['stock']}",
         True, 'Black'
@@ -62,7 +68,10 @@ def render_plate2_NS():
     screen.blit(plate_gray, plate2_NS_rect)
 
 def render_plate3():
-    screen.blit(plate1, plate3_rect)
+    if product_list['108']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate1_NS, plate3_rect)
+    else:
+        screen.blit(plate1, plate3_rect)
     screen.blit(products_count_font.render(
         f"{product_list['108']['stock']}",
         True, 'Black'
@@ -76,7 +85,10 @@ def render_plate3_NS():
     screen.blit(plate_gray, plate3_NS_rect)
 
 def render_plate4():
-    screen.blit(plate1, plate4_rect)
+    if product_list['111']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate1_NS, plate4_rect)
+    else:
+        screen.blit(plate1, plate4_rect)
     screen.blit(products_count_font.render(
         f"{product_list['111']['stock']}",
         True, 'Black'
@@ -90,7 +102,10 @@ def render_plate4_NS():
     screen.blit(plate_gray, plate4_NS_rect)
 
 def render_plate5():
-    screen.blit(plate1, plate5_rect)
+    if product_list['112']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate1_NS, plate5_rect)
+    else:
+        screen.blit(plate1, plate5_rect)
     screen.blit(products_count_font.render(
         f"{product_list['112']['stock']}",
         True, 'Black'
@@ -104,7 +119,10 @@ def render_plate5_NS():
     screen.blit(plate_gray, plate5_NS_rect)
 
 def render_plate6():
-    screen.blit(plate2, plate6_rect)
+    if product_list['105']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate2_NS, plate6_rect)
+    else:
+        screen.blit(plate2, plate6_rect)
     screen.blit(products_count_font.render(
         f"{product_list['105']['stock']}",
         True, 'Black'
@@ -118,7 +136,10 @@ def render_plate6_NS():
     screen.blit(plate_gray, plate6_NS_rect)
 
 def render_plate7():
-    screen.blit(plate2, plate7_rect)
+    if product_list['106']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate2_NS, plate7_rect)
+    else:
+        screen.blit(plate2, plate7_rect)
     screen.blit(products_count_font.render(
         f"{product_list['106']['stock']}",
         True, 'Black'
@@ -132,7 +153,10 @@ def render_plate7_NS():
     screen.blit(plate_gray, plate7_NS_rect)
 
 def render_plate8():
-    screen.blit(plate6, plate8_rect)
+    if product_list['116']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate6_NS, plate8_rect)
+    else:
+        screen.blit(plate6, plate8_rect)
     screen.blit(products_count_font.render(
         f"{product_list['116']['stock']}",
         True, 'Black'
@@ -146,7 +170,10 @@ def render_plate8_NS():
     screen.blit(plate_gray, plate8_rect)
 
 def render_plate9():
-    screen.blit(plate3, plate9_rect)
+    if product_list['109']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate3_NS, plate9_rect)
+    else:
+        screen.blit(plate3, plate9_rect)
     screen.blit(products_count_font.render(
         f"{product_list['109']['stock']}",
         True, 'Black'
@@ -160,7 +187,10 @@ def render_plate9_NS():
     screen.blit(plate_gray, plate9_NS_rect)
 
 def render_plate10():
-    screen.blit(plate3, plate10_rect)
+    if product_list['110']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate3_NS, plate10_rect)
+    else:
+        screen.blit(plate3, plate10_rect)
     screen.blit(products_count_font.render(
         f"{product_list['110']['stock']}",
         True, 'Black'
@@ -174,7 +204,10 @@ def render_plate10_NS():
     screen.blit(plate_gray, plate10_NS_rect)
 
 def render_plate11():
-    screen.blit(plate4, plate11_rect)
+    if product_list['100']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate4_NS, plate11_rect)
+    else:
+        screen.blit(plate4, plate11_rect)
     screen.blit(products_count_font.render(
         f"{product_list['100']['stock']}",
         True, 'Black'
@@ -188,7 +221,10 @@ def render_plate11_NS():
     screen.blit(plate_gray, plate11_NS_rect)
 
 def render_plate12():
-    screen.blit(plate4, plate12_rect)
+    if product_list['101']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate4_NS, plate12_rect)
+    else:
+        screen.blit(plate4, plate12_rect)
     screen.blit(products_count_font.render(
         f"{product_list['101']['stock']}",
         True, 'Black'
@@ -202,7 +238,10 @@ def render_plate12_NS():
     screen.blit(plate_gray, plate12_NS_rect)
 
 def render_plate13():
-    screen.blit(plate4, plate13_rect)
+    if product_list['102']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate4_NS, plate13_rect)
+    else:
+        screen.blit(plate4, plate13_rect)
     screen.blit(products_count_font.render(
         f"{product_list['102']['stock']}",
         True, 'Black'
@@ -216,7 +255,10 @@ def render_plate13_NS():
     screen.blit(plate_gray, plate13_NS_rect)
 
 def render_plate14():
-    screen.blit(plate4, plate14_rect)
+    if product_list['103']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate4_NS, plate14_rect)
+    else:
+        screen.blit(plate4, plate14_rect)
     screen.blit(products_count_font.render(
         f"{product_list['103']['stock']}",
         True, 'Black'
@@ -230,7 +272,10 @@ def render_plate14_NS():
     screen.blit(plate_gray, plate14_NS_rect)
 
 def render_plate18():
-    screen.blit(plate6, plate18_rect)
+    if product_list['114']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate6_NS, plate18_rect)
+    else:
+        screen.blit(plate6, plate18_rect)
     screen.blit(products_count_font.render(
         f"{product_list['114']['stock']}",
         True, 'Black'
@@ -244,7 +289,10 @@ def render_plate18_NS():
     screen.blit(plate_gray, plate18_NS_rect)
 
 def render_plate17():
-    screen.blit(plate5, plate17_rect)
+    if product_list['113']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate5_NS, plate17_rect)
+    else:
+        screen.blit(plate5, plate17_rect)
     screen.blit(products_count_font.render(
         f"{product_list['113']['stock']}",
         True, 'Black'
@@ -258,7 +306,10 @@ def render_plate17_NS():
     screen.blit(plate_gray, plate17_NS_rect)
 
 def render_plate16():
-    screen.blit(plate4, plate16_rect)
+    if product_list['104']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate4_NS, plate16_rect)
+    else:
+        screen.blit(plate4, plate16_rect)
     screen.blit(products_count_font.render(
         f"{product_list['104']['stock']}",
         True, 'Black'
@@ -272,7 +323,10 @@ def render_plate16_NS():
     screen.blit(plate_gray, plate16_NS_rect)
 
 def render_plate15():
-    screen.blit(plate6, plate15_rect)
+    if product_list['117']['stock'] < MIN_STOCK_TO_UPDATE:
+        screen.blit(plate6_NS, plate15_rect)
+    else:
+        screen.blit(plate6, plate15_rect)
     screen.blit(products_count_font.render(
         f"{product_list['117']['stock']}",
         True, 'Black'
@@ -284,7 +338,6 @@ def render_plate15():
 
 def render_plate15_NS():
     screen.blit(plate_gray, plate15_rect)
-
 
 def check_add_product():
     global small_food_pie1_rect, small_food_pie2_rect, small_food_rectpie_rect, small_food_fruitpie_rect, \
@@ -562,6 +615,11 @@ def check_update_stock_button_clicked():
         update_product_stock(product_list, '116', MIN_STOCK_TO_UPDATE)
     elif small_update_stock_food_cupcake_rect and small_update_stock_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '117', MIN_STOCK_TO_UPDATE)
+
+def check_old_products_button_clicked():
+    print("PRINT")
+    #if small_rotten_food_pie1_rect and (MARGIN, 900).collidepoint(event.pos)
+
 
 def check_rotten_products_button_clicked():
     global small_rotten_food_pie1_rect, \
@@ -2013,6 +2071,7 @@ def listen_to_key_binding():
                     check_decrement_porcentage_button_clicked()
                     check_update_stock_button_clicked()
                     check_rotten_products_button_clicked()
+                    check_old_products_button_clicked()
                     product_added = check_manager_add_product()
                     if not product_added:
                         check_manager_remove_product()
