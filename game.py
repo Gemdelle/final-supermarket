@@ -1062,14 +1062,14 @@ def render_old_products():
     screen.blit(manager_actions_titles_font.render(
         f"OLD PRODUCTS",
         True, 'Black'
-    ), (MARGIN, 900))
+    ), (MARGIN, 920))
 
     products_rotten = {key: value for key, value in product_list.items() if
                                   datetime.strptime(value['expire_date'], '%Y-%m-%d') < start_date}
-    products_x = 100
-    products_y = 1000
+    products_x = 355
+    products_y = 920
     products_line_height = 60
-    products_line_width = 100
+    products_line_width = 62
     products_inline_count = 1
 
     for product_code, product in products_rotten.items():
@@ -2054,7 +2054,7 @@ ticket = pygame.transform.scale(ticket, (550, 650))
 ticket_rect = ticket.get_rect(topleft=(100, 320))
 
 manager_board = pygame.image.load('graphics/manager-board.png').convert_alpha()
-manager_board = pygame.transform.scale(manager_board, (550, 650))
+manager_board = pygame.transform.scale(manager_board, (550, 670))
 manager_board_rect = manager_board.get_rect(topleft=(100, 320))
 
 current_y = 430

@@ -222,7 +222,7 @@ def createStock(products,start_date):
              low_stock_arr.append(product)
     
     exceeded_len = len(low_stock_arr)
-    while exceeded_len > 4:
+    while exceeded_len > 2:
         random_code = low_stock_arr[random.randint(0,len(low_stock_arr)-1)]
         products[random_code]['stock'] = random.randint(100,300)
         exceeded_len -= 1
