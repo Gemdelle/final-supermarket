@@ -8,7 +8,7 @@ import math
 
 from supermercado import buy_with_code, createStock, bakery_products, return_product, discountItem, add_product, \
     remove_product, increment_price_by_percentage, decrement_price_by_percentage, update_product_stock, \
-    remove_rotten_product
+    remove_rotten_product, is_the_most_sold_product, is_the_most_sold_in_category
 
 
 def update_ticket():
@@ -889,6 +889,9 @@ def render_manager_game_screen():
         render_manager_rotten_view()
 
 def render_manager_glass_view():
+    tagx = 25
+    tagy = -120
+
     if product_list['100']['status'] == 'GLASS':
         render_plate11()
         if is_product_expired(product_list['100']):
@@ -898,6 +901,10 @@ def render_manager_glass_view():
                 screen.blit(food_pie1, food_pie1_rect)
             else:
                 screen.blit(food_pie1_NS, food_pie1_NS_rect)
+            if is_the_most_sold_product(product_list, '100'):
+                screen.blit(most_sold_badge, (food_pie1_rect.centerx + tagx, food_pie1_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '100'):
+                screen.blit(most_category_sold_badge, (food_pie1_rect.centerx + tagx, food_pie1_rect.centery + tagy))
     else:
         render_plate11_NS()
     if product_list['101']['status'] == 'GLASS':
@@ -909,6 +916,11 @@ def render_manager_glass_view():
                 screen.blit(food_pie2, food_pie2_rect)
             else:
                 screen.blit(food_pie2_NS, food_pie2_NS_rect)
+            if is_the_most_sold_product(product_list, '101'):
+                screen.blit(most_sold_badge, (food_pie2_rect.centerx + tagx, food_pie2_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '101'):
+                screen.blit(most_category_sold_badge,
+                            (food_pie2_rect.centerx + tagx, food_pie2_rect.centery + tagy))
     else:
         render_plate12_NS()
     if product_list['102']['status'] == 'GLASS':
@@ -920,6 +932,11 @@ def render_manager_glass_view():
                 screen.blit(food_rectpie, food_rectpie_rect)
             else:
                 screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
+            if is_the_most_sold_product(product_list, '102'):
+                screen.blit(most_sold_badge, (food_rectpie_rect.centerx + tagx, food_rectpie_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '102'):
+                screen.blit(most_category_sold_badge,
+                            (food_rectpie_rect.centerx + tagx, food_rectpie_rect.centery + tagy))
     else:
         render_plate13_NS()
     if product_list['103']['status'] == 'GLASS':
@@ -931,6 +948,11 @@ def render_manager_glass_view():
                 screen.blit(food_fruitpie, food_fruitpie_rect)
             else:
                 screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
+            if is_the_most_sold_product(product_list, '103'):
+                screen.blit(most_sold_badge, (food_fruitpie_rect.centerx + tagx, food_fruitpie_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '103'):
+                screen.blit(most_category_sold_badge,
+                            (food_fruitpie_rect.centerx + tagx, food_fruitpie_rect.centery + tagy))
     else:
         render_plate14_NS()
     if product_list['104']['status'] == 'GLASS':
@@ -942,6 +964,11 @@ def render_manager_glass_view():
                 screen.blit(food_blueberryfish, food_blueberryfish_rect)
             else:
                 screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
+            if is_the_most_sold_product(product_list, '104'):
+                screen.blit(most_sold_badge, (food_blueberryfish_rect.centerx + tagx, food_blueberryfish_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '104'):
+                screen.blit(most_category_sold_badge,
+                            (food_blueberryfish_rect.centerx + tagx, food_blueberryfish_rect.centery + tagy))
     else:
         render_plate16_NS()
     if product_list['105']['status'] == 'GLASS':
@@ -953,6 +980,11 @@ def render_manager_glass_view():
                 screen.blit(food_bread_turtle, food_bread_turtle_rect)
             else:
                 screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
+            if is_the_most_sold_product(product_list, '105'):
+                screen.blit(most_sold_badge, (food_bread_turtle_rect.centerx + tagx, food_bread_turtle_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '105'):
+                screen.blit(most_category_sold_badge,
+                            (food_bread_turtle_rect.centerx + tagx, food_bread_turtle_rect.centery + tagy))
     else:
         render_plate6_NS()
     if product_list['106']['status'] == 'GLASS':
@@ -964,6 +996,11 @@ def render_manager_glass_view():
                 screen.blit(food_bread_crocodile, food_bread_crocodile_rect)
             else:
                 screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
+            if is_the_most_sold_product(product_list, '106'):
+                screen.blit(most_sold_badge, (food_bread_crocodile_rect.centerx + tagx, food_bread_crocodile_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '106'):
+                screen.blit(most_category_sold_badge,
+                            (food_bread_crocodile_rect.centerx + tagx, food_bread_crocodile_rect.centery + tagy))
     else:
         render_plate7_NS()
     if product_list['107']['status'] == 'GLASS':
@@ -975,6 +1012,11 @@ def render_manager_glass_view():
                 screen.blit(food_baguette, food_baguette_rect)
             else:
                 screen.blit(food_baguette_NS, food_baguette_NS_rect)
+            if is_the_most_sold_product(product_list, '107'):
+                screen.blit(most_sold_badge, (food_baguette_rect.centerx + tagx, food_baguette_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '107'):
+                screen.blit(most_category_sold_badge,
+                            (food_baguette_rect.centerx + tagx, food_baguette_rect.centery + tagy))
     else:
         render_plate2_NS()
     if product_list['108']['status'] == 'GLASS':
@@ -986,6 +1028,11 @@ def render_manager_glass_view():
                 screen.blit(food_roundbread, food_roundbread_rect)
             else:
                 screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
+            if is_the_most_sold_product(product_list, '108'):
+                screen.blit(most_sold_badge, (food_roundbread_rect.centerx + tagx, food_roundbread_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '108'):
+                screen.blit(most_category_sold_badge,
+                            (food_roundbread_rect.centerx + tagx, food_roundbread_rect.centery + tagy))
     else:
         render_plate3_NS()
     if product_list['109']['status'] == 'GLASS':
@@ -997,6 +1044,11 @@ def render_manager_glass_view():
                 screen.blit(food_eggtoast, food_eggtoast_rect)
             else:
                 screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
+            if is_the_most_sold_product(product_list, '109'):
+                screen.blit(most_sold_badge, (food_eggtoast_rect.centerx + tagx, food_eggtoast_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '109'):
+                screen.blit(most_category_sold_badge,
+                            (food_eggtoast_rect.centerx + tagx, food_eggtoast_rect.centery + tagy))
     else:
         render_plate9_NS()
     if product_list['110']['status'] == 'GLASS':
@@ -1008,6 +1060,11 @@ def render_manager_glass_view():
                 screen.blit(food_toast, food_toast_rect)
             else:
                 screen.blit(food_toast_NS, food_toast_NS_rect)
+            if is_the_most_sold_product(product_list, '110'):
+                screen.blit(most_sold_badge, (food_toast_rect.centerx + tagx, food_toast_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '110'):
+                screen.blit(most_category_sold_badge,
+                            (food_toast_rect.centerx + tagx, food_toast_rect.centery + tagy))
     else:
         render_plate10_NS()
     if product_list['111']['status'] == 'GLASS':
@@ -1019,6 +1076,11 @@ def render_manager_glass_view():
                 screen.blit(food_pretzel, food_pretzel_rect)
             else:
                 screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
+            if is_the_most_sold_product(product_list, '111'):
+                screen.blit(most_sold_badge, (food_pretzel_rect.centerx + tagx, food_pretzel_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '111'):
+                screen.blit(most_category_sold_badge,
+                            (food_pretzel_rect.centerx + tagx, food_pretzel_rect.centery + tagy))
     else:
         render_plate4_NS()
     if product_list['112']['status'] == 'GLASS':
@@ -1030,6 +1092,11 @@ def render_manager_glass_view():
                 screen.blit(food_croissant, food_croissant_rect)
             else:
                 screen.blit(food_croissant_NS, food_croissant_NS_rect)
+            if is_the_most_sold_product(product_list, '112'):
+                screen.blit(most_sold_badge, (food_croissant_rect.centerx + tagx, food_croissant_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '112'):
+                screen.blit(most_category_sold_badge,
+                            (food_croissant_rect.centerx + tagx, food_croissant_rect.centery + tagy))
     else:
         render_plate5_NS()
     if product_list['113']['status'] == 'GLASS':
@@ -1041,6 +1108,11 @@ def render_manager_glass_view():
                 screen.blit(food_bagel, food_bagel_rect)
             else:
                 screen.blit(food_bagel_NS, food_bagel_NS_rect)
+            if is_the_most_sold_product(product_list, '113'):
+                screen.blit(most_sold_badge, (food_bagel_rect.centerx + tagx, food_bagel_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '113'):
+                screen.blit(most_category_sold_badge,
+                            (food_bagel_rect.centerx + tagx, food_bagel_rect.centery + tagy))
     else:
         render_plate17_NS()
     if product_list['114']['status'] == 'GLASS':
@@ -1052,6 +1124,11 @@ def render_manager_glass_view():
                 screen.blit(food_chocolatebread, food_chocolatebread_rect)
             else:
                 screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
+            if is_the_most_sold_product(product_list, '114'):
+                screen.blit(most_sold_badge, (food_chocolatebread_rect.centerx + tagx, food_chocolatebread_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '114'):
+                screen.blit(most_category_sold_badge,
+                            (food_chocolatebread_rect.centerx + tagx, food_chocolatebread_rect.centery + tagy))
     else:
         render_plate18_NS()
     if product_list['115']['status'] == 'GLASS':
@@ -1063,6 +1140,11 @@ def render_manager_glass_view():
                 screen.blit(food_cookies, food_cookies_rect)
             else:
                 screen.blit(food_cookies_NS, food_cookies_NS_rect)
+            if is_the_most_sold_product(product_list, '115'):
+                screen.blit(most_sold_badge, (food_cookies_rect.centerx + tagx, food_cookies_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '115'):
+                screen.blit(most_category_sold_badge,
+                            (food_cookies_rect.centerx + tagx, food_cookies_rect.centery + tagy))
     else:
         render_plate1_NS()
     if product_list['116']['status'] == 'GLASS':
@@ -1074,6 +1156,11 @@ def render_manager_glass_view():
                 screen.blit(food_creambread, food_creambread_rect)
             else:
                 screen.blit(food_creambread_NS, food_creambread_NS_rect)
+            if is_the_most_sold_product(product_list, '116'):
+                screen.blit(most_sold_badge, (food_creambread_rect.centerx + tagx, food_creambread_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '116'):
+                screen.blit(most_category_sold_badge,
+                            (food_creambread_rect.centerx + tagx, food_creambread_rect.centery + tagy))
     else:
         render_plate8_NS()
     if product_list['117']['status'] == 'GLASS':
@@ -1085,11 +1172,15 @@ def render_manager_glass_view():
                 screen.blit(food_cupcake, food_cupcake_rect)
             else:
                 screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
+            if is_the_most_sold_product(product_list, '117'):
+                screen.blit(most_sold_badge, (food_cupcake_rect.centerx + tagx, food_cupcake_rect.centery + tagy))
+            elif is_the_most_sold_in_category(product_list, '117'):
+                screen.blit(most_category_sold_badge,
+                            (food_cupcake_rect.centerx + tagx, food_cupcake_rect.centery + tagy))
     else:
         render_plate15_NS()
 
 def render_manager_rotten_view():
-
     if product_list['100']['rotten_stock'] > 0:
         render_plate11_NS()
         screen.blit(products_count_font.render(
@@ -2579,6 +2670,11 @@ food_cupcake_rotten_rect = food_cupcake_rotten.get_rect(center=(1790, 900))
 
 discount_badge = pygame.image.load('graphics/tags/discount.png')
 discount_badge = pygame.transform.scale(discount_badge, (30, 35))
+
+most_sold_badge = pygame.image.load('graphics/tags/most-sold-product.png')
+most_sold_badge = pygame.transform.scale(most_sold_badge, (60, 65))
+most_category_sold_badge = pygame.image.load('graphics/tags/most-sold-category.png')
+most_category_sold_badge = pygame.transform.scale(most_category_sold_badge, (60, 65))
 
 empty_rect = None
 small_food_cupcake = pygame.transform.scale(food_cupcake, (55, 55))

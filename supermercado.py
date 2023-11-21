@@ -349,6 +349,24 @@ def remove_rotten_product(product_list, user_code, start_date):
     product_list[user_code]['rotten_stock'] = product_list[user_code]['stock']
     product_list[user_code]['stock'] = 0
     product_list[user_code]['expire_date'] = (start_date + timedelta(days=random.randint(4, 30))).strftime('%Y-%m-%d')
+def is_the_most_sold_product(product_list, user_code):
+    min_stock_item = min(product_list.values(), key=lambda product:product['stock'])
+
+    return min_stock_item['description'] == product_list[user_code]['description']
+
+def is_the_most_sold_in_category(product_list, user_code):
+    product_category = product_list[user_code]['type']
+    min_stock_items = {}
+
+    # Iterate through the items and filter the ones with the least stock for each type
+    for code, product in product_list.items():
+        item_type = product['type']
+        current_stock = product['stock']
+
+        if item_type not in min_stock_items or current_stock < min_stock_items[item_type]['stock']:
+            min_stock_items[item_type] = {'id': code, 'stock': current_stock}
+
+    return min_stock_items[product_category]['id'] == user_code
 
 def viewCart(cart):
     for product in cart:
