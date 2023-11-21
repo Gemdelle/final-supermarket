@@ -617,9 +617,12 @@ def check_update_stock_button_clicked():
         update_product_stock(product_list, '117', MIN_STOCK_TO_UPDATE)
 
 def check_old_products_button_clicked():
-    print("PRINT")
-    #if small_rotten_food_pie1_rect and (MARGIN, 900).collidepoint(event.pos)
+    global manager_view_mode, rotten_products_text_rect
 
+    if rotten_products_text_rect and rotten_products_text_rect.collidepoint(event.pos) and manager_view_mode == "GLASS":
+        manager_view_mode = "ROTTEN"
+    elif rotten_products_text_rect and rotten_products_text_rect.collidepoint(event.pos) and manager_view_mode == "ROTTEN":
+        manager_view_mode = "GLASS"
 
 def check_rotten_products_button_clicked():
     global small_rotten_food_pie1_rect, \
@@ -880,6 +883,12 @@ def render_manager_game_screen():
 
     render_old_products()
 
+    if manager_view_mode == 'GLASS':
+        render_manager_glass_view()
+    else:
+        render_manager_rotten_view()
+
+def render_manager_glass_view():
     if product_list['100']['status'] == 'GLASS':
         render_plate11()
         if is_product_expired(product_list['100']):
@@ -891,7 +900,6 @@ def render_manager_game_screen():
                 screen.blit(food_pie1_NS, food_pie1_NS_rect)
     else:
         render_plate11_NS()
-
     if product_list['101']['status'] == 'GLASS':
         render_plate12()
         if is_product_expired(product_list['101']):
@@ -903,7 +911,6 @@ def render_manager_game_screen():
                 screen.blit(food_pie2_NS, food_pie2_NS_rect)
     else:
         render_plate12_NS()
-
     if product_list['102']['status'] == 'GLASS':
         render_plate13()
         if is_product_expired(product_list['102']):
@@ -915,7 +922,6 @@ def render_manager_game_screen():
                 screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
     else:
         render_plate13_NS()
-
     if product_list['103']['status'] == 'GLASS':
         render_plate14()
         if is_product_expired(product_list['103']):
@@ -927,7 +933,6 @@ def render_manager_game_screen():
                 screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
     else:
         render_plate14_NS()
-
     if product_list['104']['status'] == 'GLASS':
         render_plate16()
         if is_product_expired(product_list['104']):
@@ -939,7 +944,6 @@ def render_manager_game_screen():
                 screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
     else:
         render_plate16_NS()
-
     if product_list['105']['status'] == 'GLASS':
         render_plate6()
         if is_product_expired(product_list['105']):
@@ -951,7 +955,6 @@ def render_manager_game_screen():
                 screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
     else:
         render_plate6_NS()
-
     if product_list['106']['status'] == 'GLASS':
         render_plate7()
         if is_product_expired(product_list['106']):
@@ -963,7 +966,6 @@ def render_manager_game_screen():
                 screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
     else:
         render_plate7_NS()
-
     if product_list['107']['status'] == 'GLASS':
         render_plate2()
         if is_product_expired(product_list['107']):
@@ -975,7 +977,6 @@ def render_manager_game_screen():
                 screen.blit(food_baguette_NS, food_baguette_NS_rect)
     else:
         render_plate2_NS()
-
     if product_list['108']['status'] == 'GLASS':
         render_plate3()
         if is_product_expired(product_list['108']):
@@ -987,7 +988,6 @@ def render_manager_game_screen():
                 screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
     else:
         render_plate3_NS()
-
     if product_list['109']['status'] == 'GLASS':
         render_plate9()
         if is_product_expired(product_list['109']):
@@ -999,7 +999,6 @@ def render_manager_game_screen():
                 screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
     else:
         render_plate9_NS()
-
     if product_list['110']['status'] == 'GLASS':
         render_plate10()
         if is_product_expired(product_list['110']):
@@ -1011,7 +1010,6 @@ def render_manager_game_screen():
                 screen.blit(food_toast_NS, food_toast_NS_rect)
     else:
         render_plate10_NS()
-
     if product_list['111']['status'] == 'GLASS':
         render_plate4()
         if is_product_expired(product_list['111']):
@@ -1023,7 +1021,6 @@ def render_manager_game_screen():
                 screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
     else:
         render_plate4_NS()
-
     if product_list['112']['status'] == 'GLASS':
         render_plate5()
         if is_product_expired(product_list['112']):
@@ -1035,7 +1032,6 @@ def render_manager_game_screen():
                 screen.blit(food_croissant_NS, food_croissant_NS_rect)
     else:
         render_plate5_NS()
-
     if product_list['113']['status'] == 'GLASS':
         render_plate17()
         if is_product_expired(product_list['113']):
@@ -1047,7 +1043,6 @@ def render_manager_game_screen():
                 screen.blit(food_bagel_NS, food_bagel_NS_rect)
     else:
         render_plate17_NS()
-
     if product_list['114']['status'] == 'GLASS':
         render_plate18()
         if is_product_expired(product_list['114']):
@@ -1059,7 +1054,6 @@ def render_manager_game_screen():
                 screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
     else:
         render_plate18_NS()
-
     if product_list['115']['status'] == 'GLASS':
         render_plate1()
         if is_product_expired(product_list['115']):
@@ -1071,7 +1065,6 @@ def render_manager_game_screen():
                 screen.blit(food_cookies_NS, food_cookies_NS_rect)
     else:
         render_plate1_NS()
-
     if product_list['116']['status'] == 'GLASS':
         render_plate8()
         if is_product_expired(product_list['116']):
@@ -1083,7 +1076,6 @@ def render_manager_game_screen():
                 screen.blit(food_creambread_NS, food_creambread_NS_rect)
     else:
         render_plate8_NS()
-
     if product_list['117']['status'] == 'GLASS':
         render_plate15()
         if is_product_expired(product_list['117']):
@@ -1095,6 +1087,152 @@ def render_manager_game_screen():
                 screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
     else:
         render_plate15_NS()
+
+def render_manager_rotten_view():
+
+    if product_list['100']['rotten_stock'] > 0:
+        render_plate11_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['100']['rotten_stock']}",
+            True, 'Black'
+        ), (plate11_rect.centerx - 16, plate11_rect.centery + 75))
+        screen.blit(food_pie1_rotten, food_pie1_rect)
+
+    if product_list['101']['rotten_stock'] > 0:
+        render_plate12_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['101']['rotten_stock']}",
+            True, 'Black'
+        ), (plate12_rect.centerx - 16, plate12_rect.centery + 75))
+        screen.blit(food_pie2_rotten, food_pie2_rect)
+
+    if product_list['102']['rotten_stock'] > 0:
+        render_plate13_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['102']['rotten_stock']}",
+            True, 'Black'
+        ), (plate13_rect.centerx - 16, plate13_rect.centery + 75))
+        screen.blit(food_rectpie_rotten, food_rectpie_rect)
+
+    if product_list['103']['rotten_stock'] > 0:
+        render_plate14_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['103']['rotten_stock']}",
+            True, 'Black'
+        ), (plate14_rect.centerx - 16, plate14_rect.centery + 75))
+        screen.blit(food_fruitpie_rotten, food_fruitpie_rect)
+
+    if product_list['104']['rotten_stock'] > 0:
+        render_plate16_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['104']['rotten_stock']}",
+            True, 'Black'
+        ), (plate16_rect.centerx - 16, plate16_rect.centery + 75))
+        screen.blit(food_blueberryfish_rotten, food_blueberryfish_rect)
+
+    if product_list['105']['rotten_stock'] > 0:
+        render_plate6_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['105']['rotten_stock']}",
+            True, 'Black'
+        ), (plate6_rect.centerx - 16, plate6_rect.centery + 75))
+        screen.blit(food_bread_turtle_rotten, food_bread_turtle_rect)
+
+    if product_list['106']['rotten_stock'] > 0:
+        render_plate7_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['106']['rotten_stock']}",
+            True, 'Black'
+        ), (plate7_rect.centerx - 16, plate7_rect.centery + 75))
+        screen.blit(food_bread_crocodile_rotten, food_bread_crocodile_rect)
+
+    if product_list['107']['rotten_stock'] > 0:
+        render_plate2_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['107']['rotten_stock']}",
+            True, 'Black'
+        ), (plate2_rect.centerx - 16, plate2_rect.centery + 75))
+        screen.blit(food_baguette_rotten, food_baguette_rect)
+
+    if product_list['108']['rotten_stock'] > 0:
+        render_plate3_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['108']['rotten_stock']}",
+            True, 'Black'
+        ), (plate3_rect.centerx - 16, plate3_rect.centery + 75))
+        screen.blit(food_roundbread_rotten, food_roundbread_rect)
+
+    if product_list['109']['rotten_stock'] > 0:
+        render_plate9_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['109']['rotten_stock']}",
+            True, 'Black'
+        ), (plate9_rect.centerx - 16, plate9_rect.centery + 75))
+        screen.blit(food_eggtoast_rotten, food_eggtoast_rect)
+
+    if product_list['110']['rotten_stock'] > 0:
+        render_plate10_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['110']['rotten_stock']}",
+            True, 'Black'
+        ), (plate10_rect.centerx - 16, plate10_rect.centery + 75))
+        screen.blit(food_toast_rotten, food_toast_rect)
+
+    if product_list['111']['rotten_stock'] > 0:
+        render_plate4_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['111']['rotten_stock']}",
+            True, 'Black'
+        ), (plate4_rect.centerx - 16, plate4_rect.centery + 75))
+        screen.blit(food_pretzel_rotten, food_pretzel_rect)
+
+    if product_list['112']['rotten_stock'] > 0:
+        render_plate5_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['112']['rotten_stock']}",
+            True, 'Black'
+        ), (plate5_rect.centerx - 16, plate5_rect.centery + 75))
+        screen.blit(food_croissant_rotten, food_croissant_rect)
+
+    if product_list['113']['rotten_stock'] > 0:
+        render_plate17_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['113']['rotten_stock']}",
+            True, 'Black'
+        ), (plate17_rect.centerx - 16, plate17_rect.centery + 75))
+        screen.blit(food_bagel_rotten, food_bagel_rect)
+
+    if product_list['114']['rotten_stock'] > 0:
+        render_plate18_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['114']['rotten_stock']}",
+            True, 'Black'
+        ), (plate18_rect.centerx - 16, plate18_rect.centery + 75))
+        screen.blit(food_chocolatebread_rotten, food_chocolatebread_rect)
+
+    if product_list['115']['rotten_stock'] > 0:
+        render_plate1_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['115']['rotten_stock']}",
+            True, 'Black'
+        ), (plate1_rect.centerx - 16, plate1_rect.centery + 75))
+        screen.blit(food_cookies_rotten, food_cookies_rect)
+
+    if product_list['116']['rotten_stock'] > 0:
+        render_plate8_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['116']['rotten_stock']}",
+            True, 'Black'
+        ), (plate8_rect.centerx - 16, plate8_rect.centery + 75))
+        screen.blit(food_creambread_rotten, food_creambread_rect)
+
+    if product_list['117']['rotten_stock'] > 0:
+        render_plate15_NS()
+        screen.blit(products_count_font.render(
+            f"{product_list['117']['rotten_stock']}",
+            True, 'Black'
+        ), (plate15_rect.centerx - 16, plate15_rect.centery + 75))
+        screen.blit(food_cupcake_rotten, food_cupcake_rect)
 
 
 def render_old_products():
@@ -1115,12 +1253,15 @@ def render_old_products():
         small_rotten_food_chocolatebread_rect, \
         small_rotten_food_cookies_rect, \
         small_rotten_food_creambread_rect, \
-        small_rotten_food_cupcake_rect
+        small_rotten_food_cupcake_rect, \
+        rotten_products_text_rect
 
-    screen.blit(manager_actions_titles_font.render(
+    text_render = manager_actions_titles_font.render(
         f"OLD PRODUCTS",
         True, 'Black'
-    ), (MARGIN, 900))
+    )
+    rotten_products_text_rect = text_render.get_rect(center=(MARGIN + 90, 900))
+    screen.blit(text_render, rotten_products_text_rect)
 
     products_rotten = {key: value for key, value in product_list.items() if
                                   datetime.strptime(value['expire_date'], '%Y-%m-%d') < start_date}
@@ -1342,7 +1483,6 @@ def render_old_products():
             else:
                 products_x += products_line_width
                 products_inline_count += 1
-
 
 def render_update_stock():
     global small_update_stock_food_pie1_rect, \
@@ -2556,6 +2696,8 @@ small_rotten_food_creambread_rect = empty_rect
 increment_porcentage_button_rect = empty_rect
 decrement_porcentage_button_rect = empty_rect
 
+rotten_products_text_rect = empty_rect
+
 cart = {}
 start_date = datetime.now()
 product_list = createStock(bakery_products, start_date)
@@ -2567,6 +2709,7 @@ products_text = {}
 ticket_components = {}
 
 game_selected = ''
+manager_view_mode = "GLASS"
 login_user_button = None
 login_manager_button = None
 
