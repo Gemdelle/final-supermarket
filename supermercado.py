@@ -13,6 +13,7 @@ bakery_products = {
     '100': {
         'description': 'Strawberry Pie',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'F',
@@ -22,6 +23,7 @@ bakery_products = {
     '101': {
         'description': 'Grape Pie',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'F',
@@ -31,6 +33,7 @@ bakery_products = {
     '102': {
         'description': 'Apple Pie',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'F',
@@ -40,6 +43,7 @@ bakery_products = {
     '103': {
         'description': 'Fruit Pie',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'F',
@@ -49,6 +53,7 @@ bakery_products = {
     '104': {
         'description': 'Blueberry Fish',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'F',
@@ -58,6 +63,7 @@ bakery_products = {
     '105': {
         'description': 'Bread Turtle',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'Z',
@@ -67,6 +73,7 @@ bakery_products = {
     '106': {
         'description': 'Bread Crocodile',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'Z',
@@ -76,6 +83,7 @@ bakery_products = {
     '107': {
         'description': 'Baguette',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'B',
@@ -85,6 +93,7 @@ bakery_products = {
     '108': {
         'description': 'Round Bread',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'B',
@@ -94,6 +103,7 @@ bakery_products = {
     '109': {
         'description': 'Egg Toast',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'T',
@@ -103,6 +113,7 @@ bakery_products = {
     '110': {
         'description': 'Butter Toast',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'T',
@@ -112,6 +123,7 @@ bakery_products = {
     '111': {
         'description': 'Pretzel',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'P',
@@ -121,6 +133,7 @@ bakery_products = {
     '112': {
         'description': 'Croissant',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'P',
@@ -130,6 +143,7 @@ bakery_products = {
     '113': {
         'description': 'Bagel',
         'stock': 0,
+        'rotten_stock': 0,
         'expire_date': '',
         'price': 0,
         'type': 'S',
@@ -156,6 +170,7 @@ def createStock(products,start_date):
     products['114'] = {
         'description': 'Chocolate Bread',
         'stock': random.randint(0,300),
+        'rotten_stock': 0,
         'expire_date': (start_date + timedelta(days=20)).strftime('%Y-%m-%d'),
         'price': random.randint(350,1200),
         'type': 'S',
@@ -165,6 +180,7 @@ def createStock(products,start_date):
     products['115'] = {
         'description': 'Cookies',
         'stock': random.randint(0,300),
+        'rotten_stock': 0,
         'expire_date': (start_date + timedelta(days=20)).strftime('%Y-%m-%d'),
         'price': random.randint(350,1200),
         'type': 'S',
@@ -174,6 +190,7 @@ def createStock(products,start_date):
     products['116'] = {
         'description': 'Cream Bread',
         'stock': random.randint(0,300),
+        'rotten_stock': 0,
         'expire_date': (start_date + timedelta(days=20)).strftime('%Y-%m-%d'),
         'price': random.randint(350,1200),
         'type': 'S',
@@ -183,6 +200,7 @@ def createStock(products,start_date):
     products['117'] = {
         'description': 'Cupcake',
         'stock': random.randint(0,300),
+        'rotten_stock': 0,
         'expire_date': (start_date + timedelta(days=20)).strftime('%Y-%m-%d'),
         'price': random.randint(350,1200),
         'type': 'S',
@@ -193,6 +211,8 @@ def createStock(products,start_date):
     # Hacer que no haya stock de 2 productos al inicio
     products[str(random.randint(100,109))]['stock'] = 0
     products[str(random.randint(110,117))]['stock'] = 0
+    products[str(random.randint(100, 110))]['expire_date'] = (start_date - timedelta(days=random.randint(4, 30))).strftime('%Y-%m-%d')
+    products[str(random.randint(111, 114))]['expire_date'] = (start_date - timedelta(days=random.randint(4, 30))).strftime('%Y-%m-%d')
 
     low_stock = 0
     low_stock_arr = []
@@ -324,6 +344,11 @@ def remove_product(product_list, code):
 
 def update_product_stock(product_list, user_code, stock_limit):
     product_list[user_code]['stock'] = stock_limit
+
+def remove_rotten_product(product_list, user_code, start_date):
+    product_list[user_code]['rotten_stock'] = product_list[user_code]['stock']
+    product_list[user_code]['stock'] = 0
+    product_list[user_code]['expire_date'] = (start_date + timedelta(days=random.randint(4, 30))).strftime('%Y-%m-%d')
 
 def viewCart(cart):
     for product in cart:

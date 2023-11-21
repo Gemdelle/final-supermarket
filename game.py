@@ -7,7 +7,8 @@ from random import randint
 import math
 
 from supermercado import buy_with_code, createStock, bakery_products, return_product, discountItem, add_product, \
-    remove_product, increment_price_by_percentage, decrement_price_by_percentage, update_product_stock
+    remove_product, increment_price_by_percentage, decrement_price_by_percentage, update_product_stock, \
+    remove_rotten_product
 
 
 def update_ticket():
@@ -562,6 +563,81 @@ def check_update_stock_button_clicked():
     elif small_update_stock_food_cupcake_rect and small_update_stock_food_cupcake_rect.collidepoint(event.pos) and product_list['117']['stock'] < MIN_STOCK_TO_UPDATE:
         update_product_stock(product_list, '117', MIN_STOCK_TO_UPDATE)
 
+def check_rotten_products_button_clicked():
+    global small_rotten_food_pie1_rect, \
+        small_rotten_food_pie2_rect, \
+        small_rotten_food_rectpie_rect, \
+        small_rotten_food_fruitpie_rect, \
+        small_rotten_food_blueberryfish_rect, \
+        small_rotten_food_bread_turtle_rect, \
+        small_rotten_food_bread_crocodile_rect, \
+        small_rotten_food_baguette_rect, \
+        small_rotten_food_roundbread_rect, \
+        small_rotten_food_eggtoast_rect, \
+        small_rotten_food_toast_rect, \
+        small_rotten_food_pretzel_rect, \
+        small_rotten_food_croissant_rect, \
+        small_rotten_food_bagel_rect, \
+        small_rotten_food_chocolatebread_rect, \
+        small_rotten_food_cookies_rect, \
+        small_rotten_food_creambread_rect, \
+        small_rotten_food_cupcake_rect
+
+    if small_rotten_food_pie1_rect and small_rotten_food_pie1_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['100']):
+        remove_rotten_product(product_list, '100')
+    elif small_rotten_food_pie2_rect and small_rotten_food_pie2_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['101']):
+        remove_rotten_product(product_list, '101')
+    elif small_rotten_food_rectpie_rect and small_rotten_food_rectpie_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['102']):
+        remove_rotten_product(product_list, '102')
+    elif small_rotten_food_fruitpie_rect and small_rotten_food_fruitpie_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['103']):
+        remove_rotten_product(product_list, '103')
+    elif small_rotten_food_blueberryfish_rect and small_rotten_food_blueberryfish_rect.collidepoint(
+            event.pos) and is_product_expired(product_list['104']):
+        remove_rotten_product(product_list, '104')
+    elif small_rotten_food_bread_turtle_rect and small_rotten_food_bread_turtle_rect.collidepoint(
+            event.pos) and is_product_expired(product_list['105']):
+        remove_rotten_product(product_list, '105')
+    elif small_rotten_food_bread_crocodile_rect and small_rotten_food_bread_crocodile_rect.collidepoint(
+            event.pos) and is_product_expired(product_list['106']):
+        remove_rotten_product(product_list, '106')
+    elif small_rotten_food_baguette_rect and small_rotten_food_baguette_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['107']):
+        remove_rotten_product(product_list, '107')
+    elif small_rotten_food_roundbread_rect and small_rotten_food_roundbread_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['108']):
+        remove_rotten_product(product_list, '108')
+    elif small_rotten_food_eggtoast_rect and small_rotten_food_eggtoast_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['109']):
+        remove_rotten_product(product_list, '109')
+    elif small_rotten_food_toast_rect and small_rotten_food_toast_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['110']):
+        remove_rotten_product(product_list, '110')
+    elif small_rotten_food_pretzel_rect and small_rotten_food_pretzel_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['111']):
+        remove_rotten_product(product_list, '111')
+    elif small_rotten_food_croissant_rect and small_rotten_food_croissant_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['112']):
+        remove_rotten_product(product_list, '112')
+    elif small_rotten_food_bagel_rect and small_rotten_food_bagel_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['113']):
+        remove_rotten_product(product_list, '113')
+    elif small_rotten_food_chocolatebread_rect and small_rotten_food_chocolatebread_rect.collidepoint(
+            event.pos) and is_product_expired(product_list['114']):
+        remove_rotten_product(product_list, '114')
+    elif small_rotten_food_cookies_rect and small_rotten_food_cookies_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['115']):
+        remove_rotten_product(product_list, '115')
+    elif small_rotten_food_creambread_rect and small_rotten_food_creambread_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['116']):
+        remove_rotten_product(product_list, '116')
+    elif small_rotten_food_cupcake_rect and small_rotten_food_cupcake_rect.collidepoint(event.pos) and \
+            is_product_expired(product_list['117']):
+        remove_rotten_product(product_list, '117')
+
 def check_increment_porcentage_button_clicked():
     if increment_porcentage_button_rect.collidepoint(event.pos):
         increment_price_by_percentage(product_list, 0.1)
@@ -725,6 +801,8 @@ def render_user_game_screen():
         screen.blit(food_cupcake, food_cupcake_rect)
     else:
         screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
+def is_product_expired(product):
+    return datetime.strptime(product['expire_date'], '%Y-%m-%d') < start_date
 
 def render_manager_game_screen():
     screen.fill((255, 255, 255))
@@ -746,172 +824,467 @@ def render_manager_game_screen():
 
     if product_list['100']['status'] == 'GLASS':
         render_plate11()
-        if product_list['100']['stock'] > 0:
-            screen.blit(food_pie1, food_pie1_rect)
+        if is_product_expired(product_list['100']):
+            screen.blit(food_pie1_rotten, food_pie1_rect)
         else:
-            screen.blit(food_pie1_NS, food_pie1_NS_rect)
+            if product_list['100']['stock'] > 0:
+                screen.blit(food_pie1, food_pie1_rect)
+            else:
+                screen.blit(food_pie1_NS, food_pie1_NS_rect)
     else:
         render_plate11_NS()
 
     if product_list['101']['status'] == 'GLASS':
         render_plate12()
-        if product_list['101']['stock'] > 0:
-            screen.blit(food_pie2, food_pie2_rect)
+        if is_product_expired(product_list['101']):
+            screen.blit(food_pie2_rotten, food_pie2_rect)
         else:
-            screen.blit(food_pie2_NS, food_pie2_NS_rect)
+            if product_list['101']['stock'] > 0:
+                screen.blit(food_pie2, food_pie2_rect)
+            else:
+                screen.blit(food_pie2_NS, food_pie2_NS_rect)
     else:
         render_plate12_NS()
 
     if product_list['102']['status'] == 'GLASS':
         render_plate13()
-        if product_list['102']['stock'] > 0:
-            screen.blit(food_rectpie, food_rectpie_rect)
+        if is_product_expired(product_list['102']):
+            screen.blit(food_rectpie_rotten, food_rectpie_rect)
         else:
-            screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
+            if product_list['102']['stock'] > 0:
+                screen.blit(food_rectpie, food_rectpie_rect)
+            else:
+                screen.blit(food_rectpie_NS, food_rectpie_NS_rect)
     else:
         render_plate13_NS()
 
     if product_list['103']['status'] == 'GLASS':
         render_plate14()
-        if product_list['103']['stock'] > 0:
-            screen.blit(food_fruitpie, food_fruitpie_rect)
+        if is_product_expired(product_list['103']):
+            screen.blit(food_fruitpie_rotten, food_fruitpie_rect)
         else:
-            screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
+            if product_list['103']['stock'] > 0:
+                screen.blit(food_fruitpie, food_fruitpie_rect)
+            else:
+                screen.blit(food_fruitpie_NS, food_fruitpie_NS_rect)
     else:
         render_plate14_NS()
 
     if product_list['104']['status'] == 'GLASS':
         render_plate16()
-        if product_list['104']['stock'] > 0:
-            screen.blit(food_blueberryfish, food_blueberryfish_rect)
+        if is_product_expired(product_list['104']):
+            screen.blit(food_blueberryfish_rotten, food_blueberryfish_rect)
         else:
-            screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
+            if product_list['104']['stock'] > 0:
+                screen.blit(food_blueberryfish, food_blueberryfish_rect)
+            else:
+                screen.blit(food_blueberryfish_NS, food_blueberryfish_NS_rect)
     else:
         render_plate16_NS()
 
     if product_list['105']['status'] == 'GLASS':
         render_plate6()
-        if product_list['105']['stock'] > 0:
-            screen.blit(food_bread_turtle, food_bread_turtle_rect)
+        if is_product_expired(product_list['105']):
+            screen.blit(food_bread_turtle_rotten, food_bread_turtle_rect)
         else:
-            screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
+            if product_list['105']['stock'] > 0:
+                screen.blit(food_bread_turtle, food_bread_turtle_rect)
+            else:
+                screen.blit(food_bread_turtle_NS, food_bread_turtle_NS_rect)
     else:
         render_plate6_NS()
 
     if product_list['106']['status'] == 'GLASS':
         render_plate7()
-        if product_list['106']['stock'] > 0:
-            screen.blit(food_bread_crocodile, food_bread_crocodile_rect)
+        if is_product_expired(product_list['106']):
+            screen.blit(food_bread_crocodile_rotten, food_bread_crocodile_rect)
         else:
-            screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
+            if product_list['106']['stock'] > 0:
+                screen.blit(food_bread_crocodile, food_bread_crocodile_rect)
+            else:
+                screen.blit(food_bread_crocodile_NS, food_bread_crocodile_NS_rect)
     else:
         render_plate7_NS()
 
     if product_list['107']['status'] == 'GLASS':
         render_plate2()
-        if product_list['107']['stock'] > 0:
-            screen.blit(food_baguette, food_baguette_rect)
+        if is_product_expired(product_list['107']):
+            screen.blit(food_baguette_rotten, food_baguette_rect)
         else:
-            screen.blit(food_baguette_NS, food_baguette_NS_rect)
+            if product_list['107']['stock'] > 0:
+                screen.blit(food_baguette, food_baguette_rect)
+            else:
+                screen.blit(food_baguette_NS, food_baguette_NS_rect)
     else:
         render_plate2_NS()
 
     if product_list['108']['status'] == 'GLASS':
         render_plate3()
-        if product_list['108']['stock'] > 0:
-            screen.blit(food_roundbread, food_roundbread_rect)
+        if is_product_expired(product_list['108']):
+            screen.blit(food_roundbread_rotten, food_roundbread_rect)
         else:
-            screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
+            if product_list['108']['stock'] > 0:
+                screen.blit(food_roundbread, food_roundbread_rect)
+            else:
+                screen.blit(food_roundbread_NS, food_roundbread_NS_rect)
     else:
         render_plate3_NS()
 
     if product_list['109']['status'] == 'GLASS':
         render_plate9()
-        if product_list['109']['stock'] > 0:
-            screen.blit(food_eggtoast, food_eggtoast_rect)
+        if is_product_expired(product_list['109']):
+            screen.blit(food_eggtoast_rotten, food_eggtoast_rect)
         else:
-            screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
+            if product_list['109']['stock'] > 0:
+                screen.blit(food_eggtoast, food_eggtoast_rect)
+            else:
+                screen.blit(food_eggtoast_NS, food_eggtoast_NS_rect)
     else:
         render_plate9_NS()
 
     if product_list['110']['status'] == 'GLASS':
         render_plate10()
-        if product_list['110']['stock'] > 0:
-            screen.blit(food_toast, food_toast_rect)
+        if is_product_expired(product_list['110']):
+            screen.blit(food_toast_rotten, food_toast_rect)
         else:
-            screen.blit(food_toast_NS, food_toast_NS_rect)
+            if product_list['110']['stock'] > 0:
+                screen.blit(food_toast, food_toast_rect)
+            else:
+                screen.blit(food_toast_NS, food_toast_NS_rect)
     else:
         render_plate10_NS()
 
     if product_list['111']['status'] == 'GLASS':
         render_plate4()
-        if product_list['111']['stock'] > 0:
-            screen.blit(food_pretzel, food_pretzel_rect)
+        if is_product_expired(product_list['111']):
+            screen.blit(food_pretzel_rotten, food_pretzel_rect)
         else:
-            screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
+            if product_list['111']['stock'] > 0:
+                screen.blit(food_pretzel, food_pretzel_rect)
+            else:
+                screen.blit(food_pretzel_NS, food_pretzel_NS_rect)
     else:
         render_plate4_NS()
 
     if product_list['112']['status'] == 'GLASS':
         render_plate5()
-        if product_list['112']['stock'] > 0:
-            screen.blit(food_croissant, food_croissant_rect)
+        if is_product_expired(product_list['112']):
+            screen.blit(food_croissant_rotten, food_croissant_rect)
         else:
-            screen.blit(food_croissant_NS, food_croissant_NS_rect)
+            if product_list['112']['stock'] > 0:
+                screen.blit(food_croissant, food_croissant_rect)
+            else:
+                screen.blit(food_croissant_NS, food_croissant_NS_rect)
     else:
         render_plate5_NS()
 
     if product_list['113']['status'] == 'GLASS':
         render_plate17()
-        if product_list['113']['stock'] > 0:
-            screen.blit(food_bagel, food_bagel_rect)
+        if is_product_expired(product_list['113']):
+            screen.blit(food_bagel_rotten, food_bagel_rect)
         else:
-            screen.blit(food_bagel_NS, food_bagel_NS_rect)
+            if product_list['113']['stock'] > 0:
+                screen.blit(food_bagel, food_bagel_rect)
+            else:
+                screen.blit(food_bagel_NS, food_bagel_NS_rect)
     else:
         render_plate17_NS()
 
     if product_list['114']['status'] == 'GLASS':
         render_plate18()
-        if product_list['114']['stock'] > 0:
-            screen.blit(food_chocolatebread, food_chocolatebread_rect)
+        if is_product_expired(product_list['114']):
+            screen.blit(food_chocolatebread_rotten, food_chocolatebread_rect)
         else:
-            screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
+            if product_list['114']['stock'] > 0:
+                screen.blit(food_chocolatebread, food_chocolatebread_rect)
+            else:
+                screen.blit(food_chocolatebread_NS, food_chocolatebread_NS_rect)
     else:
         render_plate18_NS()
 
     if product_list['115']['status'] == 'GLASS':
         render_plate1()
-        if product_list['115']['stock'] > 0:
-            screen.blit(food_cookies, food_cookies_rect)
+        if is_product_expired(product_list['115']):
+            screen.blit(food_cookies_rotten, food_cookies_rect)
         else:
-            screen.blit(food_cookies_NS, food_cookies_NS_rect)
+            if product_list['115']['stock'] > 0:
+                screen.blit(food_cookies, food_cookies_rect)
+            else:
+                screen.blit(food_cookies_NS, food_cookies_NS_rect)
     else:
         render_plate1_NS()
 
     if product_list['116']['status'] == 'GLASS':
         render_plate8()
-        if product_list['116']['stock'] > 0:
-            screen.blit(food_creambread, food_creambread_rect)
+        if is_product_expired(product_list['116']):
+            screen.blit(food_creambread_rotten, food_creambread_rect)
         else:
-            screen.blit(food_creambread_NS, food_creambread_NS_rect)
+            if product_list['116']['stock'] > 0:
+                screen.blit(food_creambread, food_creambread_rect)
+            else:
+                screen.blit(food_creambread_NS, food_creambread_NS_rect)
     else:
         render_plate8_NS()
 
     if product_list['117']['status'] == 'GLASS':
         render_plate15()
-        if product_list['117']['stock'] > 0:
-            screen.blit(food_cupcake, food_cupcake_rect)
+        if is_product_expired(product_list['117']):
+            screen.blit(food_cupcake_rotten, food_cupcake_rect)
         else:
-            screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
+            if product_list['117']['stock'] > 0:
+                screen.blit(food_cupcake, food_cupcake_rect)
+            else:
+                screen.blit(food_cupcake_NS, food_cupcake_NS_rect)
     else:
         render_plate15_NS()
 
 
 def render_old_products():
+    global small_rotten_food_pie1_rect, \
+        small_rotten_food_pie2_rect, \
+        small_rotten_food_rectpie_rect, \
+        small_rotten_food_fruitpie_rect, \
+        small_rotten_food_blueberryfish_rect, \
+        small_rotten_food_bread_turtle_rect, \
+        small_rotten_food_bread_crocodile_rect, \
+        small_rotten_food_baguette_rect, \
+        small_rotten_food_roundbread_rect, \
+        small_rotten_food_eggtoast_rect, \
+        small_rotten_food_toast_rect, \
+        small_rotten_food_pretzel_rect, \
+        small_rotten_food_croissant_rect, \
+        small_rotten_food_bagel_rect, \
+        small_rotten_food_chocolatebread_rect, \
+        small_rotten_food_cookies_rect, \
+        small_rotten_food_creambread_rect, \
+        small_rotten_food_cupcake_rect
+
     screen.blit(manager_actions_titles_font.render(
         f"OLD PRODUCTS",
         True, 'Black'
     ), (MARGIN, 900))
+
+    products_rotten = {key: value for key, value in product_list.items() if
+                                  datetime.strptime(value['expire_date'], '%Y-%m-%d') < start_date}
+    products_x = 100
+    products_y = 1000
+    products_line_height = 60
+    products_line_width = 100
+    products_inline_count = 1
+
+    for product_code, product in products_rotten.items():
+        if product_code == '100':
+            small_rotten_food_pie1_rect = small_rotten_food_pie1.get_rect(center=(products_x, products_y))
+            screen.blit(small_rotten_food_pie1, small_rotten_food_pie1_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '101':
+            small_rotten_food_pie2_rect = small_rotten_food_pie2.get_rect(center=(products_x, products_y))
+            screen.blit(small_rotten_food_pie2, small_rotten_food_pie2_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '102':
+            small_rotten_food_rectpie_rect = small_rotten_food_rectpie.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_rectpie, small_rotten_food_rectpie_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '103':
+            small_rotten_food_fruitpie_rect = small_rotten_food_fruitpie.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_fruitpie, small_rotten_food_fruitpie_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '104':
+            small_rotten_food_blueberryfish_rect = small_rotten_food_blueberryfish.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_blueberryfish, small_rotten_food_blueberryfish_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '105':
+            small_rotten_food_bread_turtle_rect = small_rotten_food_bread_turtle.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_bread_turtle, small_rotten_food_bread_turtle_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '106':
+            small_rotten_food_bread_crocodile_rect = small_rotten_food_bread_crocodile.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_bread_crocodile, small_rotten_food_bread_crocodile_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '107':
+            small_rotten_food_baguette_rect = small_rotten_food_baguette.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_baguette, small_rotten_food_baguette_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '108':
+            small_rotten_food_roundbread_rect = small_rotten_food_roundbread.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_roundbread, small_rotten_food_roundbread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '109':
+            small_rotten_food_eggtoast_rect = small_rotten_food_eggtoast.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_eggtoast, small_rotten_food_eggtoast_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '110':
+            small_rotten_food_toast_rect = small_rotten_food_toast.get_rect(center=(products_x, products_y))
+            screen.blit(small_rotten_food_toast, small_rotten_food_toast_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '111':
+            small_rotten_food_pretzel_rect = small_rotten_food_pretzel.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_pretzel, small_rotten_food_pretzel_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '112':
+            small_rotten_food_croissant_rect = small_rotten_food_croissant.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_croissant, small_rotten_food_croissant_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '113':
+            small_rotten_food_bagel_rect = small_rotten_food_bagel.get_rect(center=(products_x, products_y))
+            screen.blit(small_rotten_food_bagel, small_rotten_food_bagel_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '114':
+            small_rotten_food_chocolatebread_rect = small_rotten_food_chocolatebread.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_chocolatebread, small_rotten_food_chocolatebread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '115':
+            small_rotten_food_cookies_rect = small_rotten_food_cookies.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_cookies, small_rotten_food_cookies_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '116':
+            small_rotten_food_creambread_rect = small_rotten_food_creambread.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_creambread, small_rotten_food_creambread_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
+        if product_code == '117':
+            small_rotten_food_cupcake_rect = small_rotten_food_cupcake.get_rect(
+                center=(products_x, products_y))
+            screen.blit(small_rotten_food_cupcake, small_rotten_food_cupcake_rect)
+            if products_inline_count > 3:
+                products_y += products_line_height
+                products_inline_count = 0
+                products_x = 100
+            else:
+                products_x += products_line_width
+                products_inline_count += 1
+
 
 def render_update_stock():
     global small_update_stock_food_pie1_rect, \
@@ -1181,7 +1554,7 @@ def render_remove_product_section():
     products_line_height = 60
     products_line_width = 62
     products_inline_count = 1
-    max_products = 6    
+    max_products = 6
 
     for product_code, product in products_in_glass.items():
         if product_code == '100':
@@ -1639,6 +2012,7 @@ def listen_to_key_binding():
                     check_increment_porcentage_button_clicked()
                     check_decrement_porcentage_button_clicked()
                     check_update_stock_button_clicked()
+                    check_rotten_products_button_clicked()
                     product_added = check_manager_add_product()
                     if not product_added:
                         check_manager_remove_product()
@@ -1791,6 +2165,10 @@ food_baguette_NS = pygame.image.load('graphics/food-baguette-NS.png')
 food_baguette_NS = pygame.transform.scale(food_baguette_NS, (170, 140))
 food_baguette_NS_rect = food_baguette_NS.get_rect(center=(790, 400))
 
+food_baguette_rotten = pygame.image.load('graphics/food-baguette-rotten.png')
+food_baguette_rotten = pygame.transform.scale(food_baguette_rotten, (170, 140))
+food_baguette_rotten_rect = food_baguette_rotten.get_rect(center=(790, 400))
+
 food_roundbread = pygame.image.load('graphics/food-roundbread.png')
 food_roundbread = pygame.transform.scale(food_roundbread, (170, 140))
 food_roundbread_rect = food_roundbread.get_rect(center=(990, 400))
@@ -1798,6 +2176,10 @@ food_roundbread_rect = food_roundbread.get_rect(center=(990, 400))
 food_roundbread_NS = pygame.image.load('graphics/food-roundbread-NS.png')
 food_roundbread_NS = pygame.transform.scale(food_roundbread_NS, (170, 140))
 food_roundbread_NS_rect = food_roundbread_NS.get_rect(center=(990, 400))
+
+food_roundbread_rotten = pygame.image.load('graphics/food-roundbread-rotten.png')
+food_roundbread_rotten = pygame.transform.scale(food_roundbread_rotten, (170, 140))
+food_roundbread_rotten_rect = food_roundbread_rotten.get_rect(center=(990, 400))
 
 # Zoo Bread
 food_bread_turtle = pygame.image.load('graphics/food-breadturtle.png')
@@ -1808,6 +2190,10 @@ food_bread_turtle_NS = pygame.image.load('graphics/food-breadturtle-NS.png')
 food_bread_turtle_NS = pygame.transform.scale(food_bread_turtle_NS, (170, 140))
 food_bread_turtle_NS_rect = food_bread_turtle_NS.get_rect(center=(1590, 400))
 
+food_bread_turtle_rotten = pygame.image.load('graphics/food-breadturtle-rotten.png')
+food_bread_turtle_rotten = pygame.transform.scale(food_bread_turtle_rotten, (170, 140))
+food_bread_turtle_rotten_rect = food_bread_turtle_rotten.get_rect(center=(1590, 400))
+
 food_bread_crocodile = pygame.image.load('graphics/food-breadcrocodile.png')
 food_bread_crocodile = pygame.transform.scale(food_bread_crocodile, (170, 140))
 food_bread_crocodile_rect = food_bread_crocodile.get_rect(center=(1780, 400))
@@ -1815,6 +2201,10 @@ food_bread_crocodile_rect = food_bread_crocodile.get_rect(center=(1780, 400))
 food_bread_crocodile_NS = pygame.image.load('graphics/food-breadcrocodile-NS.png')
 food_bread_crocodile_NS = pygame.transform.scale(food_bread_crocodile_NS, (170, 140))
 food_bread_crocodile_NS_rect = food_bread_crocodile_NS.get_rect(center=(1780, 400))
+
+food_bread_crocodile_rotten = pygame.image.load('graphics/food-breadcrocodile-rotten.png')
+food_bread_crocodile_rotten = pygame.transform.scale(food_bread_crocodile_rotten, (170, 140))
+food_bread_crocodile_rotten_rect = food_bread_crocodile_rotten.get_rect(center=(1780, 400))
 
 # Toast
 food_eggtoast = pygame.image.load('graphics/food-eggtoast.png')
@@ -1825,6 +2215,10 @@ food_eggtoast_NS = pygame.image.load('graphics/food-eggtoast-NS.png')
 food_eggtoast_NS = pygame.transform.scale(food_eggtoast_NS, (170, 140))
 food_eggtoast_NS_rect = food_eggtoast_NS.get_rect(center=(790, 650))
 
+food_eggtoast_rotten = pygame.image.load('graphics/food-eggtoast-rotten.png')
+food_eggtoast_rotten = pygame.transform.scale(food_eggtoast_rotten, (170, 140))
+food_eggtoast_rotten_rect = food_eggtoast_rotten.get_rect(center=(790, 650))
+
 food_toast = pygame.image.load('graphics/food-toast.png')
 food_toast = pygame.transform.scale(food_toast, (190, 160))
 food_toast_rect = food_toast.get_rect(center=(990, 650))
@@ -1832,6 +2226,10 @@ food_toast_rect = food_toast.get_rect(center=(990, 650))
 food_toast_NS = pygame.image.load('graphics/food-toast-NS.png')
 food_toast_NS = pygame.transform.scale(food_toast_NS, (190, 160))
 food_toast_NS_rect = food_toast_NS.get_rect(center=(990, 650))
+
+food_toast_rotten = pygame.image.load('graphics/food-toast-rotten.png')
+food_toast_rotten = pygame.transform.scale(food_toast_rotten, (190, 160))
+food_toast_rotten_rect = food_toast_rotten.get_rect(center=(990, 650))
 
 # Fruit Pie
 food_pie1 = pygame.image.load('graphics/food-pie1.png')
@@ -1842,6 +2240,10 @@ food_pie1_NS = pygame.image.load('graphics/food-pie1-NS.png')
 food_pie1_NS = pygame.transform.scale(food_pie1_NS, (170, 140))
 food_pie1_NS_rect = food_pie1_NS.get_rect(center=(1190, 650))
 
+food_pie1_rotten = pygame.image.load('graphics/food-pie1-rotten.png')
+food_pie1_rotten = pygame.transform.scale(food_pie1_rotten, (170, 140))
+food_pie1_rotten_rect = food_pie1_rotten.get_rect(center=(1190, 650))
+
 food_pie2 = pygame.image.load('graphics/food-pie2.png')
 food_pie2 = pygame.transform.scale(food_pie2, (170, 140))
 food_pie2_rect = food_pie2.get_rect(center=(1390, 650))
@@ -1849,6 +2251,10 @@ food_pie2_rect = food_pie2.get_rect(center=(1390, 650))
 food_pie2_NS = pygame.image.load('graphics/food-pie2-NS.png')
 food_pie2_NS = pygame.transform.scale(food_pie2_NS, (170, 140))
 food_pie2_NS_rect = food_pie2_NS.get_rect(center=(1390, 650))
+
+food_pie2_rotten = pygame.image.load('graphics/food-pie2-rotten.png')
+food_pie2_rotten = pygame.transform.scale(food_pie2_rotten, (170, 140))
+food_pie2_rotten_rect = food_pie2_rotten.get_rect(center=(1390, 650))
 
 food_rectpie = pygame.image.load('graphics/food-rectpie.png')
 food_rectpie = pygame.transform.scale(food_rectpie, (170, 140))
@@ -1858,6 +2264,10 @@ food_rectpie_NS = pygame.image.load('graphics/food-rectpie-NS.png')
 food_rectpie_NS = pygame.transform.scale(food_rectpie_NS, (170, 140))
 food_rectpie_NS_rect = food_rectpie_NS.get_rect(center=(1590, 650))
 
+food_rectpie_rotten = pygame.image.load('graphics/food-rectpie-rotten.png')
+food_rectpie_rotten = pygame.transform.scale(food_rectpie_rotten, (170, 140))
+food_rectpie_rotten_rect = food_rectpie_rotten.get_rect(center=(1590, 650))
+
 food_fruitpie = pygame.image.load('graphics/food-fruitpie.png')
 food_fruitpie = pygame.transform.scale(food_fruitpie, (170, 140))
 food_fruitpie_rect = food_fruitpie.get_rect(center=(1790, 650))
@@ -1866,6 +2276,10 @@ food_fruitpie_NS = pygame.image.load('graphics/food-fruitpie-NS.png')
 food_fruitpie_NS = pygame.transform.scale(food_fruitpie_NS, (170, 140))
 food_fruitpie_NS_rect = food_fruitpie_NS.get_rect(center=(1790, 650))
 
+food_fruitpie_rotten = pygame.image.load('graphics/food-fruitpie-rotten.png')
+food_fruitpie_rotten = pygame.transform.scale(food_fruitpie_rotten, (170, 140))
+food_fruitpie_rotten_rect = food_fruitpie_rotten.get_rect(center=(1790, 650))
+
 food_blueberryfish = pygame.image.load('graphics/food-blueberryfish.png')
 food_blueberryfish = pygame.transform.scale(food_blueberryfish, (170, 140))
 food_blueberryfish_rect = food_blueberryfish.get_rect(center=(790, 900))
@@ -1873,6 +2287,10 @@ food_blueberryfish_rect = food_blueberryfish.get_rect(center=(790, 900))
 food_blueberryfish_NS = pygame.image.load('graphics/food-blueberryfish-NS.png')
 food_blueberryfish_NS = pygame.transform.scale(food_blueberryfish_NS, (170, 140))
 food_blueberryfish_NS_rect = food_blueberryfish_NS.get_rect(center=(790, 900))
+
+food_blueberryfish_rotten = pygame.image.load('graphics/food-blueberryfish-rotten.png')
+food_blueberryfish_rotten = pygame.transform.scale(food_blueberryfish_rotten, (170, 140))
+food_blueberryfish_rotten_rect = food_blueberryfish_rotten.get_rect(center=(790, 900))
 
 # Sandwich
 food_bagel = pygame.image.load('graphics/food-bagel.png')
@@ -1883,6 +2301,10 @@ food_bagel_NS = pygame.image.load('graphics/food-bagel-NS.png')
 food_bagel_NS = pygame.transform.scale(food_bagel_NS, (170, 140))
 food_bagel_NS_rect = food_bagel_NS.get_rect(center=(990, 900))
 
+food_bagel_rotten = pygame.image.load('graphics/food-bagel-rotten.png')
+food_bagel_rotten = pygame.transform.scale(food_bagel_rotten, (170, 140))
+food_bagel_rotten_rect = food_bagel_rotten.get_rect(center=(990, 900))
+
 # Plain
 food_pretzel = pygame.image.load('graphics/food-pretzel.png')
 food_pretzel = pygame.transform.scale(food_pretzel, (170, 140))
@@ -1892,6 +2314,10 @@ food_pretzel_NS = pygame.image.load('graphics/food-pretzel-NS.png')
 food_pretzel_NS = pygame.transform.scale(food_pretzel_NS, (170, 140))
 food_pretzel_NS_rect = food_pretzel_NS.get_rect(center=(1190, 400))
 
+food_pretzel_rotten = pygame.image.load('graphics/food-pretzel-rotten.png')
+food_pretzel_rotten = pygame.transform.scale(food_pretzel_rotten, (170, 140))
+food_pretzel_rotten_rect = food_pretzel_rotten.get_rect(center=(1190, 400))
+
 food_croissant = pygame.image.load('graphics/food-croissant.png')
 food_croissant = pygame.transform.scale(food_croissant, (170, 140))
 food_croissant_rect = food_croissant.get_rect(center=(1390, 400))
@@ -1899,6 +2325,10 @@ food_croissant_rect = food_croissant.get_rect(center=(1390, 400))
 food_croissant_NS = pygame.image.load('graphics/food-croissant-NS.png')
 food_croissant_NS = pygame.transform.scale(food_croissant_NS, (170, 140))
 food_croissant_NS_rect = food_croissant_NS.get_rect(center=(1390, 400))
+
+food_croissant_rotten = pygame.image.load('graphics/food-croissant-rotten.png')
+food_croissant_rotten = pygame.transform.scale(food_croissant_rotten, (170, 140))
+food_croissant_rotten_rect = food_croissant_rotten.get_rect(center=(1390, 400))
 
 food_chocolatebread = pygame.image.load('graphics/food-chocolatebread.png')
 food_chocolatebread = pygame.transform.scale(food_chocolatebread, (130, 120))
@@ -1908,6 +2338,10 @@ food_chocolatebread_NS = pygame.image.load('graphics/food-chocolatebread-NS.png'
 food_chocolatebread_NS = pygame.transform.scale(food_chocolatebread_NS, (130, 120))
 food_chocolatebread_NS_rect = food_chocolatebread_NS.get_rect(center=(1190, 900))
 
+food_chocolatebread_rotten = pygame.image.load('graphics/food-chocolatebread-rotten.png')
+food_chocolatebread_rotten = pygame.transform.scale(food_chocolatebread_rotten, (130, 120))
+food_chocolatebread_rotten_rect = food_chocolatebread_rotten.get_rect(center=(1190, 900))
+
 food_cookies = pygame.image.load('graphics/food-cookies.png')
 food_cookies = pygame.transform.scale(food_cookies, (140, 130))
 food_cookies_rect = food_cookies.get_rect(center=(1390, 900))
@@ -1915,6 +2349,10 @@ food_cookies_rect = food_cookies.get_rect(center=(1390, 900))
 food_cookies_NS = pygame.image.load('graphics/food-cookies-NS.png')
 food_cookies_NS = pygame.transform.scale(food_cookies_NS, (140, 130))
 food_cookies_NS_rect = food_cookies_NS.get_rect(center=(1390, 900))
+
+food_cookies_rotten = pygame.image.load('graphics/food-cookies-rotten.png')
+food_cookies_rotten = pygame.transform.scale(food_cookies_rotten, (140, 130))
+food_cookies_rotten_rect = food_cookies_rotten.get_rect(center=(1390, 900))
 
 food_creambread = pygame.image.load('graphics/food-creambread.png')
 food_creambread = pygame.transform.scale(food_creambread, (130, 110))
@@ -1924,6 +2362,10 @@ food_creambread_NS = pygame.image.load('graphics/food-creambread-NS.png')
 food_creambread_NS = pygame.transform.scale(food_creambread_NS, (130, 110))
 food_creambread_NS_rect = food_creambread_NS.get_rect(center=(1590, 900))
 
+food_creambread_rotten = pygame.image.load('graphics/food-creambread-rotten.png')
+food_creambread_rotten = pygame.transform.scale(food_creambread_rotten, (130, 110))
+food_creambread_rotten_rect = food_creambread_rotten.get_rect(center=(1590, 900))
+
 food_cupcake = pygame.image.load('graphics/food-cupcake.png')
 food_cupcake = pygame.transform.scale(food_cupcake, (120, 130))
 food_cupcake_rect = food_cupcake.get_rect(center=(1790, 900))
@@ -1931,6 +2373,10 @@ food_cupcake_rect = food_cupcake.get_rect(center=(1790, 900))
 food_cupcake_NS = pygame.image.load('graphics/food-cupcake-NS.png')
 food_cupcake_NS = pygame.transform.scale(food_cupcake_NS, (120, 130))
 food_cupcake_NS_rect = food_cupcake_NS.get_rect(center=(1790, 900))
+
+food_cupcake_rotten = pygame.image.load('graphics/food-cupcake-rotten.png')
+food_cupcake_rotten = pygame.transform.scale(food_cupcake_rotten, (120, 130))
+food_cupcake_rotten_rect = food_cupcake_rotten.get_rect(center=(1790, 900))
 
 discount_badge = pygame.image.load('graphics/tags/discount.png')
 discount_badge = pygame.transform.scale(discount_badge, (30, 35))
@@ -2009,6 +2455,43 @@ small_update_stock_food_cookies = pygame.transform.scale(food_cookies, (55, 55))
 small_update_stock_food_cookies_rect = empty_rect
 small_update_stock_food_creambread = pygame.transform.scale(food_creambread, (55, 55))
 small_update_stock_food_creambread_rect = empty_rect
+
+small_rotten_food_cupcake = pygame.transform.scale(food_cupcake_rotten, (70, 60))
+small_rotten_food_cupcake_rect = empty_rect
+small_rotten_food_pie1 = pygame.transform.scale(food_pie1_rotten, (70, 60))
+small_rotten_food_pie1_rect = empty_rect
+small_rotten_food_pie2 = pygame.transform.scale(food_pie2_rotten, (70, 60))
+small_rotten_food_pie2_rect = empty_rect
+small_rotten_food_rectpie = pygame.transform.scale(food_rectpie_rotten, (70, 60))
+small_rotten_food_rectpie_rect = empty_rect
+small_rotten_food_fruitpie = pygame.transform.scale(food_fruitpie_rotten, (70, 60))
+small_rotten_food_fruitpie_rect = empty_rect
+small_rotten_food_blueberryfish = pygame.transform.scale(food_blueberryfish_rotten, (70, 60))
+small_rotten_food_blueberryfish_rect = empty_rect
+small_rotten_food_bread_turtle = pygame.transform.scale(food_bread_turtle_rotten, (70, 60))
+small_rotten_food_bread_turtle_rect = empty_rect
+small_rotten_food_bread_crocodile = pygame.transform.scale(food_bread_crocodile_rotten, (70, 60))
+small_rotten_food_bread_crocodile_rect = empty_rect
+small_rotten_food_baguette = pygame.transform.scale(food_baguette_rotten, (70, 60))
+small_rotten_food_baguette_rect = empty_rect
+small_rotten_food_roundbread = pygame.transform.scale(food_roundbread_rotten, (70, 60))
+small_rotten_food_roundbread_rect = empty_rect
+small_rotten_food_eggtoast = pygame.transform.scale(food_eggtoast_rotten, (70, 60))
+small_rotten_food_eggtoast_rect = empty_rect
+small_rotten_food_toast = pygame.transform.scale(food_toast_rotten, (70, 60))
+small_rotten_food_toast_rect = empty_rect
+small_rotten_food_pretzel = pygame.transform.scale(food_pretzel_rotten, (70, 60))
+small_rotten_food_pretzel_rect = empty_rect
+small_rotten_food_croissant = pygame.transform.scale(food_croissant_rotten, (70, 60))
+small_rotten_food_croissant_rect = empty_rect
+small_rotten_food_bagel = pygame.transform.scale(food_bagel_rotten, (70, 60))
+small_rotten_food_bagel_rect = empty_rect
+small_rotten_food_chocolatebread = pygame.transform.scale(food_chocolatebread_rotten, (70, 60))
+small_rotten_food_chocolatebread_rect = empty_rect
+small_rotten_food_cookies = pygame.transform.scale(food_cookies_rotten, (70, 60))
+small_rotten_food_cookies_rect = empty_rect
+small_rotten_food_creambread = pygame.transform.scale(food_creambread_rotten, (70, 60))
+small_rotten_food_creambread_rect = empty_rect
 
 
 increment_porcentage_button_rect = empty_rect
